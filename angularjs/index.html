@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>angular.js lesson 1</title>
+	<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+</head>
+<body>
+	your name: <input type="text" ng-model="yourname" placeholder="world">
+	<hr>
+	Hello  {{ yourname || 'world'}}!
+</body>
+</html>
