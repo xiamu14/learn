@@ -112,6 +112,8 @@
 [第三天学习笔记](http://www.jianshu.com/p/af24662c4d2b)
 [第四天学习笔记](http://www.jianshu.com/p/e615dafbc780)
 
+测试如何编写可靠的commit
+
 
 
 
