@@ -1,0 +1,19 @@
+{
+  "name": "learn",
+  "version": "1.0.0",
+  "description": "learn ",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-connect": "^1.0.0",
+    "grunt-contrib-jade": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
