@@ -22,31 +22,22 @@ module.exports = function(grunt){
 		},
 
 	  	watch: {
-	  		scripts0: {
-	  			files: ['./**/*.html','./**/*.js'],
-	  			tasks: '',
-	  			options: {
-	  				spawn: false,
-	  				event: 'all'
-	  			}
-	  		},
-	  		scripts1: {
+	  		scripts: {
 	  			files: ["./**/*.jade"],
 	  			tasks: 'jadetohtml',
 	  			options: {
 	  				spawn: false,
-	  				event: 'all'
+	  				// event: 'all'
 	  			}
 	  		}
 	  	},
 
 	  	browserSync: {
 	  		bsFiles: {
-	  			src: './**/*.html',
+	  			src: ['./**/*.html','./**/*.js','./**/*.css'],
 	  		},
 	  		options: {
 	  			watchTask: true,
-	  			// host: "10.2.200.62",
 	  			server: {
 	  				baseDir: './'
 	  			}
@@ -57,9 +48,11 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks("grunt-contrib-jade");
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks("grunt-browser-sync");
+	grunt.loadNpmTasks("grunt-newer");
+	grunt.loadNpmTasks("grunt-eslint");
 
-	grunt.registerTask('jadetohtml',["jade"]);
-	grunt.registerTask('browser',['jadetohtml','browserSync','watch']);
+	grunt.registerTask('jadetohtml',["newer:jade"]);
+	grunt.registerTask('browser',['browserSync','watch']);
 	grunt.registerTask('default');
 	
 };
