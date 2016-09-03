@@ -1,0 +1,10 @@
+#content {
+    width: 60%;
+    height: 400px;
+    margin: 20px auto;
+}
+
+.commentBox {
+    font-size: 16px;
+    color: #345435;
+}

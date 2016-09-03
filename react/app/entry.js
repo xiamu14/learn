@@ -4,3 +4,4 @@
 // require('./component.jsx');
 
 require('./test.jsx');
+require('./index.css');

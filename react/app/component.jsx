@@ -18,6 +18,8 @@ var CommentBox = React.createClass({
     },
     render: function() {
         console.log("render 4");
+        var img = document.createElement('img');
+        img.src = require('./src/test.png');
         return (
             <div className="commentBox">
             Hello, world! I'm {this.props.name} .
