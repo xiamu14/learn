@@ -87,12 +87,12 @@
         }
     });
 
-    
+
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks("grunt-contrib-cssmin");
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-jshint");
-    grunt.loadNpmTasks("grunt-contrib-uglify"); 
+    grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-newer");
     grunt.loadNpmTasks("grunt-browser-sync");
@@ -101,7 +101,7 @@
     grunt.registerTask("release",["less:production","cssmin:target"]);
     grunt.registerTask("browser",['devless','browserSync','watch']);
     grunt.registerTask('default');
-    
+
     };
 
 # *nodejs 四天入门学习*
@@ -120,8 +120,4 @@
 2016/5/23 测试链接
 
 
-
-
-
-
-
+<!-- 好像推送有问题，测试一下 -->
