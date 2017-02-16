@@ -45,6 +45,7 @@ const config = {
         new BrowserSyncPlugin({
             host: '192.168.31.217',
             port: 3000,
+            browser: 'chrome',
             server: { baseDir: ['./build'] }
         })
     ]
