@@ -1,43 +1,53 @@
 var path = require('path');
 var webpack = require('webpack');
-var react_dir = path.resolve(__dirname, './node_modules/react/dist/react.min.js');
-var react_dom_dir = path.resolve(__dirname, './node_modules/react-dom/dist/react-dom.min.js');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const config = {
-    addVendor: function (name, path) {
-        this.resolve.alias[name] = path;
-        this.module.noParse.push(new RegExp(path))
-    },
     resolve: {
         alias: {}
     },
     entry: {
-        app: ['./app/main.js'],
+        main: './app/main.js',
+        about: './app/about.js'
     },
     output: {
-        path: './build',
-        filename: 'bundle.js'
+        path: path.resolve(__dirname, './build'),
+        filename: '[name].bundle.js'
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js$/,
             exclude: /(node_modules|bower_components)/,
             loader: 'babel-loader',
-            query: {
+            options: {
                 presets: ['es2015', 'react']
             }
         },
         {
             test: /\.css$/,
-            loader: 'style-loader!css-loader',
-            options: {
-                sourceMap: true,
-                minimize: true
-            }
+            use: [
+                {
+                    loader:'style-loader'
+                }, 
+                {
+                    loader: 'css-loader',
+                    options: {
+                        sourceMap: true,
+                        minimize: true,
+                        modules: true,
+                        localIdentName: '[name]__[local]--[hash:base64:5]'
+                    }
+                }
+            ]
         }]
-    }
+    },
+    plugins: [
+        new BrowserSyncPlugin({
+            host: '192.168.31.217',
+            port: 3000,
+            server: { baseDir: ['./build'] }
+        })
+    ]
 }
-// config.addVendor('react', react_dir);
-// config.addVendor('react-dom', react_dom_dir);
 
 module.exports = config;

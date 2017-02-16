@@ -5,7 +5,9 @@
   "author": "Ben",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build"
+    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build",
+    "build": "webpack -p",
+    "watch": "webpack --watch"
   },
   "dependencies": {
     "babel-core": "^6.22.1",
@@ -17,6 +19,11 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "style-loader": "^0.13.1",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "browser-sync-webpack-plugin": "^1.1.4"
   }
 }
