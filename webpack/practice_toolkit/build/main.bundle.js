@@ -9466,7 +9466,7 @@ module.exports = React.createClass({
             React.createElement(
                 'p',
                 null,
-                '\u4F60\u597D\u5417\uFF01'
+                '\u4F60\u597D\uFF0C\u4E16\u754C\uFF01'
             )
         );
     }

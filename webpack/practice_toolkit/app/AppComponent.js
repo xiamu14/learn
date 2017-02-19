@@ -7,7 +7,7 @@ module.exports = React.createClass({
         return (
         	<div className={styles.box}>
             	<h1>Hello world!</h1>
-            	<p>你好吗！</p>
+            	<p>你好，世界！</p>
             </div>
         )
     }
