@@ -1,3 +1,4 @@
+/*
 var React = require('react');
 import { findDOMNode } from 'react-dom';
 import styles from '../css/main.css';
@@ -22,3 +23,29 @@ module.exports = React.createClass({
         )
     }
 });
+*/
+
+// 2017/2/23 开始写新的东西
+// 
+let React = require('react');
+class Button extends React.Component {
+    static propTypes = {
+        type: PropTypes.oneOf(['success', 'normal']),
+        onClick: PropTypes.func,
+    };
+    static defaultProps = {
+        type: 'normal',
+    };
+    handleClick() {
+    }
+
+    render() {
+        let { className, type, children, ...other} = this.props;
+        const classes = className(classNam, 'prefix-button', 'prefix-button-'+type);
+        return (
+            <span className={classes}{...other} onClick={::this.handleClick}>
+                {children}
+            </span>
+            );
+    }
+}
