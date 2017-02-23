@@ -5,13 +5,6 @@
   margin: 0;
 }
 
-#container {
-	width: 90%;
-	height: 400px;
-	margin: 200px auto;
-	border: 1px solid lightblue;
-}
-
 .box {
   width: 80%;
   margin: 200px auto;
