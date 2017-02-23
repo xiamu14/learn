@@ -39,6 +39,13 @@ const config = {
                     }
                 }
             ]
+        },
+        {
+            test: /\.(png|jpg|gif|webp)$/,
+            loader: 'url-loader',
+            options:  {
+                limit: 10000
+            }
         }]
     },
     plugins: [

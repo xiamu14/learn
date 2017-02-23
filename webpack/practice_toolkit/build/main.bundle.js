@@ -9443,6 +9443,8 @@ module.exports = ReactPropTypesSecret;
 "use strict";
 
 
+var _reactDom = __webpack_require__(81);
+
 var _main = __webpack_require__(181);
 
 var _main2 = _interopRequireDefault(_main);
@@ -9451,22 +9453,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var React = __webpack_require__(52);
 
+
+var img = document.createElement('img');
+
 module.exports = React.createClass({
     displayName: 'exports',
 
+    submitHandler: function submitHandler(event) {
+        event.preventDefault();
+        // 通过 ref 访问输入框
+        var helloTo = (0, _reactDom.findDOMNode)(this.refs.helloTo).value;
+        // console.log(this);
+        console.log(helloTo);
+    },
     render: function render() {
         return React.createElement(
-            'div',
-            { className: _main2.default.box },
+            'form',
+            { onSubmit: this.submitHandler },
+            React.createElement('input', { ref: 'helloTo', type: 'text', defaultValue: 'Hello world!' }),
+            React.createElement('br', null),
             React.createElement(
-                'h1',
-                null,
-                'Hello world!'
-            ),
-            React.createElement(
-                'p',
-                null,
-                '\u4F60\u597D\uFF0C\u4E16\u754C\uFF01'
+                'button',
+                { type: 'submit' },
+                'speak'
             )
         );
     }
@@ -9491,10 +9500,11 @@ exports = module.exports = __webpack_require__(83)();
 
 
 // module
-exports.push([module.i, "*{margin:0;padding:0}.main__box--3BpNb{color:#add8e6;font-size:16px;width:80%;margin:200px auto;text-align:center}", "", {"version":3,"sources":["/./css/main.css"],"names":[],"mappings":"AAEA,EACI,SAAU,AACV,SAAW,CACd,AAED,kBACI,cAAiB,AACjB,eAAgB,AAChB,UAAW,AACX,kBAAmB,AACnB,iBAAmB,CACtB","file":"main.css","sourcesContent":["/* 首页样式表 */\n\n*{\n    margin: 0;\n    padding: 0;\n}\n\n.box {\n    color: lightblue;\n    font-size: 16px;\n    width: 80%;\n    margin: 200px auto;\n    text-align: center;\n}\n"],"sourceRoot":"webpack://"}]);
+exports.push([module.i, "*{padding:0;margin:0}#main__container--2bdM7{width:90%;height:400px;margin:200px auto;border:1px solid #add8e6}.main__box--3BpNb{width:80%;margin:200px auto;font-size:16px;color:#add8e6;text-align:center}", "", {"version":3,"sources":["/./css/main.css"],"names":[],"mappings":"AAEA,EACE,UAAW,AACX,QAAU,CACX,AAED,wBACC,UAAW,AACX,aAAc,AACd,kBAAmB,AACnB,wBAA4B,CAC5B,AAED,kBACE,UAAW,AACX,kBAAmB,AACnB,eAAgB,AAChB,cAAiB,AACjB,iBAAmB,CACpB","file":"main.css","sourcesContent":["/* 首页样式表 */\n\n* {\n  padding: 0;\n  margin: 0;\n}\n\n#container {\n\twidth: 90%;\n\theight: 400px;\n\tmargin: 200px auto;\n\tborder: 1px solid lightblue;\n}\n\n.box {\n  width: 80%;\n  margin: 200px auto;\n  font-size: 16px;\n  color: lightblue;\n  text-align: center;\n}\n"],"sourceRoot":"webpack://"}]);
 
 // exports
 exports.locals = {
+	"container": "main__container--2bdM7",
 	"box": "main__box--3BpNb"
 };
 
