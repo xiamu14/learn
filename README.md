@@ -1,9 +1,6 @@
-# *grunt 使用方法-Gruntfile.js当前配置内容*
+# *grunt 使用方法 - Gruntfile.js 当前配置内容 *
 
-    module.exports = function(grunt){
-
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+    module.exports = function(grunt){grunt.initConfig({pkg: grunt.file.readJSON('package.json'),
 
         less: {
             development: {
@@ -12,8 +9,7 @@
                     yuicompress: false,
                     barnner: "测试一下啊！"
                 },
-                files: {
-                    "css/dev/main.css": ["css/less/main.less","css/less/common.less"]
+                files: {"css/dev/main.css": ["css/less/main.less","css/less/common.less"]
                     // "css/dev/common.css": "css/less/common.less"
                 }
             },
@@ -22,68 +18,42 @@
                     compress: false,
                     yuicompress: false
                 },
-                files: {
-                    "css/release/main.css": "css/less/main.less",
+                files: {"css/release/main.css": "css/less/main.less",
                     "css/release/common.css": "css/less/common.less"
                 }
             }
         },
 
-        cssmin: {
-            options: {
-                report: "min",
+        cssmin: {options: {report:"min",
                 shorthandCompacting: false,
                 roundingPrecision: -1
             },
-            target: {
-                files: {
-                    'css/release/main.min.css': ['css/dev/main.css', 'css/dev/common.css']
-            }
+            target: {files: {'css/release/main.min.css': ['css/dev/main.css','css/dev/common.css']}
           }
         },
 
-        concat: {
-            options: {
-                separator: "",
-            },
-            dist: {
-                src: ['mobile/js/main.js','mobile/js/common.js'],
+        concat: {options: {separator:"",},
+            dist: {src: ['mobile/js/main.js','mobile/js/common.js'],
                 dest: 'mobile/js/main1.js'
             }
         },
 
-        uglify: {
-            compressjs: {
-                files: {
-                    'mobile/js/main1.min.js': ['mobile/js/main1.js'],
-                }
+        uglify: {compressjs: {files: {'mobile/js/main1.min.js': ['mobile/js/main1.js'],}
             }
         },
 
-        jshint: {
-            all: ['mobile/js/main1.js']
-        },
+        jshint: {all: ['mobile/js/main1.js']},
 
-        watch: {
-            scripts: {
-                files: ['template/jade/*.jade',"css/less/*.less"],
+        watch: {scripts: {files: ['template/jade/*.jade',"css/less/*.less"],
                 tasks: ["devless"],
-                options: {
-                    spawn: false
-                }
+                options: {spawn: false}
             }
         },
 
-        browserSync: {
-            bsFiles: {
-                src : ['index.html','template/dev/*.html','css/dev/*.css']
-            },
+        browserSync: {bsFiles: {src : ['index.html','template/dev/*.html','css/dev/*.css']},
             options: {
                 watchTask: true,
-                server: {
-                    baseDir: "./"
-                }
-            }
+                server: {baseDir:"./"}}
         }
     });
 
@@ -104,7 +74,7 @@
 
     };
 
-# *nodejs 四天入门学习*
+# *nodejs 四天入门学习 *
 
 ## nodejs d1
 [第一天学习笔记](http://www.jianshu.com/p/158fc79c0f6e)
@@ -112,9 +82,9 @@
 [第三天学习笔记](http://www.jianshu.com/p/af24662c4d2b)
 [第四天学习笔记](http://www.jianshu.com/p/e615dafbc780)
 
-测试如何编写可靠的commit
+测试如何编写可靠的 commit
 
-# *echart 学习echart图表组件的使用*
+# echart 学习 echart 图表组件的使用
 详细使用方法和注意事项稍后补充
 
 2016/5/23 测试链接
