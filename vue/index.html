@@ -7,8 +7,10 @@
     <title>Vue.js v2</title>
 </head>
 <body>
-    <div id="app">
-        <app></app>
+    <div id="counter-event-example">
+        <p>{{ total }}</p>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
     </div>
     <script src="dist/bundle.js"></script>
 </body>

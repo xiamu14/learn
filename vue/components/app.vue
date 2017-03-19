@@ -23,6 +23,9 @@
         <input v-model="message" placeholder="edit me">
         <p>Message id: {{ message }}</p>
         <br/>
+        <p>-- 单选框 --</p>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <lable for="checkbox">{{ checked }}</lable>
     </div>
 </template>
 
@@ -32,6 +35,7 @@
             return {
                 message: 'Hello, Vue.js 2.0',
                 seen: false,
+                checked: false,
                 todos: [
                     {text: "看书"},
                     {text: "做饭"},
