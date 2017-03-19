@@ -9399,12 +9399,40 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
         return {
-            message: 'Hello, Vue.js 2.0'
+            message: 'Hello, Vue.js 2.0',
+            seen: false,
+            todos: [{ text: "看书" }, { text: "做饭" }, { text: "洗碗" }]
         };
+    },
+
+    methods: {
+        reverseMessage: function reverseMessage() {
+            this.message = this.message.split('').reverse().join('');
+        }
     }
 };
 
@@ -11582,9 +11610,34 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
+  return _c('div', [_c('p', [_vm._v("-- 声明式渲染 -- ")]), _vm._v(" "), _c('div', {
     staticClass: "message"
-  }, [_vm._v("\n        " + _vm._s(_vm.message) + "\n    ")])])
+  }, [_vm._v("\n        " + _vm._s(_vm.message) + "\n    ")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("-- 指令：if 判断 -- ")]), _vm._v(" "), (_vm.seen) ? _c('p', [_vm._v("看得见这个")]) : _vm._e(), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("-- 指令：for 循环 -- ")]), _vm._v(" "), _c('ul', _vm._l((_vm.todos), function(todo) {
+    return _c('li', [_vm._v("\n            " + _vm._s(todo.text) + "\n        ")])
+  })), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("-- 事件处理器 -- ")]), _vm._v(" "), _c('button', {
+    on: {
+      "click": _vm.reverseMessage
+    }
+  }, [_vm._v("逆转消息")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("-- 表单控件绑定 -- ")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.message),
+      expression: "message"
+    }],
+    attrs: {
+      "placeholder": "edit me"
+    },
+    domProps: {
+      "value": (_vm.message)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.message = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('p', [_vm._v("Message id: " + _vm._s(_vm.message))]), _vm._v(" "), _c('br')])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -11893,9 +11946,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 new _vue2.default({
     el: '#app',
-    data: {
-        message: 'hello Vue'
-    },
     components: { App: _app2.default }
 });
 

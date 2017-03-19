@@ -8,3 +8,5 @@ author: Ben
 ## 入门
 使用 webpack  搭建学习 vue 2+ 的开发环境 √
   
+## 基础
+- 声明式渲染
