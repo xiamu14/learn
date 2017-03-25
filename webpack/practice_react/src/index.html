@@ -10,267 +10,42 @@
 </head>
 
 <body>
-    <div id="content"></div>
-    <div id="content2"></div>
+    <div id="app"></div>
     <script type="text/babel">
-        // //demo1
-        // var NoteList = React.createClass({
-        //     render: function() {
-        //         return (
-        //             <ul>
-        //                 {
-        //                     React.Children.map(this.props.children, function(child){
-        //                         return <li>{child}</li>;
-        //                     })
-        //                 }
-        //             </ul>
-        //         );
-        //     }
-        // });
-        // ReactDOM.render(
-        //     <NoteList>
-        //         <span>hello</span>
-        //         <span>world</span>
-        //     </NoteList>,
-        //     document.getElementById('content')
-        // )
-        // //demo2
-        // var MyTitle = React.createClass({
-        //     propTypes: {
-        //         title: React.PropTypes.string.isRequired,
-        //     },
-        //     render: function(){
-        //         return (
-        //             <h1>{this.props.title}</h1>
-        //         );
-        //     }
-        // });
-        // // var data = 21;
-        // ReactDOM.render(
-        //     <MyTitle title="hello，world"></MyTitle>,
-        //     document.getElementById('content')
-        // )
-        // //demo3
-        // function HelloComponent(props, context ) {
-        //   return <div>Hello {props.name}</div>
-        // }
-        // ReactDOM.render(<HelloComponent name="Sebastian" />, document.getElementById('content'));
-        // // demo4
-        // var InputControl = React.createClass({
-        //     propTypes: {  // 定义传入 props 中的属性各种类型
-        //         initialValue: React.PropTypes.string
-        //     },
-        //     defaultPorps: {  // 组件默认的 props 对象
-        //         initialValue: ''
-        //     },
-        //     // 设置 initial state
-        //     getInitialState: function() { // 组件相关状态对象
-        //         return {
-        //             text: this.props.initialValue || 'placeholder'
-        //         };
-        //     },
-        //     handleChange: function () {
-        //         this.setState({
-        //             text: event.target.value
-        //         });
-        //     },
-        //     render: function() {
-        //         return (
-        //             <div>
-        //                 Type something:
-        //                 <input onChange={this.handleChange} value= {this.state.text} />
-        //                 <p>{this.state.text}</p>
-        //             </div>
-        //         );
-        //     }
-        // });
-        // ReactDOM.render(<InputControl />, document.getElementById('content'));
-        // // demo5 - 使用 ES6 语法写 component
-        // class InputControl extends React.Component {
-        //     constructor(props) {
-        //         super(props);
-        //         // 设置 intitial state
-        //         this.state = {
-        //             text: props.initialValue || 'placeholder'
-        //         };
-        //
-        //         // ES6 类中函数必须手动绑定
-        //         this.handleChange = this.handleChange.bind(this);
-        //     }
-        //
-        //     handleChange(event) {
-        //         this.setState({
-        //             text: event.target.value
-        //         });
-        //     }
-        //
-        //     render() {
-        //         return (
-        //             <div>Type something:
-        //                 <input onChange={this.handleChange} value={this.state.text}/>
-        //                 <p>{this.state.text}</p>
-        //             </div>
-        //         );
-        //     }
-        // }
-        // InputControl.propTypes = {
-        //     initialValue: React.PropTypes.string
-        // };
-        // InputControl.defaultProps = {
-        //     initialValue: ''
-        // };
-        //
-        // ReactDOM.render(<InputControl/>, document.getElementById('content'));
-        // // demo6 - component 的生命周期
-        // var LogStatus = React.createClass({
-        //     getDefaultProps: function() {
-        //         console.log('组件开始实例化……设置默认 props');
-        //     },
-        //     getInitialState: function() {
-        //         console.log('组件开始实例化……设置默认 state');
-        //         return {
-        //             num: 0
-        //         };
-        //     },
-        //     componentWillMount: function(){
-        //         console.log('组件即将实例化……');
-        //     },
-        //     componentWillReceiveProps: function() {
-        //         console.log('组件即将初始化……并更新 state');
-        //     },
-        //     componentWillUpdate: function() {
-        //         console.log('组件即将更新……');
-        //     },
-        //     onTest: function(ev) {
-        //         this.setState(function(state, props){
-        //             var i = state.num + 1;
-        //             return {num: i};
-        //         })
-        //     },
-        //     render: function(){
-        //
-        //         var num = this.state.num;
-        //
-        //         return (<h1 onClick={this.onTest}>this.props.text
-        //             <span>{num}</span></h1>);
-        //     },
-        //     componentDidMount: function() {
-        //         console.log('组件实例化完成……');
-        //     },
-        //     componentDidUpdate: function() {
-        //         console.log('组件更新完成……');
-        //     }
-        // });
-        // ReactDOM.render(
-        //     <LogStatus text="组件第一次实例化"></LogStatus>, document.getElementById('content')
-        // );
-        // ReactDOM.render(
-        //     <LogStatus text="组件第二次实例化"></LogStatus>,
-        //     document.getElementById('content2')
-        // )
-        // // demo7 - component 的生命周期
-        class LifeCycle extends React.Component {
-            constructor (props) {
-                super(props);
-                this.state = {
-                    str : 's'
-                };
-                console.log("Initial render");
-                console.log('constructor');
-            }
+        class Zan extends React.Component{
+          constructor(props){
+            super(props);
+            this.state = {
+              likes: 0,
+              unlikes: 0
+            };
+            this.like = this.like.bind(this);
+            this.unlike = this.unlike.bind(this);
+          }
 
-            componentWillMount() {
-                console.log("component will mount");
-            }
+          like() {
+            this.setState({
+                likes: this.state.likes +1
+            });
+          }
 
-            componentWillReceiveProps(nextProps){
-                console.log("component will receive props");
-            }
+          unlike() {
+            this.setState({
+                unlikes: this.state.unlikes +1
+            });
+          }
 
-            shouldComponentUpdate() {
-                console.log("should component update");
-                return true;
-            }
-
-            componentDidUpdate() {
-                 console.log("component did updates");
-            }
-
-            componentWillUnmount () {
-                console.log('component will unmount');
-            }
-
-            setTheState() {
-                let s = "hello";
-                if(this.state.str === 's'){
-                    s = "HELLO";
-                }
-                this.setState({
-                    str: s
-                })
-            }
-
-            forceItUpdate() {
-                this.forceUpdate();
-            }
-
-            render() {
-                console.log("render");
-                return (
-                    <div>
-                        <span>{"Props:"}<h2>{parseInt(this.props.num)}</h2>
-                        </span>
-                        <br></br>
-                        <span>{"state:"}<h2>{this.state.str}</h2>
-                        </span>
-                    </div>
-                );
-            }
+          render() {
+            return (
+              <div>
+                <button onClick={this.like}>喜欢{this.state.likes}</button>
+                <button onClick={this.unlike}>不喜欢{this.state.unlikes}</button>
+              </div>
+            );
+          }
         }
 
-        class Container extends React.Component {
-            constructor(props) {
-                super(props);
-                this.state = {
-                    num: Math.random() * 100
-                };
-            }
-
-            propsChange(event) {
-                console.log(event);
-                this.setState({
-                    num: Math.random() * 100
-                })
-            }
-
-            setLifeCycleState() {
-                this.refs.rLifeCycle.setTheState();
-            }
-
-            forceLifeCycleUpdate() {
-                this.refs.rLifeCycle.forceItUpdate();
-            }
-
-            parentForceUpdate() {
-                this.forceUpdate();
-            }
-
-            render() {
-                return (
-                    <div>
-                        <a href="javascript:;" className="weui_btn weui_btn_primary" onClick={this.propsChange.bind(this)}>propsChange</a><br/>
-                        <a href="javascript:;" className="weui_btn weui_btn_primary" onClick={this.setLifeCycleState.bind(this)}>setState</a><br/>
-                        <a href="javascript:;" className="weui_btn weui_btn_primary" onClick={this.forceLifeCycleUpdate.bind(this)}>forceUpdate</a><br/>
-                        <a href="javascript:;" className="weui_btn weui_btn_primary" onClick={this.parentForceUpdate.bind(this)}>parentForceUpdateWithoutChange</a><br/>
-                        <LifeCycle ref="rLifeCycle" num={this.state.num}></LifeCycle>
-                    </div>
-                );
-            }
-        }
-
-        ReactDOM.render(
-            <Container></Container>, document.getElementById('content')
-        );
+        ReactDOM.render(<Zan></Zan>, document.getElementById('app'));
     </script>
 </body>
 
