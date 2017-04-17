@@ -1,0 +1,9 @@
+{
+  "name": "my-headless-chrome",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "chrome-remote-interface": "^0.19.1"
+  }
+}
