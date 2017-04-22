@@ -2,12 +2,12 @@ var cheerio = require('cheerio')
 var request = require('superagent')
 var fs = require('fs')
 
-var url = 'https://movie.douban.com/subject/26260853/?from=showing'
+var url = 'http://api.shouqu.me/api_service/api/v1/mark/webList'
 var html = ''
 
-request.get(url).end((err, res)=>{
-    console.log(handleDB(res.text));
-});
+// request.get(url).end((err, res)=>{
+//     console.log(handleDB(res.text));
+// });
 
 function handleDB(html) {
     var $ = cheerio.load(html)
@@ -25,3 +25,48 @@ function handleDB(html) {
 
      return directories
 }
+
+// 测试连接 mongodb
+var mongoose = require('mongoose');
+//重点在这一句，赋值一个全局Promise
+mongoose.Promise = global.Promise;
+var db = mongoose.connect('mongodb://192.168.31.205:27017/shouqu');
+
+// db.on('error', console.error.bind(console, '连接错误'));
+// db.open('once', function(){
+//     console.log('连接成功');
+// })
+
+// 创建schema
+const indexSchema = new mongoose.Schema({
+    title: String,
+    url: String,
+    channel: Number,
+    channelName: String,
+    sourceName: String
+});
+
+const col = mongoose.model('col', indexSchema)
+
+const test2 = {
+    title: 'test2',
+    url: 'www.baidu.com',
+    channel: 1,
+    channelName: '收趣云书签',
+    sourceName: '推酷'
+}
+
+//初始化model
+var insert = new col(test2);
+
+//执行插入
+insert.save(function(err, result){
+  if(err){
+    console.log(err);
+  }else{
+    console.log('insert ok');
+  }
+
+  //关闭连接
+  // db.close();
+});
