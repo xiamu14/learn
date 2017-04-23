@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+cd "$(dirname "$0")"
+osascript \
+-e 'on run argv' \
+-e   'tell application id "com.adobe.Photoshop" to do javascript (item 1 of argv)' \
+-e 'end run' \
+"$(cat | sed "s!^#include \"\./!#include \"$PWD/!g")"
