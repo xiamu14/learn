@@ -34,7 +34,8 @@ const indexSchema = new mongoose.Schema({
     createtime: Number,
     updatetime: Number,
     channelName: String,
-    sourceName: String
+    sourceName: String,
+    author: String
 });
 
 const col = mongoose.model('shouqu', indexSchema)
@@ -48,7 +49,8 @@ const data1 = {
     createtime: 0,
     updatetime: 0,
     channelName: '收趣云书签',
-    sourceName: ''
+    sourceName: '',
+    author: ''
 }
 for(var j = 0; j < 11; j ++){
   data.Number = j + 1;
@@ -77,6 +79,7 @@ for(var j = 0; j < 11; j ++){
         }
         data1.createtime = list[index].createtime
         data1.updatetime = list[index].updatetime
+        data1.author = list[index].author
         //初始化model
         var insert = new col(data1);
         insert.save(function(err, result){
