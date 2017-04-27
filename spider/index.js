@@ -19,10 +19,12 @@ var browserMsg={
 };
 
 // 测试连接 mongodb
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
+// 导入 Schema
+var listSchema = require('schema.js')
 //重点在这一句，赋值一个全局Promise
 mongoose.Promise = global.Promise;
-var db = mongoose.connect('mongodb://192.168.31.217:27017/shouqu');
+var db = mongoose.connect('mongodb://192.168.31.205:27017/shouqu')
 
 // 创建schema
 const indexSchema = new mongoose.Schema({
@@ -38,7 +40,7 @@ const indexSchema = new mongoose.Schema({
     author: String
 });
 
-const col = mongoose.model('shouqu', indexSchema)
+const col = mongoose.model('list', listSchema)
 
 const data1 = {
     title: '',
