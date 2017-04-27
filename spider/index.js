@@ -3,9 +3,10 @@ var request = require('superagent')
 var fs = require('fs')
 
 var url1 = 'https://api.shouqu.me/api_service/api/v1/mark/webList'
+var current = new Date()
 var data = {
   userId:223558,
-  lastupdataTime:1492873515827,
+  lastupdataTime: current,
   pageNo:1,
   pageSize:30,
   sort:'desc',
@@ -21,28 +22,39 @@ var browserMsg={
 var mongoose = require('mongoose');
 //重点在这一句，赋值一个全局Promise
 mongoose.Promise = global.Promise;
-var db = mongoose.connect('mongodb://192.168.31.205:27017/shouqu');
+var db = mongoose.connect('mongodb://192.168.31.217:27017/shouqu');
 
 // 创建schema
 const indexSchema = new mongoose.Schema({
     title: String,
+    introduct: String,
     url: String,
     channel: Number,
+    categorys: Array,
+    createtime: Number,
+    updatetime: Number,
     channelName: String,
-    sourceName: String
+    sourceName: String,
+    author: String
 });
 
-const col = mongoose.model('col', indexSchema)
+const col = mongoose.model('shouqu', indexSchema)
 
 const data1 = {
     title: '',
+    introduct: '',
     url: '',
     channel: 1,
+    categorys: [],
+    createtime: 0,
+    updatetime: 0,
     channelName: '收趣云书签',
-    sourceName: ''
+    sourceName: '',
+    author: ''
 }
-
-request
+for(var j = 0; j < 11; j ++){
+  data.pageNo = j + 1;
+  request
   .post(url1)
   .set(browserMsg)
   .send(data)
@@ -51,13 +63,25 @@ request
     if (err || !res.ok) {
       console.log(err);
     } else {
-      console.log(typeof(res.body))
+      // console.log(typeof(res.body))
       var list = res.body.data.list
       for( index in list ){
-        console.log(list[index])
+        // console.log(list[index])
+
         data1.title = list[index].title
+        data1.introduct = list[index].introduct
         data1.url = list[index].url
         data1.sourceName = list[index].sourceName
+        var categorys = list[index].categorys
+        var length = categorys.length
+        data1.categorys = []
+        for (var i=0; i<length; i++){
+          // 这里啊，第二次的时候要清空啊
+          data1.categorys.push(categorys[i]['name'])
+        }
+        data1.createtime = list[index].createtime
+        data1.updatetime = list[index].updatetime
+        data1.author = list[index].author
         //初始化model
         var insert = new col(data1);
         insert.save(function(err, result){
@@ -69,3 +93,4 @@ request
       }
     }
   })
+}
