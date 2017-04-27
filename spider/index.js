@@ -53,7 +53,7 @@ const data1 = {
     author: ''
 }
 for(var j = 0; j < 11; j ++){
-  data.Number = j + 1;
+  data.pageNo = j + 1;
   request
   .post(url1)
   .set(browserMsg)
@@ -74,7 +74,9 @@ for(var j = 0; j < 11; j ++){
         data1.sourceName = list[index].sourceName
         var categorys = list[index].categorys
         var length = categorys.length
+        data1.categorys = []
         for (var i=0; i<length; i++){
+          // 这里啊，第二次的时候要清空啊
           data1.categorys.push(categorys[i]['name'])
         }
         data1.createtime = list[index].createtime
