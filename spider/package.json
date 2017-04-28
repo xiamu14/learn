@@ -1,7 +1,8 @@
 {
   "devDependencies": {
     "cheerio": "^0.22.0",
-    "superagent": "^3.5.2"
+    "superagent": "^3.5.2",
+    "to-markdown": "^3.0.4"
   },
   "dependencies": {
     "mongoose": "^4.9.5"
