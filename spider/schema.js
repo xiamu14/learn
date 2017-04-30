@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 module.exports = new Schema({
     title: String,
     introduct: String,
+    article_markdown: String,
     url: String,
     channel: Number,
     categorys: Array,
