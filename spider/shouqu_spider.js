@@ -6,11 +6,12 @@ var async = require('async')
 
 var url1 = 'https://api.shouqu.me/api_service/api/v1/mark/webList'
 var current = new Date()
+
 var data = {
   userId:223558,
   lastupdataTime: current,
   pageNo:1,
-  pageSize:30,
+  pageSize:1,
   sort:'desc',
   renderType:0
 }
@@ -40,7 +41,10 @@ const data1 = {
     updatetime: 0,
     channelName: '收趣云书签',
     sourceName: '',
-    author: ''
+    author: '',
+    type: 'reprint',
+    published: false,
+    mark: false
 }
 
 function save(data) {
@@ -68,43 +72,58 @@ function save(data) {
   })
 }
 
-for(var j = 0; j < 12; j ++){
-  data.pageNo = j + 1;
-  request
-  .post(url1)
-  .set(browserMsg)
-  .send(data)
-  .end(function(err, res){
-    // console.log(res)
-    if (err || !res.ok) {
-      console.log(err);
-    } else {
-      // console.log(typeof(res.body))
-      var list = res.body.data.list
-      var len = list.length
-      console.log(len)
-      for( index in list ){
-        // 用 title，URL 来判断数据库中是否已有该文章类型；之后可能还需要用文章内容来判断是否已经是重复转载的内容
-        async.waterfall([function(cb){
-            col.findOne({"title": list[index].title, "url": list[index].url}).exec(function(err, res){
-                cb(null, res)
-            })
-        }],function(err, result){
-            if(err) {
-              console.log(err)
-              return false
-            }
-            if(result){
-              ;
-            }else {
-              save(list[index])
-            }
-        })
-        if(index === len){
-          console.log("更新完成！！！")
-          return false;
+//修改爬虫爬取方式
+
+async.series([
+  function(cb){
+    request
+      .post(url1)
+      .set(browserMsg)
+      .send(data)
+      .end(function(err, res) {
+        if(err || !res.ok) {
+          console.log(err)
+        }else {
+          data.pageSize = res.body.data.pageCount
+          cb(null, 1)
         }
-      }
+      })
+  }],
+  function(err, result) {
+    if(err){
+      console.log(err)
+      return false
+    }else{
+      request
+      .post(url1)
+      .set(browserMsg)
+      .send(data)
+      .end(function(err, res){
+        if (err || !res.ok) {
+          console.log(err);
+        } else {
+          // console.log(typeof(res.body))
+          var list = res.body.data.list
+          var len = list.length
+          for( let index = 0; index < len; index ++ ){
+            // 用 title，URL 来判断数据库中是否已有该文章类型；之后可能还需要用文章内容来判断是否已经是重复转载的内容
+            col.findOne({"title": list[index].title, "url": list[index].url}).exec(function(err, res){
+                if(err) {
+                  console.log(err)
+                  return false
+                }
+                if(res) {
+                  ;
+                }else {
+                  save(list[index])
+                  if(index === (len - 1)){
+                    console.log("更新完成～")
+                    return true
+                  }
+                }
+            })
+          }
+        }
+      })
     }
   })
-}

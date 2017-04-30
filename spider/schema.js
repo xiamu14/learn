@@ -13,5 +13,8 @@ module.exports = new Schema({
     updatetime: Number,
     channelName: String,
     sourceName: String,
-    author: String
+    author: String,
+    type: String,
+    published: Boolean,
+    mark: Boolean
 })
