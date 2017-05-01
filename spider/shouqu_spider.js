@@ -102,7 +102,6 @@ async.series([
         if (err || !res.ok) {
           console.log(err);
         } else {
-          // console.log(typeof(res.body))
           var list = res.body.data.list
           var len = list.length
           for( let index = 0; index < len; index ++ ){
