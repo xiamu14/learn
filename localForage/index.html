@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>localforage</title>
+</head>
+<body>
+    <script src="modules/localforage.js"></script>
+    <script>
+        // 保存用户信息
+        var users = [ {id: 1, fullName: 'Matt'}, {id: 2, fullName: 'Bob'} ];
+        localforage.setItem('users', users, function(err) {
+            localforage.getItem('users', function(err, res) {
+                if(err){
+                    console.err(err)
+                }
+                console.log(res)
+            })
+        });
+    </script>
+</body>
+</html>
