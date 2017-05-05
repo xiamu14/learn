@@ -1,4 +1,4 @@
-#! /usr/bin/python
+﻿#! /usr/bin/python
 # -*- conding:utf-8 -*-
 
 import os.path
@@ -12,26 +12,36 @@ from tornado.options import define, options
 define("port", default=8000, help="run on the given port", type=int)
 
 imgList=[{'title':'1.jpeg', 'w':480, 'h':960}, {'title':'2.jpeg', 'w':658, 'h':822}, {'title':'3.jpeg', 'w':658, 'h':658}, {'title':'4.jpeg', 'w':658, 'h':658},{'title':'5.jpeg', 'w':658, 'h':439}]
-length=len(imgList)
 
-def layoutImg(imgList):
-    newImgList=[{'model': 0}]  #预设图片布局为模式0
+def layoutImg(imgList, model, ratioList):
     for item in imgList:
-        ratio=item['w']/item['h']
-        item['ratio']=ratio
-        newImgList.append(item)
-    if length==1:
-        return newImgList
-    elif length==2:
-        newImgList[0]['model']=1
-        return newImgList
-    elif length==3:
+        ratio=round(item['w']/float(item['h']), 1) # 获取保留一位小数的长宽比
+        ratios.append(ratio)
+    # 排序
+    ratios = sorted(ratios)
+    newImgList0 = sorted(imgList, key=lambda img:img['ratio'])
+    newImgList1 = []
+    low = 0
+    heigh = len(ratios) - 1
+    time = 0
+    while model > 0:
+        val = ratiosList[model]
+        time += 1
+        mid = int((heigh + low) / 2)
+        if abs(val - ratios[mid]) == 0:
 
-    return newImgList
+
+
+    print newImgList
+    # 根据图片数量以及横竖图数量确定布局并排序
+    if length >= 5:
+        return newImgList
+    else:
+        return imgList
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render('index.html', imgList=layoutImg(imgList), length=length)
+        self.render('index.html', imgList=layoutImg(imgList))
 
 if __name__ == '__main__':
     tornado.options.parse_command_line()

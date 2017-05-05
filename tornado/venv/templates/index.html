@@ -54,7 +54,7 @@
 </head>
 <body>
     <div class="img-wrapper flex">
-        <div class="row row4 block margin-right" style='background-image: url(static/img/2.jpeg)'>{{length}}</div>
+        <div class="row row4 block margin-right" style='background-image: url(static/img/2.jpeg)'></div>
         <div class="row row3 flex flex-direction-column">
             <div class="item col1 block margin-bottom" style="background-image: url(static/img/1.jpeg)"></div>
             <div class="item col1 block margin-bottom" style="background-image: url(static/img/3.jpeg)"></div>
@@ -87,16 +87,18 @@
             <div class="row1 block" style="background-image: url(static/img/5.jpeg)"></div>
         </div>
     </div>
+    {% if length >= 5 %}
     <div class="img-wrapper flex flex-direction-column">
         <div class="row row1 flex margin-bottom">
-            <div class="row1 block margin-right" style="background-image: url(static/img/7.jpeg)"></div>
-            <div class="row1 block" style="background-image: url(static/img/8.jpeg)"></div>
+            <div class="row1 block margin-right" style="background-image: url(static/img/{{ imgList[0]['title'] }})"></div>
+            <div class="row1 block" style="background-image: url(static/img/{{ imgList[1]['title'] }})"></div>
         </div>
         <div class="row row1 flex">
-            <div class="row1 block margin-right" style="background-image: url(static/img/9.jpeg)"></div>
-            <div class="row1 block margin-right" style="background-image: url(static/img/10.jpeg)"></div>
-            <div class="row1 block" style="background-image: url(static/img/11.jpeg)"></div>
+            <div class="row1 block margin-right" style="background-image: url(static/img/{{ imgList[2]['title'] }})"></div>
+            <div class="row1 block margin-right" style="background-image: url(static/img/{{ imgList[3]['title']  }})"></div>
+            <div class="row1 block" style="background-image: url(static/img/{{ imgList[4]['title']  }})"></div>
         </div>
     </div>
+    {% end %}
 </body>
 </html>
