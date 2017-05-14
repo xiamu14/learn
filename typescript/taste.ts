@@ -3,3 +3,7 @@ function say(text: string) {
 }
 
 say("hello!");
+
+let myname : string = "xiazhignag"
+
+myname = 123
