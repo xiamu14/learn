@@ -1,16 +1,32 @@
 {
-  "name": "learn",
+  "name": "guangfa",
   "version": "1.0.0",
-  "description": "learn ",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ben",
+  "author": "songhang",
   "license": "ISC",
-  "keywords": [
-    "gulp",
-    "learn"
-  ],
-  "devDependencies": {}
+  "devDependencies": {
+    "autoprefixer": "^7.0.1",
+    "browser-sync": "^2.18.7",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat": "^2.6.0",
+    "gulp-debug": "^3.1.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-less": "^3.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^1.5.4",
+    "gulp-util": "^3.0.8",
+    "imagemin-pngquant": "^5.0.0",
+    "yargs": "^7.1.0"
+  },
+  "dependencies": {}
 }
