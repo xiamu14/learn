@@ -3,4 +3,5 @@ html
         title=title
     body
         h1 #{message}
-        div !{rs1}
+        - for (var x=0; x < list.length; x ++)
+            div !{list[x]['title']}
