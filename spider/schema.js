@@ -9,6 +9,7 @@ module.exports = new Schema({
     sourceUrl: String,                 // 文章原始地址
     channel: Number,                   // 文章爬取来源标示【可能无用】
     categorys: Array,                  // 标签
+    markImage: Object,                 // 存储封面图片
     createtime: Number,                // 创建时间【可能无用】
     updatetime: Number,                // 更新时间【可能无用】
     channelName: String,               // 爬取来源名称

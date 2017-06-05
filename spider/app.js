@@ -30,8 +30,9 @@ app.get('/', function(req, res) {
             cb(null, res)
         })
     }], function(err, result) {
-        var rs1 = md.render(result[1].article_markdown)
-        res.render('index', { title: 'Hey', message: 'hello ben', rs1: rs1})
+        // var rs1 = md.render(result[1].article_markdown)
+        // var list = result
+        res.render('index', { title: 'Hey', message: 'hello ben', list: result})
     })
 })
 // 获取频道1-简书的文章内容

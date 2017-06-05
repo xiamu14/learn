@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>demo0</title>
+</head>
+<body>
+    <svg width="400" height="400">
+        <circle cx="200" cy="200" r="40" style="fill:#ff6600">
+            <animate
+                attributeName="r"
+                attributeType="XML"
+                values="40;60;40"
+                begin="0s"
+                dur="2s"
+                fill="freeze"
+            />
+            <animate
+                attributeName="fill-opacity"
+                attributeType="CSS"
+                values="1;0.6;1"
+                begin="0s"
+                dur="2s"
+                repeatCount="indefinite"
+            />
+        </circle>
+    </svg>
+</body>
+</html>

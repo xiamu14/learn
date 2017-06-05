@@ -37,6 +37,7 @@ const data1 = {
     url: '',
     channel: 1,
     categorys: [],
+    markImage: {},
     createtime: 0,
     updatetime: 0,
     channelName: '收趣云书签',
@@ -55,13 +56,18 @@ function save(data) {
   var categorys = data.categorys
   var length = categorys.length
   data1.categorys = []
+  // data1.imageList = []
   for (var i=0; i<length; i++){
     // 这里啊，第二次的时候要清空啊
     data1.categorys.push(categorys[i]['name'])
   }
+  if(data.imageList && data.imageList.length > 0){
+    data1.markImage = data.imageList[0]
+  }
   data1.createtime = data.createtime
   data1.updatetime = data.updatetime
   data1.author = data.author
+  console.log(data1)
   //初始化model
   var insert = new col(data1);
   insert.save(function(err, result){

@@ -10,5 +10,8 @@
   },
   "dependencies": {
     "cross-env": "^3.2.4"
+  },
+  "devDependencies": {
+    "inquirer": "^3.0.6"
   }
 }
