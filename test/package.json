@@ -9,7 +9,9 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "cross-env": "^3.2.4"
+    "browser-sync": "^2.18.12",
+    "cross-env": "^3.2.4",
+    "gulp": "^3.9.1"
   },
   "devDependencies": {
     "inquirer": "^3.0.6"
