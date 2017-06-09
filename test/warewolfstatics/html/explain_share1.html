@@ -124,10 +124,10 @@
     }
     var device = get_device_info()
     var app = get_app_info()
-    alert(app)
+    // alert(app)
     btn_down.addEventListener('click', function(e) {
+        if (device == 1 && (app != 4 && app != 3)) {
             e.preventDefault()
-        if (device == 1 && (app == 4 || app == 3)) {
             window.location.href = 'https://download.werewolf.mobi/download/werewolf-dee35-ff13b-bdsem-1.8.1-114-release.apk'
         }
     })
