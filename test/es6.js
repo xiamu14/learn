@@ -12,3 +12,20 @@ var obj = new Proxy({}, {
 obj.count = 1
 
 ++obj.count
+
+// 2017年6月10日
+//
+function Person(name, age, gender) {
+  this.name = name
+  this.age = age
+  this.gender = gender
+}
+
+var first = new Person('lisi', 12, 'male')
+var second = new Person('li', 23, 'female')
+
+Person.prototype.getName = function(){
+  return this.name
+}
+
+console.log(second.getName())
