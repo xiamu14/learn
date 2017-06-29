@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "cross-env NODE_ENV=production node app.js",
+    "test": "nodemon es6.js",
     "build": "cross-env NODE_ENV=production webpack",
     "start": "node app.js"
   },
@@ -14,6 +14,7 @@
     "gulp": "^3.9.1"
   },
   "devDependencies": {
-    "inquirer": "^3.0.6"
+    "inquirer": "^3.0.6",
+    "nodemon": "^1.11.0"
   }
 }
