@@ -1,0 +1,3 @@
+[submodule "learning-rxjs"]
+	path = learning-rxjs
+	url = https://github.com/Brooooooklyn/learning-rxjs.git
