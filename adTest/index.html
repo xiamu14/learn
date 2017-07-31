@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>测试一下 script 内的作用域</title>
+    <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+</head>
+<style type="text/css">
+iframe {
+    border-width: 0;
+}
+
+</style>
+
+<body>
+    <div class="ad1" id="ad">
+        <!-- <iframe src="/ad0.html"></iframe> -->
+    </div>
+    <div id="ad2">
+        <!-- <iframe src="/ad1.html"></iframe> -->
+    </div>
+</body>
+<!-- <script type="text/javascript">
+var ifr = document.createElement('iframe');
+ifr.src = '/ad.html?cpro_id=u2557760';
+var ad = document.getElementsByClassName('ad1')
+ad[0].appendChild(ifr);
+</script> -->
+<script type="text/javascript">
+    BAIDU_CLB_fillSlotAsync('u2602149','ad');
+    BAIDU_CLB_fillSlotAsync('u3028919','ad2');
+</script>
+</html>
