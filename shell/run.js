@@ -1,6 +1,6 @@
 var ProgressBar = require('./progress-bar');
 
-var pb = new ProgressBar("下载进度：", 50)
+var pb = new ProgressBar("下载进度", 50)
 
 var num = 0,
     total = 200;
@@ -11,7 +11,9 @@ function downloading() {
         num++;
         setTimeout(function() {
             downloading();
-        }, 500)
+        }, 10)
+    } else {
+        console.log('\n\r下载完成。')
     }
 }
 
