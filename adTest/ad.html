@@ -1,5 +1,31 @@
 <script type="text/javascript">
-    console.log(window.location.href)
-  var cpro_id = "u2557760";
+  var cpro_id = getChannel('cpro_id');
+
+  (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = {
+      at: "3",
+      hn: "3",
+      wn: "3",
+      imgRatio: "1.7",
+      scale: "20.20",
+      pat: "6",
+      tn: "template_inlay_all_mobile_lu_native",
+      rss1: "#FFFFFF",
+      adp: "1",
+      ptt: "0",
+      titFF: "%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",
+      titFS: "14",
+      rss2: "#FFFFFF",
+      titSU: "0",
+      ptbg: "70",
+      ptp: "1"
+  };
+
+  function getChannel(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+    }
 </script>
 <script src="http://cpro.baidustatic.com/cpro/ui/cm.js"></script>
