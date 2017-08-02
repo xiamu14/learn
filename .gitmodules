@@ -1,3 +1,6 @@
 [submodule "learning-rxjs"]
 	path = learning-rxjs
 	url = https://github.com/Brooooooklyn/learning-rxjs.git
+[submodule "editor.md/editor.md"]
+	path = editor.md/editor.md
+	url = git@github.com:xiamu14/editor.md.git
