@@ -1,0 +1,12 @@
+{
+  "name": "swiper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "flickity": "^2.0.9",
+    "gulp": "^3.9.1",
+    "tiny-slider": "^2.0.1"
+  }
+}

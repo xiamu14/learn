@@ -4,3 +4,6 @@
 [submodule "editor.md/editor.md"]
 	path = editor.md/editor.md
 	url = git@github.com:xiamu14/editor.md.git
+[submodule "siema"]
+	path = siema
+	url = git@github.com:xiamu14/siema.git
