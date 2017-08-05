@@ -8,7 +8,7 @@ export function css(gulp, $, entry) {
             .pipe($.postcss([cssnext(), cssnano()]))
             .pipe(gulp.dest('./static/dist'))
             .on('end', () => {
-                $.util.log(' 编译完成')
+                $.util.log($.util.colors.magenta('compile success!'))
             })
     }
 }

@@ -30,7 +30,7 @@ export function js(gulp, $, entry) {
             .pipe($.sourcemaps.write(path.join('./map')))
             .pipe(gulp.dest('./static/dist/'))
             .on('end', () => {
-                $.util.log($.util.colors.magenta('compile success'))
+                $.util.log($.util.colors.magenta('compile success!'))
             })
     }
 }
