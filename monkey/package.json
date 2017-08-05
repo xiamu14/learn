@@ -17,7 +17,9 @@
         "instrument": false
     },
     "scripts": {
-        "test": "cross-env NODE_ENV=test nyc mocha --compilers js:babel-core/register ./test/**/*.js"
+        "init": "",
+        "test": "cross-env NODE_ENV=test nyc mocha --compilers js:babel-core/register ./test/**/*.js",
+        "dev": "gulp dev"
     },
     "devDependencies": {
         "babel-core": "^6.25.0",

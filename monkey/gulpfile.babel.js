@@ -10,13 +10,9 @@ import { entry } from './gulp_tasks/config.js'
 
 let $ = loadPlugins()
 
-function getTask(taskName) {
-    return tasks[taskName]
-}
-
 // register task
-gulp.task('css', getTask('css')(gulp, $, entry.css))
+gulp.task('css', tasks['css'](gulp, $, entry.css))
 
-gulp.task('js', getTask('js')(gulp, $, entry.js))
+gulp.task('js', tasks['js'](gulp, $, entry.js))
 
 gulp.task('dev', ['css', 'js'], dev(gulp, $))
