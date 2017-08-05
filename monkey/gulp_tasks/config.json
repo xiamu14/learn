@@ -1,0 +1,14 @@
+{
+    "web": {
+        "css": [],
+        "js": [],
+        "img": [],
+        "font": []
+    },
+    "touch": {
+        "css": ["test.css"],
+        "js": ["app.js"],
+        "img": [],
+        "font": []
+    }
+}
