@@ -30,3 +30,5 @@ tornado/venv/lib
 sklearn
 
 .DS_*
+
+.nyc_output
