@@ -1,1 +1,0 @@
-{"version":3,"sources":["fn.js"],"names":["fn0"],"mappings":"AAAO,SAASA,aACL","file":"../app.js","sourcesContent":["export function fn0() {\n    return 1 * 8\n}\n\nexport function fn1() {\n    return 9 * 1\n}"]}

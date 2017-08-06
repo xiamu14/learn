@@ -1,5 +1,5 @@
 export function fn0() {
-    return 1 * 8
+    return 1 * 9
 }
 
 export function fn1() {

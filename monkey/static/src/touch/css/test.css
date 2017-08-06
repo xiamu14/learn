@@ -17,7 +17,3 @@
     }
     ;
 }
-
-.centered {
-    @apply --centered;
-}

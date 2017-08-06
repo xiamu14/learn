@@ -1,15 +1,13 @@
-let config = {
+export let config = {
     "web": {
         "css": [],
         "js": [],
-        "img": [],
-        "font": []
+        "html": []
     },
     "touch": {
         "css": ["test.css"],
         "js": ["app.js"],
-        "img": [],
-        "font": []
+        "html": ["index", "page"]
     }
 }
 
