@@ -3,7 +3,7 @@
 :root {
     --fontSize: 1rem;
     --mainColor: #12345678;
-    --highlightColor: hwb(190, 35%, 20%);
+    --highlightColor: hwb(100, 35%, 20%);
 }
 
 
@@ -16,4 +16,8 @@
         justify-content: center;
     }
     ;
+}
+
+.font {
+    font-size: var(--fontSize);
 }

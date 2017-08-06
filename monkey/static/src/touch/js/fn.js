@@ -3,5 +3,5 @@ export function fn0() {
 }
 
 export function fn1() {
-    return 9 * 1
+    return 9 * 10
 }

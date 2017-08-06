@@ -1,2 +1,2 @@
-function fn0(){return 8}console.log(fn0());
+function fn1(){return 90}console.log(fn1());
 //# sourceMappingURL=../../map/touch/js/app.js.map

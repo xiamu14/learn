@@ -4,7 +4,7 @@ import through from 'through2'
 
 export function clean(gulp, $) {
     return function() {
-        gulp.src(['./dist/**/*.*'], { read: false })
+        gulp.src(['./static/dist/**/*.*'], { read: false })
             .pipe($.revOutdated(1))
             .pipe($.debug())
             .pipe(cleaner())

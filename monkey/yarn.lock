@@ -1791,6 +1791,14 @@ gulp-rev-collector-query@^1.0.0:
     through2 ">=0.5.1"
     underscore "^1.6.0"
 
+gulp-rev-collector@^1.2.2:
+  version "1.2.2"
+  resolved "http://registry.npm.taobao.org/gulp-rev-collector/download/gulp-rev-collector-1.2.2.tgz#90da1ad3d22e788bca31f7796ad28c1d28efd0fb"
+  dependencies:
+    gulp-util "^3.0.0"
+    through2 ">=0.5.1"
+    underscore "^1.6.0"
+
 gulp-rev-format@^1.0.4:
   version "1.0.4"
   resolved "http://registry.npm.taobao.org/gulp-rev-format/download/gulp-rev-format-1.0.4.tgz#e59d77cdbf9b8fdb10f9445e30f91d865595548c"

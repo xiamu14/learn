@@ -2,7 +2,9 @@ import cssnext from 'postcss-cssnext'
 import cssnano from 'cssnano'
 
 export function css(gulp, $, entry, argv) {
-    let v = argv.v ? true : false
+
+    let v = Object.keys(argv).indexOf('v') > -1 ? true : false
+
     return function() {
         gulp.src(entry, { base: './static/src' })
             .pipe($.debug())

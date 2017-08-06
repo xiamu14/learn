@@ -1,10 +1,10 @@
 import babel from 'rollup-plugin-babel'
 import path from 'path'
 
-
-
 export function js(gulp, $, entry, argv) {
-    let v = argv.v ? true : false
+
+    let v = Object.keys(argv).indexOf('v') > -1 ? true : false
+
     return function() {
         gulp.src(entry, { base: './static/src' })
             .pipe($.debug())

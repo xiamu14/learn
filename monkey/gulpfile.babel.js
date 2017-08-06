@@ -10,8 +10,8 @@ import { entry } from './gulp_tasks/config.js'
 import yargs from 'yargs'
 
 const argv = yargs.argv
-console.log(argv)
-let $ = loadPlugins()
+
+const $ = loadPlugins()
 
 // register task
 gulp.task('clean', tasks['clean'](gulp, $))
