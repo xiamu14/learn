@@ -1,7 +1,7 @@
 export let config = {
     "web": {
         "css": [],
-        "js": [],
+        "js": ["jquery.js"],
         "html": []
     },
     "touch": {
