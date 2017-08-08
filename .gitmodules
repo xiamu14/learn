@@ -7,3 +7,6 @@
 [submodule "siema"]
 	path = siema
 	url = git@github.com:xiamu14/siema.git
+[submodule "quill/monkey"]
+	path = quill/monkey
+	url = git@github.com:xiamu14/monkey.git
