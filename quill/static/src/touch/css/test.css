@@ -1,0 +1,23 @@
+/* custom properties */
+
+:root {
+    --fontSize: 1rem;
+    --mainColor: #12345678;
+    --highlightColor: hwb(100, 35%, 20%);
+}
+
+
+/* custom properties set & @apply rule */
+
+:root {
+    --centered: {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    ;
+}
+
+.font {
+    font-size: var(--fontSize);
+}
