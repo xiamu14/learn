@@ -7,3 +7,9 @@
 [submodule "siema"]
 	path = siema
 	url = git@github.com:xiamu14/siema.git
+[submodule "pen"]
+	path = pen
+	url = git@github.com:xiamu14/pen.git
+[submodule "md.editor"]
+	path = md.editor
+	url = git@github.com:xiamu14/md.editor.git
