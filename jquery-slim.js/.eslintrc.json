@@ -1,0 +1,7 @@
+{
+    "extends": "google",
+    "parser": "babel-eslint",
+    "rules": {
+        "eol-last": 0
+    }
+}
