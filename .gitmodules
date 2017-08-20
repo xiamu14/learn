@@ -13,3 +13,6 @@
 [submodule "md.editor"]
 	path = md.editor
 	url = git@github.com:xiamu14/md.editor.git
+[submodule "simpleTest"]
+	path = simpleTest
+	url = git@github.com:xiamu14/simpleTest.git
