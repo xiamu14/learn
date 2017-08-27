@@ -1,17 +1,17 @@
-var init = (jQuery){
-    jQuery.fn.init = (selector , context, root) {
-        if(!selector) {
-            return this;
+/**
+ *
+ */
+class Init {
+    /**
+     *
+     */
+    constructor(...args) {
+        if (args.length === 0) {
+            // 默认 dom, css, event
         } else {
-            var elem = document.querySelector(selector);
-            if(elem){
-                this[0] = elem;
-                this.length = 1;
-            }
-            return this;
-        }
-    };
-    jQuery.fn.init.prototype = jQuery.fn;
-}
+            if (typeof args[0] === 'Object') {
 
-export default init;
+            }
+        }
+    }
+}
