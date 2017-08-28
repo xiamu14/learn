@@ -8,3 +8,4 @@ export default {
     plugins: [babel()],
     sourceMap: true
 };
+

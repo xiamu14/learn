@@ -6,4 +6,10 @@ export class jQuery {
         this.dom = dom
     }
 
+let jQ = function() {
+    return new Dom();
+};
+
+class Dom {
+    constructor
 }
