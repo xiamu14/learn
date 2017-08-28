@@ -1,8 +1,9 @@
-import jQuery from './core'
-import global from './global'
-import init from './init'
+import {dom} from './dom'
 
-global(jQuery);
-init(jQuery);
+export class jQuery {
+    constructor() {
+        this.version = '1.0.0'
+        this.dom = dom
+    }
 
-export default jQuery
+}

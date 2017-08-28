@@ -5,6 +5,7 @@
     "author": "Ben",
     "license": "MIT",
     "scripts": {
+        "dev": "rollup -c",
         "test": "mocha"
     },
     "devDependencies": {

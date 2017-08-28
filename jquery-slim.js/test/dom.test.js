@@ -1,3 +1,7 @@
-import Dom from '../component/dom.js';
+let jQuery = require('../dist/jq.js').jQuery
 
-let dom = new Dom();
+let jQ = new jQuery()
+
+let dom = jQ.dom()
+
+console.log(dom.version)

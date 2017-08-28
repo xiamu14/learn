@@ -1,13 +1,10 @@
-var rollup = require( 'rollup' );
-var babel = require('rollup-plugin-babel');
+import babel from 'rollup-plugin-babel'
 
-rollup.rollup({
+export default {
     entry: 'src/index.js',
-    plugins: [ babel() ]
-}).then( function ( bundle ) {
-    bundle.write({
-        format: 'umd',
-        moduleName: 'jQuery-slim',
-        dest: 'dist/jquery-slim.js'
-    });
-});
+    dest: 'dist/jq.js',
+    moduleName: 'jquerySlim',
+    format: 'cjs',
+    plugins: [babel()],
+    sourceMap: true
+};
