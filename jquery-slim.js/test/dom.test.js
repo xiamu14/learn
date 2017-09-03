@@ -1,7 +1,2 @@
-let jQuery = require('../dist/jq.js').jQuery
+import {dom} from '../src/dom';
 
-let jQ = new jQuery()
-
-let dom = jQ.dom()
-
-console.log(dom.version)
