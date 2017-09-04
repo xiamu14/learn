@@ -2,10 +2,13 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 
 // 静态服务器
-gulp.task('browser-sync', function() {
+gulp.task('dev', function() {
     browserSync.init({
         server: {
             baseDir: "./"
         }
     });
+    gulp.watch('./*.html', function(){
+        browserSync.reload()
+    })
 });
