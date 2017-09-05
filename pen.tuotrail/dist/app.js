@@ -1277,6 +1277,9 @@ btnPreview.addEventListener('click', function () {
     var result = md.render(html);
     console.log('编译后的 md:', result);
     previewBox.innerHTML = result;
+    $('pre code').each(function (i, e) {
+        hljs.highlightBlock(e);
+    });
 });
 
 /***/ }),
