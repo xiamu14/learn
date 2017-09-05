@@ -8,7 +8,7 @@ gulp.task('dev', function() {
             baseDir: "./"
         }
     });
-    gulp.watch('./*.html', function(){
+    gulp.watch(['./*.html', './dist/**/*.js'], function(){
         browserSync.reload()
     })
 });

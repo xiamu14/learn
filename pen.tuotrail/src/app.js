@@ -1,4 +1,14 @@
 import MarkdownIt from 'markdown-it';
 let md = new MarkdownIt();
-let result = md.render('# markdown-it rulezz!');
-console.log(result);
+
+let penBox = document.getElementById('penBox');
+let previewBox = document.getElementById('previewBox');
+let btnPreview = document.getElementById('btn-preview');
+
+btnPreview.addEventListener('click', () => {
+    let html = penBox.innerText;
+    console.log('编写的内容:',html.length)
+    let result = md.render(html);
+    console.log('编译后的 md:', result)
+    previewBox.innerHTML = result;
+})

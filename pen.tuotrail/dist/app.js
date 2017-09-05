@@ -1266,8 +1266,18 @@ var _markdownIt2 = _interopRequireDefault(_markdownIt);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var md = new _markdownIt2.default();
-var result = md.render('# markdown-it rulezz!');
-console.log(result);
+
+var penBox = document.getElementById('penBox');
+var previewBox = document.getElementById('previewBox');
+var btnPreview = document.getElementById('btn-preview');
+
+btnPreview.addEventListener('click', function () {
+    var html = penBox.innerText;
+    console.log('编写的内容:', html.length);
+    var result = md.render(html);
+    console.log('编译后的 md:', result);
+    previewBox.innerHTML = result;
+});
 
 /***/ }),
 /* 13 */

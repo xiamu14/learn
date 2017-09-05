@@ -6,15 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>测试可编辑 div</title>
     <style>
+        body{
+            /* font-size: 0; */
+        }
+        #btn-preview {
+            display: block;
+        }
         #penBox {
+            display: inline-block;
+            width: 40%;
+            min-height: 200px;
             outline: 0;
+            font-size: 14px;
+            border: 1px solid lightblue;
+        }
+        #previewBox {
+            display: inline-block;
+            width: 40%;
+            min-height: 200px;
+            border: 1px solid lightblue;
         }
     </style>
 </head>
 <body>
+    <button id="btn-preview">预览</button>
     <div id="penBox" contenteditable="true">
-        - 如何修改这段文字？
-        - 青石的街道向晚。
+        # 标题1
+    </div>
+    <div id="previewBox">
+
     </div>
     <script src="./dist/app.js"></script>
 </body>
