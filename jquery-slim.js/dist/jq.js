@@ -52,11 +52,11 @@ var Dom = function () {
             if (typeof this.selector !== 'string') {
                 throw new Error('typeError\uFF1A' + this.selector + ' is not a string');
             }
-            var ele = document.querySelectorAll(this.selector);
-            for (var i = 0; i < ele.length; i++) {
-                this[i] = ele[i];
-            }
-            this.length = ele.length;
+            var ele = document.querySelector(this.selector);
+            // for (let i = 0; i < ele.length; i ++) {
+            //     this[i] = ele[i];
+            // }
+            // this.length = ele.length;
             return this;
         }
     }]);

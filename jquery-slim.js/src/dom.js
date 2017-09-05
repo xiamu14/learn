@@ -19,11 +19,11 @@ export class Dom {
         if (typeof this.selector !== 'string') {
             throw new Error( `typeError：${this.selector} is not a string` );
         }
-        let ele = document.querySelectorAll(this.selector);
-        for (let i = 0; i < ele.length; i ++) {
-            this[i] = ele[i];
-        }
-        this.length = ele.length;
+        let ele = document.querySelector(this.selector);
+        // for (let i = 0; i < ele.length; i ++) {
+        //     this[i] = ele[i];
+        // }
+        // this.length = ele.length;
         return this;
     }
 }
