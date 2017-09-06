@@ -1,5 +1,12 @@
 import MarkdownIt from 'markdown-it';
+import emoji from 'markdown-it-emoji';
+import mk from 'markdown-it-katex';
+import mc from 'markdown-it-checkbox';
 let md = new MarkdownIt();
+
+md.use(emoji);
+md.use(mk);
+md.use(mc);
 
 let penBox = document.getElementById('penBox');
 let previewBox = document.getElementById('previewBox');
