@@ -17,13 +17,17 @@ export class Dom {
     getNode() {
         // checkout whether parameter is a string.
         if (typeof this.selector !== 'string') {
-            throw new Error( `typeError：${this.selector} is not a string` );
+            throw new Error( `typeError：${this.selector} is not a string.` );
         }
-        let ele = document.querySelector(this.selector);
-        // for (let i = 0; i < ele.length; i ++) {
-        //     this[i] = ele[i];
-        // }
-        // this.length = ele.length;
+        let ele = document.querySelectorAll(this.selector);
+        console.log(ele instanceof Object);
+        if (ele.length === 0) {
+            throw new Error(`unexpect param:${this.selector} is not valid.`);
+        }
+        for (let i = 0; i < ele.length; i ++) {
+            this[i] = ele[i];
+        }
+        this.length = ele.length;
         return this;
     }
 }
