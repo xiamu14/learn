@@ -30,4 +30,11 @@ export class Dom {
         this.length = ele.length;
         return this;
     }
+
+    /**
+     * @return {String} {return textContent}
+     */
+    text() {
+        return this[0].textContent;
+    }
 }

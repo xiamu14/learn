@@ -63,6 +63,18 @@ var Dom = function () {
             this.length = ele.length;
             return this;
         }
+
+        /**
+         *
+         * @return {Object} {return this}
+         *
+         */
+
+    }, {
+        key: 'text',
+        value: function text() {
+            return this[0].textContent;
+        }
     }]);
     return Dom;
 }();
