@@ -13,7 +13,10 @@
             height: 400px;
         }
         #btn-preview {
-            display: block;
+            margin-right: 10px;
+        }
+        .btn-normal {
+            display: inline-block;
             width: 80px;
             height: 30px;
             margin-bottom: 10px;
@@ -48,7 +51,8 @@
     </style>
 </head>
 <body>
-    <button id="btn-preview">预览</button>
+    <button id="btn-preview" class="btn-normal">预览</button>
+    <button id="btn-save" class="btn-normal">保存</button>
     <div id="editor">
         <div id="penBox" contenteditable="true"></div>
         <div id="previewBox"></div>

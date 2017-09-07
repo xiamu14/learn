@@ -4,6 +4,7 @@ module.exports = {
       path: __dirname + '/dist',          // 打包后文件存放的地方
       filename: 'app.js'              // 打包后输出文件的文件名
     },
+    devtool: 'source-map',
     module: {
       loaders: [
         {
