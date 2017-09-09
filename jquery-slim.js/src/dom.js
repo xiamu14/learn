@@ -1,5 +1,9 @@
 /**
- * dom 操作类
+ * dom 获取类
+ * support:
+ * - Class Slector(".class")
+ * - Element Slector("element")
+ * - ID Slector("#ID")
  */
 export class Dom {
     /**
@@ -21,6 +25,7 @@ export class Dom {
         }
         let ele = document.querySelectorAll(this.selector);
         console.log(ele instanceof Object);
+        // if ele is not valid ,return empty object.
         if (ele.length === 0) {
             throw new Error(`unexpect param:${this.selector} is not valid.`);
         }
