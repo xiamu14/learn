@@ -1,6 +1,7 @@
 /**
  *
  * @param {String} selector
+ * @return {{string}} test strnig
  */
 export function select(selector) {
     if (typeof selector !== 'string') {
@@ -11,13 +12,13 @@ export function select(selector) {
     let result = regex.exec(selector);
     switch (result[1]) {
         case '#':
-            console.log('id selector');
+            return 'id selector';
             break;
         case '.':
-            console.log('class selector');
+            return 'class selector';
             break;
         default:
-            console.log('element selector');
+            return 'element selector';
             break;
     }
 }

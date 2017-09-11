@@ -1,2 +1,2 @@
-import {dom} from '../src/dom';
+// import {dom} from '../src/dom';
 
