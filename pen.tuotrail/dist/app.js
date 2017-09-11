@@ -3304,7 +3304,7 @@ var btnSave = document.getElementById('btn-save');
 // stores
 var stores = {};
 
-// actions
+// actions --> action depend on store
 var actions = {
     render: function render(text) {
         var html = md.render(text);
@@ -3322,20 +3322,36 @@ function initZoom() {
     }
 }
 
+function preview() {
+    var text = penBox.innerText;
+    console.log('编写的内容:', text.length);
+    actions.render(text);
+    $('pre code').each(function (i, e) {
+        hljs.highlightBlock(e);
+    });
+}
+
 function handle() {
     // btn-preview
     btnPreview.addEventListener('click', function () {
-        var text = penBox.innerText;
-        console.log('编写的内容:', text.length);
-        actions.render(text);
-        $('pre code').each(function (i, e) {
-            hljs.highlightBlock(e);
-        });
+        preview();
     });
     // btn-save
     btnSave.addEventListener('click', function () {
         var text = penBox.innerText;
-        _store2.default.set('text', { 'content': text });
+        _store2.default.set('text', { 'content': text }); // 实践时要注意阈值
+    });
+    // 自动刷新预览区
+    // penBox.addEventListener('blur', ()=>{
+    //     preview()
+    // })
+    // penBox.addEventListener('input', ()=>{
+    //     preview()
+    // })
+    penBox.addEventListener('keydown', function (event) {
+        if (event.keyCode === 13 && !event.shiftKey) {
+            preview();
+        }
     });
 }
 

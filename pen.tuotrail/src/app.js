@@ -38,18 +38,39 @@ function initZoom() {
     }
 }
 
+function preview(){
+    let text = penBox.innerText;
+    console.log('编写的内容:', text.length)
+    actions.render(text)
+    $('pre code').each(function(i, e) { hljs.highlightBlock(e) });
+}
+
 function handle() {
     // btn-preview
     btnPreview.addEventListener('click', () => {
-        let text = penBox.innerText;
-        console.log('编写的内容:', text.length)
-        actions.render(text)
-        $('pre code').each(function(i, e) { hljs.highlightBlock(e) });
+        preview()
     })
     // btn-save
     btnSave.addEventListener('click', ()=>{
         let text = penBox.innerText;
         store.set('text', {'content': text}) // 实践时要注意阈值
+    })
+
+    // 编写区失去焦点时刷新预览区
+    // penBox.addEventListener('blur', ()=>{
+    //     preview()
+    // })
+
+    // 每输入一个字符刷新预览区
+    // penBox.addEventListener('input', ()=>{
+    //     preview()
+    // })
+
+    // 检测是换行符的时候刷新预览区，删除没法处理
+    penBox.addEventListener('keydown',(event)=>{
+        if(event.keyCode === 13 && !event.shiftKey) {
+            preview()
+        }
     })
 }
 
