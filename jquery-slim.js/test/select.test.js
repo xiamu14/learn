@@ -15,5 +15,5 @@ describe('type', ()=>{
     });
     it('it should return a element selector', ()=>{
         res3.should.equal('element selector');
-    })
+    });
 });
