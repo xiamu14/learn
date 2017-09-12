@@ -1,3 +1,5 @@
+import {select} from './select';
+
 /**
  * dom 获取类
  * support:
@@ -23,7 +25,8 @@ export class Dom {
         if (typeof this.selector !== 'string') {
             throw new Error( `typeError：${this.selector} is not a string.` );
         }
-        let ele = document.querySelectorAll(this.selector);
+        let ele = select(this.selector);
+        console.log(ele);
         console.log(ele instanceof Object);
         // if ele is not valid ,return empty object.
         if (ele.length === 0) {

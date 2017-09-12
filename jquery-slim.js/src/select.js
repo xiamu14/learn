@@ -10,15 +10,17 @@ export function select(selector) {
     // define a RegEx to distinguish a string.
     let regex = /^(#|.)\w+/g;
     let result = regex.exec(selector);
+    let selectorSlice = selector.slice(1, selector.length);
+    console.log(selectorSlice);
     switch (result[1]) {
         case '#':
-            return 'id selector';
+            return document.getElementById(selectorSlice);
             break;
         case '.':
-            return 'class selector';
+            return document.getElementsByClassName(selectorSlice);
             break;
         default:
-            return 'element selector';
+            return document.getElementsByTagName(selector);
             break;
     }
 }

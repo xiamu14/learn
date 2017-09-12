@@ -5,7 +5,9 @@ export default {
     dest: 'dist/jq.js',
     moduleName: 'jquerySlim',
     format: 'iife',
-    plugins: [babel()],
+    plugins: [babel({
+        exclude: 'node_modules/**',
+    })],
     sourceMap: true,
 };
 

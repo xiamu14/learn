@@ -1,6 +1,33 @@
 (function () {
 'use strict';
 
+/**
+ *
+ * @param {String} selector
+ * @return {{string}} test strnig
+ */
+function select(selector) {
+    if (typeof selector !== 'string') {
+        throw new Error('typeError\uFF1A' + selector + ' is not a string.');
+    }
+    // define a RegEx to distinguish a string.
+    var regex = /^(#|.)\w+/g;
+    var result = regex.exec(selector);
+    var selectorSlice = selector.slice(1, selector.length);
+    console.log(selectorSlice);
+    switch (result[1]) {
+        case '#':
+            return document.getElementById(selectorSlice);
+            break;
+        case '.':
+            return document.getElementsByClassName(selectorSlice);
+            break;
+        default:
+            return document.getElementsByTagName(selector);
+            break;
+    }
+}
+
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -26,7 +53,11 @@ var createClass = function () {
 }();
 
 /**
- * dom 操作类
+ * dom 获取类
+ * support:
+ * - Class Slector(".class")
+ * - Element Slector("element")
+ * - ID Slector("#ID")
  */
 var Dom = function () {
     /**
@@ -52,8 +83,10 @@ var Dom = function () {
             if (typeof this.selector !== 'string') {
                 throw new Error('typeError\uFF1A' + this.selector + ' is not a string.');
             }
-            var ele = document.querySelectorAll(this.selector);
+            var ele = select(this.selector);
+            console.log(ele);
             console.log(ele instanceof Object);
+            // if ele is not valid ,return empty object.
             if (ele.length === 0) {
                 throw new Error('unexpect param:' + this.selector + ' is not valid.');
             }
@@ -65,9 +98,7 @@ var Dom = function () {
         }
 
         /**
-         *
-         * @return {Object} {return this}
-         *
+         * @return {String} {return textContent}
          */
 
     }, {
