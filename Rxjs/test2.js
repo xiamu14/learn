@@ -1,11 +1,6 @@
 import Rx from 'rxjs/Rx'
 
-var source = Rx.Observable.create(function(observe){
-    var i = 0;
-    setInterval(()=>{
-        observe.next(i++)
-    },1000)
-});
+var source = Rx.Observable.interval(1000);
 
 source.subscribe({
     next: function(value) {
