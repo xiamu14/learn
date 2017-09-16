@@ -16,24 +16,23 @@
 </head>
 
 <body>
-    <div>
-        hello rxjs!
-    </div>
+    <div>    </div>
     <script src="https://unpkg.com/@reactivex/rxjs@5.0.3/dist/global/Rx.js"></script>
     <script>
-        var source = Rx.Observable.fromEvent(document.body, 'click');
-        console.log('代码没有执行吗？')
+        let click  = Rx.Observable.fromEvent(document.body, 'click')
+        let source = click.map(event => Rx.Observable.interval(500).take(3))
+                            .concatAll()
         source.subscribe({
-            next: function(value) {
+            next: function(value){
                 console.log(value)
             },
-            complete: function() {
-                console.log('complete!');
+            error: function(err){
+                console.log(err)
             },
-            error: function(error) {
-                console.log(error)
+            complete: function(){
+                console.log('complete')
             }
-        });
+        })
     </script>
 </body>
 
