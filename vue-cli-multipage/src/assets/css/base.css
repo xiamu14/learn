@@ -1,0 +1,17 @@
+
+// reset
+div {
+  box-sizing: border-box;
+}
+
+// variable
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+
