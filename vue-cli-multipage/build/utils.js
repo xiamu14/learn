@@ -23,7 +23,7 @@ exports.cssLoaders = function (options) {
         extraParamChar = '?'
         // 解决npm run dev 和 npm run build 编译后前缀不一样的问题
         if (loader === 'css-loader') {
-            extraParamChar = '?-autoprefixer&'
+          extraParamChar = '?-autoprefixer&'
         }
       }
       return loader + (options.sourceMap ? extraParamChar + 'sourceMap' : '')

@@ -1,10 +1,10 @@
 
-// reset
+/* reset */
 div {
   box-sizing: border-box;
 }
 
-// variable
+ /* variable */
 .float-left {
   float: left;
 }
