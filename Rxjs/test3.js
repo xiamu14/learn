@@ -1,7 +1,12 @@
 import Rx from 'rxjs/Rx'
 
-let ob0 = Rx.Observable.interval(1000).take(3)
-let ob1 = Rx.Dbservable.interval(2000).take(2)
-let ob2 = Rx.Observable.interval(4000).take(1)
+let source = Rx.Observable.interval(200).take(6)
+let newest = Rx.Observable.interval(100).take(3)
+let result = source.zip(newest, (x,y)=> x+y)
 
-let source = Rx.Observable
+result.subscribe({
+    next: (value)=>{console.log(value)},
+    complete: ()=>{console.log('complete!')},
+    error: (error)=>{console.log(error)},
+})
+
