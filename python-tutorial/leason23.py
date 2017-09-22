@@ -1,13 +1,14 @@
+# 隐形继承
 class Parent(object):
-    def altered(self):
-        print("PARENT altered()")
+    def implicit(self):
+        print("PARENT implicit()")
 
-class Child(Parent):
-    def altered(self):
-        print("CHILD,BEFORE PARENT altered()")
-        super(Child, self).altered()
+class child(Parent):
+    pass
 
 dad = Parent()
-son = Child()
+son = child()
 
-son.altered()
+dad.implicit()
+
+son.implicit()

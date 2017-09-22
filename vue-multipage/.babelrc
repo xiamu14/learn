@@ -1,0 +1,18 @@
+{
+    "presets": [
+        [
+            "env",
+            {
+                "targets": {
+                    "node": "current"
+                }
+            }
+        ],
+        "stage-2"
+    ],
+    "env": {
+        "test": {
+            "plugins": ["rewire"]
+        }
+    }
+}
