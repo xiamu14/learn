@@ -1,6 +1,7 @@
 var path = require('path')
-var config = require('../config')
+var glob = require('glob') // 引入glob包
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var config = require('../config')
 
 exports.assetsPath = function (_path) {
   var assetsSubDirectory = process.env.NODE_ENV === 'production'
@@ -70,6 +71,28 @@ exports.styleLoaders = function (options) {
   return output
 }
 
+// 在exports挂上俩个方法
+// 获取路口方法
+exports.getEntries = function () {
+  if (!/\*/.test(config.pageEntry)) {
+    // 单页入口处理
+    return {'index': config.pageEntry}
+  } else {
+    // 多页入口处理
+    var files = glob.sync(config.pageEntry)
+    var entries = {}
+    files.forEach(function (filepath) {
+      // 取倒数第二层(view下面的文件夹)做包名
+      var split = filepath.split('/')
+      var name = split[split.length - 2]
+      entries[name] = filepath
+    })
+    return entries
+  }
+}
+
+// connect-history-api-fallback 路由重写使用，
+// https://github.com/bripkens/connect-history-api-fallback
 exports.getRewrites = function () {
   var entries = exports.getEntries()
   var rewrites = []

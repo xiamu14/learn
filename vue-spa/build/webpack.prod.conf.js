@@ -49,33 +49,22 @@ var webpackConfig = merge(baseWebpackConfig, {
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: config.build.index,
-      template: 'index.html',
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true
-        // more options:
-        // https://github.com/kangax/html-minifier#options-quick-reference
-      },
-      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
-    }),
-    // 多页:index2.html → app2.js
-    new HtmlWebpackPlugin({
-      filename: config.build.video,
-      template: 'index.html',
-      inject: true,
-      minify: {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true
-      },
-      chunksSortMode: 'dependency',
-      chunks: ['manifest','vendor','video']//需要引入的Chunk，不配置就会引入所有页面的资源
-  }),
+    // new HtmlWebpackPlugin({
+    //   filename: config.build.index,
+    //   template: 'index.html',
+    //   inject: true,
+    //   minify: {
+    //     removeComments: true,
+    //     collapseWhitespace: true,
+    //     removeAttributeQuotes: true
+    //     // more options:
+    //     // https://github.com/kangax/html-minifier#options-quick-reference
+    //   },
+    //   // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+    //   chunksSortMode: 'dependency'
+    // }),
+    // 添加下面的处理
+
     // keep module.id stable when vender modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // split vendor js into its own file
@@ -131,5 +120,26 @@ if (config.build.bundleAnalyzerReport) {
   var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
+
+var entries = utils.getEntries()
+Object.keys(entries).forEach(function (name) {
+  // 每个页面生成一个html
+  var plugin = new HtmlWebpackPlugin({
+    filename: name + '.html',
+    template: entries[name].slice(0, -3) + '.html',
+    inject: true,
+    minify: {
+      removeComments: true,
+      collapseWhitespace: true,
+      removeAttributeQuotes: true
+    },
+    chunksSortMode: 'dependency',
+    // 每个包引入自己的依赖，公共依赖
+    chunks: ['manifest', 'vendor', name],
+    hash: true
+  });
+
+  webpackConfig.plugins.push(plugin)
+})
 
 module.exports = webpackConfig

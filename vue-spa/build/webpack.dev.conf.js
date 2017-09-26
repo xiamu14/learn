@@ -25,18 +25,30 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true,
-      chunks: ['app']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'video.html',
-      template: 'index.html',
-      inject: true,
-      chunks: ['video']
-    }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'index.html',
+    //   template: 'index.html',
+    //   inject: true,
+    //   chunks: ['app']
+    // }),
     new FriendlyErrorsPlugin()
   ]
+})
+
+// 添加下面的处理
+var entries = utils.getEntries()
+console.log(entries)
+Object.keys(entries).forEach(function (name) {
+  // 每个页面生成一个html
+  console.log(entries[name])
+  var plugin = new HtmlWebpackPlugin({
+    // 输出为 模块名称+html
+    filename: name + '.html',
+    //(模板放置对应的目录中，若用通用模板，则写 ‘index.html’)
+    template: entries[name].slice(0, -3) + '.html',
+    inject: true,
+    // 每个包引入自己的依赖，公共依赖
+    chunks: ['manifest', 'vendor', name],
+  });
+  module.exports.plugins.push(plugin)
 })

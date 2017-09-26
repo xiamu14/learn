@@ -1,0 +1,20 @@
+
+div, main {
+  box-sizing: border-box;
+}
+i {
+  font-style: normal;
+}
+p {
+  margin: 0;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+

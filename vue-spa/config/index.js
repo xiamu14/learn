@@ -4,8 +4,6 @@ var path = require('path')
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, '../dist/index.html'),
-    video: path.resolve(__dirname, '../dist/video.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -35,5 +33,8 @@ module.exports = {
     // In our experience, they generally work as expected,
     // just be aware of this issue when enabling this option.
     cssSourceMap: false
-  }
+  },
+  // 添加下面两项，根据自己要求配置
+  pageEntry: './src/views/**/*.js' // 多页应用入口
+  // pageEntry: './src/main.js' // 单页应用入口
 }

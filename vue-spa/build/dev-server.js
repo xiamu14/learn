@@ -11,6 +11,8 @@ var express = require('express')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = require('./webpack.dev.conf')
+// 引入utils包
+var utils = require('./utils')
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
@@ -50,8 +52,10 @@ Object.keys(proxyTable).forEach(function (context) {
 })
 
 // handle fallback for HTML5 history API
-app.use(require('connect-history-api-fallback')())
-
+// app.use(require('connect-history-api-fallback')())
+app.use(require('connect-history-api-fallback')(
+  {rewrites: utils.getRewrites()}
+))
 // serve webpack bundle output
 app.use(devMiddleware)
 

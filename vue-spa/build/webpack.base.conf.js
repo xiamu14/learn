@@ -8,10 +8,7 @@ function resolve (dir) {
 }
 
 module.exports = {
-  entry: {
-    app: './src/main.js',
-    video: './src/page/video/index.js'
-  },
+  entry: utils.getEntries(),
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -23,6 +20,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       '@': resolve('src'),
+      'vue': 'vue/dist/vue.js'
     }
   },
   module: {
