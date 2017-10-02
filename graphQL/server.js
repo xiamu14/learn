@@ -7,11 +7,11 @@ const port = 3002
 
 app.use('/', graphqlHTTP({
     schema: Schema,
-    graphiql: true
+    graphiql: false
 }));
 
 let server = app.listen(port, function () {
-    let addr = server.address();
-    let bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+    const addr = server.address();
+    const bind = typeof addr === "string" ? `pipe ${addr}`: `port ${addr.port}`
     console.log('Listening on ' + bind);
 });
