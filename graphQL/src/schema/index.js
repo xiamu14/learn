@@ -2,6 +2,7 @@ import {
     GraphQLObjectType,
     GraphQLSchema,
     GraphQLString,
+    GraphQLList,
     GraphQLInt
 } from 'graphql'
 
@@ -31,8 +32,14 @@ const Query = new GraphQLObjectType({
                     type: GraphQLInt
                 }
             },
-            resolve: function (_, args) {
+            resolve(_, args) {
                 return data[args.id];
+            }
+        },
+        users: {
+            type: new GraphQLList(User),
+            resolve(_, args) {
+                return data
             }
         }
     }
