@@ -27,7 +27,6 @@ build/Release
 node_modules
 
 tornado/venv/lib
-sklearn
 
 .DS_*
 
