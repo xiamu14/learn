@@ -1,14 +1,16 @@
 {
-    "1": {
-        "id": 1,
-        "name": "Dan"
+  "users": [
+    {
+      "id": 1,
+      "name": "Dan"
     },
-    "2": {
-        "id": 2,
-        "name": "Marie"
+    {
+      "id": 2,
+      "name": "Marie"
     },
-    "3": {
-        "id": 3,
-        "name": "Jessie"
+    {
+      "id": 3,
+      "name": "Jessie"
     }
+  ]
 }
