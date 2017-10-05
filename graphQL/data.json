@@ -2,15 +2,11 @@
   "users": [
     {
       "id": 1,
-      "name": "Dan"
+      "name": "Jane"
     },
     {
       "id": 2,
       "name": "Marie"
-    },
-    {
-      "id": 3,
-      "name": "Jessie"
     },
     {
       "name": "Ben",
