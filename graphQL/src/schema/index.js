@@ -4,7 +4,8 @@ import {
   GraphQLSchema,
   GraphQLString,
   GraphQLList,
-  GraphQLInt
+  GraphQLInt,
+  GraphQLNonNull
 } from "graphql";
 
 // 我们要用的模拟数据
@@ -50,8 +51,29 @@ const Query = new GraphQLObjectType({
   }
 });
 
+// mutaion: add & delete
+const mutation = new GraphQLObjectType({
+  name: "mutation",
+  fields: {
+    addUser: {
+      type: User,
+      args: {
+        name: { type: new GraphQLNonNull(GraphQLString) }
+      },
+      resolve(_, args) {
+        return axios
+          .post(`http://localhost:3000/users`, {
+            name: args.name
+          })
+          .then(res => res.data);
+      }
+    }
+  }
+});
+
 const Schema = new GraphQLSchema({
-  query: Query
+  query: Query,
+  mutation
 });
 
 export default Schema;
