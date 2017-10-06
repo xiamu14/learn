@@ -3,18 +3,23 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/ben/Documents/W/learn/ios_tutorial/MyPlayground.playground#CharacterRangeLen=65&amp;CharacterRangeLoc=68&amp;EndingColumnNumber=0&amp;EndingLineNumber=9&amp;StartingColumnNumber=0&amp;StartingLineNumber=4&amp;Timestamp=528981542.92524"
+         documentLocation = "file:///Users/ben/Documents/W/learn/ios_tutorial/MyPlayground.playground#CharacterRangeLen=65&amp;CharacterRangeLoc=68&amp;EndingColumnNumber=0&amp;EndingLineNumber=9&amp;StartingColumnNumber=0&amp;StartingLineNumber=4&amp;Timestamp=528990836.944862"
          lockedSize = "{226.83262499999998, 50}"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/ben/Documents/W/learn/ios_tutorial/MyPlayground.playground#CharacterRangeLen=65&amp;CharacterRangeLoc=68&amp;EndingColumnNumber=0&amp;EndingLineNumber=9&amp;StartingColumnNumber=0&amp;StartingLineNumber=4&amp;Timestamp=528981542.925369"
+         documentLocation = "file:///Users/ben/Documents/W/learn/ios_tutorial/MyPlayground.playground#CharacterRangeLen=65&amp;CharacterRangeLoc=68&amp;EndingColumnNumber=0&amp;EndingLineNumber=9&amp;StartingColumnNumber=0&amp;StartingLineNumber=4&amp;Timestamp=528990836.94498"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/ben/Documents/W/learn/ios_tutorial/MyPlayground.playground#CharacterRangeLen=65&amp;CharacterRangeLoc=68&amp;EndingColumnNumber=0&amp;EndingLineNumber=9&amp;StartingColumnNumber=0&amp;StartingLineNumber=4&amp;Timestamp=528981542.925461"
+         documentLocation = "file:///Users/ben/Documents/W/learn/ios_tutorial/MyPlayground.playground#CharacterRangeLen=65&amp;CharacterRangeLoc=68&amp;EndingColumnNumber=0&amp;EndingLineNumber=9&amp;StartingColumnNumber=0&amp;StartingLineNumber=4&amp;Timestamp=528990836.945067"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/ben/Documents/W/learn/ios_tutorial/MyPlayground.playground#CharacterRangeLen=5&amp;CharacterRangeLoc=218&amp;EndingColumnNumber=0&amp;EndingLineNumber=16&amp;StartingColumnNumber=5&amp;StartingLineNumber=15&amp;Timestamp=528990836.945149"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
