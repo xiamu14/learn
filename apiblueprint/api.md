@@ -1,6 +1,6 @@
 FORMAT: 1A
 
-# Example API
+# OHCAT API
 
 hello world
 
@@ -9,7 +9,12 @@ hello world
 ### 获取消息 [GET]
 
 + Response 200 (application/json)
-
         {
           "hello": "world"
+        }
+
++ Response 400 (application/json)
+        {
+            "state": 400,
+            "msg": "Error: 400"
         }

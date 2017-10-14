@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "render": "aglio -i api.md -o index.html",
+    "render": "aglio --theme-variables flatly -i api.md --server",
     "server": "drakov -f api.md -p 3000"
   },
   "dependencies": {
