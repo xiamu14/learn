@@ -1,0 +1,14 @@
+{
+  "name": "apiblueprint",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "render": "aglio -i api.md -o index.html",
+    "server": "drakov -f api.md -p 3000"
+  },
+  "dependencies": {
+    "aglio": "^2.3.0",
+    "drakov": "^1.0.4"
+  }
+}
