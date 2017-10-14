@@ -1,8 +1,0 @@
-{
-    "extends": "google",
-    "parser": "babel-eslint",
-    "rules": {
-        "eol-last": 0,
-        "no-unused-vars": 0
-    }
-}
