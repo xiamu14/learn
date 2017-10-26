@@ -1,3 +1,5 @@
+const Mock = require('mockjs');
+
 /* eslint-disable */
 exports.articleDat1 = {
   "err": 0,
@@ -4094,3 +4096,13 @@ exports.imageData1 = {
     "next_id": 5768
   }
 }
+
+const template = {
+  data: {
+    'title': 'Syntax Demo',
+    'string1|1-10': '★',
+    'string2|3': 'value'
+  },
+  err: 0
+}
+exports.share = Mock.mock(template)

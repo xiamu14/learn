@@ -18,4 +18,8 @@ router.get('/image', (req, res) => {
   }, 0);
 });
 
+router.get('/share', (req, res) => {
+  res.json(yueduData.share);
+})
+
 module.exports = router;
