@@ -1,0 +1,29 @@
+{
+  "name": "mock-server",
+  "version": "1.0.0",
+  "description": "apply mock data along.",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "mock",
+    "server",
+    "along",
+    "proxy"
+  ],
+  "author": "Ben",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mockjs": "^1.0.1-beta3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
