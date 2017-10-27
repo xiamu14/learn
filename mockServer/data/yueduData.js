@@ -397,7 +397,7 @@ exports.articleData = {
     "Status": "normal",
     "Category": "lishi",
     "Url": "https://news.uc.cn/a_14108985769072691647/",
-    "SourceUrl": "https://news.uc.cn/a_14108985769072691647/",
+    "SourceUrl": "",
     "Pb_time": "2017-09-12",
     "Created_time": "2017-09-19 14:27:10",
     "imgs": [
