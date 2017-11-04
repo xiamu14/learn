@@ -9,6 +9,9 @@
     "jest": "^21.0.2"
   },
   "scripts": {
-      "test": "jest"
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
   }
 }
