@@ -12,7 +12,7 @@ router.get('/article', (req, res) => {
   res.json(yueduData.articleData);
 });
 
-router.get('/image', (req, res) => {
+router.get('/img', (req, res) => {
   setTimeout(() => { // 限速，模拟响应速度
     res.json(yueduData.imageData1);
   }, 0);
