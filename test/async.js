@@ -33,15 +33,23 @@ const startTime = new Date();
 const f = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      // resolve(123);
-      reject('模拟异常');
+      resolve(123);
+      // reject('模拟异常');
     }, 2000);
+  })
+}
+
+const h = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(456);
+    }, 3000);
   })
 }
 
 const asyncFn = async () => {
   try { // 捕获异常
-    const res = await f();
+    const res = await Promise.all([f(), h()]);
     console.log(res);
   } catch(err) {
     console.log(err); // 处理异常
@@ -52,42 +60,45 @@ const asyncFn = async () => {
 
 asyncFn();
 
-// practise
-const getList = () => {
-  return Promise((resolve, reject) => {
-    ajax({
-      url: '/list',
-      type: 'GET',
-      success: (data) => {
-        appendToDom(data);
-        resove(data);
-      },
-      error: (err) => {
-        reject(err);
-      }
-    })
-  })
-}
+// // practise
+// const getList = () => {
+//   return Promise((resolve, reject) => {
+//     ajax({
+//       url: '/list',
+//       type: 'GET',
+//       success: (data) => {
+//         appendToDom(data);
+//         resove(data);
+//       },
+//       error: (err) => {
+//         reject(err);
+//       }
+//     })
+//   })
+// }
 
-const postUpdate = () => {
-  return new Promise((resolve, reject) => {
-    ajax({
-      url: '/update',
-      type: 'POST',
-      success: (data) => {
-        util.toast('success!');
-        resolve(data);
-      },
-      error: (err) => {
-        reject(err);
-      }
-    })
-  })
-}
+// const postUpdate = () => {
+//   return new Promise((resolve, reject) => {
+//     ajax({
+//       url: '/update',
+//       type: 'POST',
+//       success: (data) => {
+//         util.toast('success!');
+//         resolve(data);
+//       },
+//       error: (err) => {
+//         reject(err);
+//       }
+//     })
+//   })
+// }
 
-const asyncTest = async () => {
-  const data1 = await getList();
-  const data2 = await postUpdate();
-}
+// const asyncTest = async () => {
+//   const data1 = await getList();
+//   const data2 = await postUpdate();
+// }
 
-asyncTest();
+// asyncTest();
+
+
+// async Promise.all
