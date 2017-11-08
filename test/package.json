@@ -6,9 +6,13 @@
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
+    "javascript-state-machine": "^3.0.1",
     "jest": "^21.0.2"
   },
   "scripts": {
-      "test": "jest"
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
   }
 }
