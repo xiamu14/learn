@@ -11,6 +11,8 @@ exports.articleData = {
     "Author": "闲坐说玄宗 ",
     "Status": "normal",
     "Category": "lishi",
+    "Click": 2500,
+    "Hot": 1,
     "Url": "https://news.uc.cn/a_14108985769072691647/",
     "SourceUrl": "https://news.uc.cn/a_14108985769072691647/",
     "Pb_time": "2017-09-12",
@@ -4096,6 +4098,8 @@ exports.imageData1 = {
     "next_id": 5768
   }
 }
+
+exports.appInfo = { "err": 0, "err_msg": "", "url": "https:\/\/static.qiushibaike.com\/static\/yuedu\/inews-v1.0.2-3-20171028-005255.apk", "change": "\u65b0\u7248\u53d1\u5e03\uff1a\n1\u3001\u65b0\u589e\u8da3\u95fb\u63a8\u9001\n2\u3001\u6027\u80fd\u4f18\u5316", "vn": "1.0.2", "vc": 3, "c": 130 };
 
 const template = {
   data: {
