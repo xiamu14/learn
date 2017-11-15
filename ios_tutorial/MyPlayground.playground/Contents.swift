@@ -57,4 +57,12 @@ func withdraw(amount:Int)-> ATMStatus{
     }
 }
 
-withdraw(amount: 10000)
+//withdraw(amount: 10000)
+
+struct Location{
+    let latitude: Double
+    let longitude: Double
+}
+
+let appleHeadQuarterLocation = Location(latitude: 37.3230, longitude: -122.0322)
+
