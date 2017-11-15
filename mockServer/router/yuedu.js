@@ -1,6 +1,7 @@
 // import express from 'express';
 const express = require('express');
 const yueduData = require('../data/yueduData');
+const statistic = require('../controller/statictis');
 
 const router = express.Router();
 
@@ -35,5 +36,7 @@ router.get('/version', (req, res) => {
 router.get('/share', (req, res) => {
   res.json(yueduData.share);
 })
+
+router.post('/statistic', statistic);
 
 module.exports = router;
