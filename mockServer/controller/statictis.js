@@ -7,8 +7,8 @@ const router = express.Router();
 const client = redis.createClient();
 
 module.exports = (req, res) => {
-  const data = req.body;
-  client.set('stayTime', data.stayTime, () => {
+  const data = JSON.stringify(req.body);
+  client.set('test', data, () => {
     res.json({
       err: 0,
       reply: data,
