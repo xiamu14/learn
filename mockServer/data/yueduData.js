@@ -4099,6 +4099,134 @@ exports.imageData1 = {
   }
 }
 
+exports.apprentice = {
+  "err": 0,
+  "data": [
+    {
+      "disciple_id": 3,
+      "disciple_name": "小猪",
+      "money": 14,
+      "info": "没有有效阅读"
+    },
+    {
+      "disciple_id": 5,
+      "disciple_name": "大宝宝",
+      "money": 13,
+      "info": "用户未登录"
+    },
+    {
+      "disciple_id": 3,
+      "disciple_name": "小猪",
+      "money": 12,
+      "info": "没有有效阅读"
+    },
+    {
+      "disciple_id": 5,
+      "disciple_name": "大宝宝",
+      "money": 11,
+      "info": "用户未登录"
+    },
+    {
+      "disciple_id": 3,
+      "disciple_name": "小猪",
+      "money": 10,
+      "info": "没有有效阅读"
+    },
+    {
+      "disciple_id": 5,
+      "disciple_name": "大宝宝",
+      "money": 9,
+      "info": "用户未登录"
+    },
+    {
+      "disciple_id": 3,
+      "disciple_name": "小猪",
+      "money": 8,
+      "info": "没有有效阅读"
+    },
+    {
+      "disciple_id": 5,
+      "disciple_name": "大宝宝",
+      "money": 7,
+      "info": "用户未登录"
+    },
+    {
+      "disciple_id": 3,
+      "disciple_name": "小猪",
+      "money": 6,
+      "info": "没有有效阅读"
+    },
+    {
+      "disciple_id": 5,
+      "disciple_name": "大宝宝",
+      "money": 5,
+      "info": "用户未登录"
+    },
+    {
+      "disciple_id": 3,
+      "disciple_name": "小猪",
+      "money": 4,
+      "info": "没有有效阅读"
+    },
+    {
+      "disciple_id": 5,
+      "disciple_name": "大宝宝",
+      "money": 3,
+      "info": "用户未登录"
+    },
+    {
+      "disciple_id": 3,
+      "disciple_name": "小猪",
+      "money": 2,
+      "info": "没有有效阅读"
+    },
+    {
+      "disciple_id": 5,
+      "disciple_name": "大宝宝",
+      "money": 1,
+      "info": "用户未登录"
+    },
+    {
+      "disciple_id": 3,
+      "disciple_name": "小猪",
+      "money": 0,
+      "info": "没有有效阅读"
+    },
+    {
+      "disciple_id": 5,
+      "disciple_name": "大宝宝",
+      "money": 0,
+      "info": "用户未登录"
+    },
+    {
+      "disciple_id": 3,
+      "disciple_name": "小猪",
+      "money": 0,
+      "info": "没有有效阅读"
+    },
+    {
+      "disciple_id": 5,
+      "disciple_name": "大宝宝",
+      "money": 0,
+      "info": "用户未登录"
+    },
+    {
+      "disciple_id": 3,
+      "disciple_name": "小猪",
+      "money": 0,
+      "info": "没有有效阅读"
+    },
+    {
+      "disciple_id": 5,
+      "disciple_name": "大宝宝",
+      "money": 0,
+      "info": "用户未登录"
+    }
+  ],
+  "data_length": 20,
+  "data_info": "更新了20条内容"
+}
+
 exports.appInfo = { "err": 0, "err_msg": "", "url": "https:\/\/static.qiushibaike.com\/static\/yuedu\/inews-v1.0.2-3-20171028-005255.apk", "change": "\u65b0\u7248\u53d1\u5e03\uff1a\n1\u3001\u65b0\u589e\u8da3\u95fb\u63a8\u9001\n2\u3001\u6027\u80fd\u4f18\u5316", "vn": "1.0.2", "vc": 3, "c": 130 };
 
 const template = {

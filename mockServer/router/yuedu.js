@@ -37,6 +37,10 @@ router.get('/share', (req, res) => {
   res.json(yueduData.share);
 })
 
+router.get('/master', (req, res) => {
+  res.json(yueduData.apprentice);
+})
+
 router.post('/statistic', statistic);
 
 module.exports = router;
