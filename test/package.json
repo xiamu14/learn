@@ -13,6 +13,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@xiamu/toolkit": "0.0.2",
     "express": "^4.16.2"
   }
 }
