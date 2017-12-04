@@ -4,7 +4,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const client = redis.createClient();
+const client = redis.createClient(6379, '127.0.0.1');
 
 module.exports = (req, res) => {
   const data = JSON.stringify(req.body);
