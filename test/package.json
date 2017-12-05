@@ -13,7 +13,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@xiamu/toolkit": "0.0.2",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "json2xls": "^0.1.2",
+    "xlsx": "^0.11.12"
   }
 }
