@@ -1,6 +1,7 @@
 const express = require('express');
 
 const yueduRouter = require('./router/yuedu');
+const yueduAdminRouter = require('./router/yueduAdmin');
 const config = require('./config');
 const expressSetup = require('./util').expressSetup;
 
@@ -11,6 +12,7 @@ expressSetup(app);
 
 // 定义 mock 接口前缀
 app.use('/yuedu/api', yueduRouter);
+app.use('/yuedu/account/admin', yueduAdminRouter);
 
 const uri = `http://localhost:${config.port}`;
 
