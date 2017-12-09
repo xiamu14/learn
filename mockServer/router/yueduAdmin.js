@@ -7,6 +7,9 @@ router.get('/user', (req, res) => {
   if(req.query.page){
     res.json(yueduAdminData.userTable);
   }
+  if(req.query.i){
+    res.json(yueduAdminData.userTable);
+  }
   if(req.query.u) {
     res.json(yueduAdminData.userDetail);
   }
