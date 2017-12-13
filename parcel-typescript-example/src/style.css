@@ -1,7 +1,9 @@
 .main {
     width: 500px;
     height: 500px;
+    margin: 0 auto;
     background: lightskyblue;
     text-align: center;
     color: #ffffff;
+    font-size: 16px;
 }
