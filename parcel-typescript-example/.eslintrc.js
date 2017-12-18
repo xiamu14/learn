@@ -4,7 +4,7 @@ module.exports = {
     "browser": true,
     "mocha": true
   },
-  "extends": "airbnb/base",
+  "extends": "airbnb-base",
   "plugins": [
     "import"
   ],
