@@ -15,10 +15,9 @@
   "description": "TypeScript app with parcel bundler.",
   "main": "lib/parcel-typescript-example.js",
   "scripts": {
-    "start": "parcel serve src/index.html",
+    "start": "parcel serve src/index.pug",
     "build": "cross-env NODE_ENV=production parcel build src/index.html --public-url .",
     "watch": "parcel watch src/index.html",
-    "dev": "yarn start && yarn watch",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
@@ -34,11 +33,15 @@
     "babel-eslint": "^8.0.3",
     "cross-env": "^5.1.1",
     "eslint": "^4.13.1",
-    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "gh-pages": "^1.1.0",
     "parcel-bundler": "^1.1.0",
     "parcel-plugin-eslint": "^0.1.2",
+    "parcel-plugin-markdown": "^0.2.1",
     "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "parcel-plugin-pug": "^0.1.2"
   }
 }
