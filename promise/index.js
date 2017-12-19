@@ -26,11 +26,11 @@ function lazy(timer, state) {
 
 async function start() {
   console.log('等待 3秒>>>>');
-  const sleepRes = sleep(3000, 403);
-  const lazyRes = lazy(4000, 403);
+  const sleepRes = sleep(1000, 403);
+  const lazyRes = lazy(1000, 403);
   try {
     const result = await Promise.all([sleepRes, lazyRes]);
-    console.log(`得到回馈${result}结束>>>>`);
+    console.log('回馈', result);
   } catch (err) {
     console.log(err);
   }
