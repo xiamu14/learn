@@ -13,6 +13,12 @@ router.get('/user', (req, res) => {
   if(req.query.u) {
     res.json(yueduAdminData.userDetail);
   }
+  if(req.query.cate === 'money_all') {
+    res.json(yueduAdminData.userMoneyAll);
+  }
+  if (req.query.cate === 'withdraw_date') {
+    res.json(yueduAdminData.userWithdrawDate);
+  }
 });
 router.get('/count', (req, res) => {
   if(req.query.p) {

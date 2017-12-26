@@ -449,3 +449,115 @@ exports.channelDataEx = {
     "2017-11-08": 1
   }
 }
+
+exports.userMoneyAll = {
+  "err": 0,
+  "data": [
+    {
+      "ID": 1,
+      "Datetime": "2017-12-20",
+      "WithdrawAll": 0,
+      "WithdrawNo": 0,
+      "RewardAll": 0,
+      "RewardNo": 0
+    },
+    {
+      "ID": 2,
+      "Datetime": "2017-12-21",
+      "WithdrawAll": 30,
+      "WithdrawNo": 1,
+      "RewardAll": 9,
+      "RewardNo": 7
+    },
+    {
+      "ID": 3,
+      "Datetime": "2017-12-22",
+      "WithdrawAll": 30,
+      "WithdrawNo": 1,
+      "RewardAll": 25,
+      "RewardNo": 23
+    },
+    {
+      "ID": 4,
+      "Datetime": "2017-12-23",
+      "WithdrawAll": 0,
+      "WithdrawNo": 0,
+      "RewardAll": 60,
+      "RewardNo": 58
+    },
+    {
+      "ID": 5,
+      "Datetime": "2017-12-24",
+      "WithdrawAll": 0,
+      "WithdrawNo": 0,
+      "RewardAll": 52,
+      "RewardNo": 72
+    },
+    {
+      "ID": 6,
+      "Datetime": "2017-12-25",
+      "WithdrawAll": 20,
+      "WithdrawNo": 4,
+      "RewardAll": 603,
+      "RewardNo": 402
+    },
+    {
+      "ID": 7,
+      "Datetime": "2017-12-26",
+      "WithdrawAll": 110,
+      "WithdrawNo": 22,
+      "RewardAll": 1749,
+      "RewardNo": 1216
+    }
+  ],
+  "data_length": 7,
+  "data_info": "更新了7条内容"
+}
+
+exports.userWithdrawDate = {
+  "err": 0,
+  "data": [
+    {
+      "ID": 3,
+      "Uid": 179,
+      "DevID": "7F46D1A972C5C1101730FA369A378D92",
+      "Money": 5,
+      "FlowNo": "15142055901519",
+      "Aliname": "张钊",
+      "Aliaccount": "18024188825",
+      "Status": "doing"
+    },
+    {
+      "ID": 4,
+      "Uid": 182,
+      "DevID": "9756546AD0104B5F566B1D14132A6BBB",
+      "Money": 5,
+      "FlowNo": "15142058659005",
+      "Aliname": "游德贵",
+      "Aliaccount": "13255017539",
+      "Status": "doing"
+    },
+    {
+      "ID": 5,
+      "Uid": 299,
+      "DevID": "1DD9BE2EF65624D80385650FB1FB4C18",
+      "Money": 5,
+      "FlowNo": "15142099524461",
+      "Aliname": "王铁刚",
+      "Aliaccount": "15076060369",
+      "Status": "doing"
+    },
+    {
+      "ID": 6,
+      "Uid": 321,
+      "DevID": "A800203E5D85BD39B0D97C4137E7CD05",
+      "Money": 5,
+      "FlowNo": "15142111735852",
+      "Aliname": "范会珍",
+      "Aliaccount": "18501487537",
+      "Status": "doing"
+    }
+  ],
+  "data_length": 4,
+  "data_info": "更新了4条内容"
+}

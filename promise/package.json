@@ -1,0 +1,10 @@
+{
+  "name": "promise_learn",
+  "version": "1.0",
+  "devDependencies": {
+    "jest": "^22.0.4"
+  },
+  "scripts": {
+    "test": "jest *.test.js"
+  }
+}
