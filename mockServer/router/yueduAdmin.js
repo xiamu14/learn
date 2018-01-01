@@ -20,6 +20,20 @@ router.get('/user', (req, res) => {
     res.json(yueduAdminData.userWithdrawDate);
   }
 });
+router.post('/user', (req, res) => {
+  if (req.query.cate === 'withdraw_reject') {
+    res.json({
+      err: 0,
+      msg: '已退还'
+    })
+  }
+  if (req.query.cate === 'withdraw_accept') {
+    res.json({
+      err: 0,
+      msg: '已提现'
+    })
+  }
+})
 router.get('/count', (req, res) => {
   if(req.query.p) {
     if(req.query.cate === 'list'){
