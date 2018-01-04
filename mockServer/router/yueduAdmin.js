@@ -19,6 +19,12 @@ router.get('/user', (req, res) => {
   if (req.query.cate === 'withdraw_date') {
     res.json(yueduAdminData.userWithdrawDate);
   }
+  if (req.query.cate === 'login_info') {
+    res.json(yueduAdminData.loginInfoData);
+  }
+  if (req.query.cate === 'today_redpacket_count') {
+    res.json(yueduAdminData.redPacketCount);
+  }
 });
 router.post('/user', (req, res) => {
   if (req.query.cate === 'withdraw_reject') {
@@ -35,16 +41,19 @@ router.post('/user', (req, res) => {
   }
 })
 router.get('/count', (req, res) => {
-  if(req.query.p) {
-    if(req.query.cate === 'list'){
-      // 导出数据接口
-      res.json(yueduAdminData.channelDataEx);
-    } else {
-      // 渠道信息显示
-      res.json(yueduAdminData.channelData);
-    }
-  } else {
-    // 注册统计信息显示
+  if(req.query.p && req.query.cate === 'list'){
+    // 导出数据接口
+    // res.json(yueduAdminData.channelData);
+    res.json(yueduAdminData.channelDataEx);
+  }
+  if (req.query.p) {
+    res.json(yueduAdminData.channelData);
+  }
+  if (req.query.cate === 'list') {
+    // 新增用户注册数据
+    res.json(yueduAdminData.newUserData);
+  }
+  if (!req.query.p && !req.query.cate) {
     res.json(yueduAdminData.accountData);
   }
 })
