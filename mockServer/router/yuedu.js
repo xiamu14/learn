@@ -41,6 +41,12 @@ router.get('/master', (req, res) => {
   res.json(yueduData.apprentice);
 })
 
+router.get('/yuedutask', (req, res) => {
+  if (req.id && req.cata) {
+    res.json(yueduData.yueduTask)
+  }
+})
+
 router.post('/statistic', statistic);
 
 module.exports = router;

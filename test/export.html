@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>json导出Excel</title>
+
+  <script type="text/javascript" src="./jsonExportExcel.js"></script>
+  <!-- <script type="text/javascript" src="../node_modules/xlsx/dist/xlsx.core.min.js"></script>
+    <script type="text/javascript" src="../src/index.js"></script> -->
+  <script>
+    window.onload = function () {
+      var option = {};
+      // abc.data=[['sd卡分行看好了','sd卡分行看好了','sd卡分行看好了'],[1,2,3],[1,2,3]];
+      // option.datas=[{one:'一行一列',two:'一行二列'},{one:'二行一列',two:'二行二列'}];
+      // option.filter=['two','one'];
+      option.fileName = 'excel'
+      option.datas = [
+        {
+          sheetData: [{ one: '一行一列', two: '一行二列' }, { one: '二行一列', two: '二行二列' }],
+          sheetName: 'sheet',
+          sheetFilter: ['two', 'one'],
+          sheetHeader: ['第一列', '第二列'],
+        },
+        {
+          sheetData: [{ one: '一行一列', two: '一行二列' }, { one: '二行一列', two: '二行二列' }]
+        }
+      ];
+      var toExcel = new ExportJsonExcel(option);
+      toExcel.saveExcel();
+    };
+  </script>
+</head>
+
+<body>
+  <h1>jsonToExcel</h1>
+
+</html>

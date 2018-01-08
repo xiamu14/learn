@@ -4240,4 +4240,12 @@ const template = {
   },
   err: 0
 }
+
+exports.yueduTask = {
+  "err": 0,
+  "data": {
+    "money": '0.01'
+  }
+}
+
 exports.share = Mock.mock(template)
