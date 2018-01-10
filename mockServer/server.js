@@ -1,6 +1,7 @@
 const express = require('express');
 
 const yueduRouter = require('./router/yuedu');
+const yueduApiRouter = require('./router/yueduApi');
 const yueduAdminRouter = require('./router/yueduAdmin');
 const yueduAdminMaster = require('./router/yueduAdminMaster');
 const config = require('./config');
@@ -12,7 +13,8 @@ const app = express();
 expressSetup(app);
 
 // 定义 mock 接口前缀
-app.use('/yuedu/api', yueduRouter);
+app.use('/yuedu', yueduRouter);
+app.use('/yuedu/api', yueduApiRouter);
 app.use('/yuedu/account/admin', yueduAdminRouter);
 app.use('/yuedu/master/admin', yueduAdminMaster);
 

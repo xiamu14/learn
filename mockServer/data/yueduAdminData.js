@@ -292,6 +292,12 @@ exports.userDetail = {
         "ip": "127.0.0.1",
         "dev_id": "A29D9BB516F850504057A7DC02CDFF47",
         "created_time": "2017-12-28 12:54:06"
+      },
+      {
+        "uid": 1745,
+        "ip": "127.0.0.1",
+        "dev_id": "A29D9BB516F850504057A7DC02CDFF47",
+        "created_time": "2017-12-27 12:54:06"
       }
     ]
   }
