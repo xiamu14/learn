@@ -2739,10 +2739,10 @@ exports.imageData1 = {
         "img_type": "jpeg",
         "status": "checked",
         "size": "800*970",
-        "qiushi_url": "https://qb-img.qiushibaike.com/qb_imgs/afa6a83cc1571165a51ad2b2e008933d"
+        "qiushi_url": "https://qb-img.qiushibaike.com/qb_imgs/afa6a83cc1571165a51ad2b2e008933d!/format/webp"
       },
       {
-        "id": 72913,
+        "id": 72914,
         "aid": 14852,
         "name": "afa6a83cc1571165a51ad2b2e008933d",
         "img_type": "jpeg",
@@ -2751,7 +2751,7 @@ exports.imageData1 = {
         "qiushi_url": "https://qb-img.qiushibaike.com/qb_imgs/afa6a83cc1571165a51ad2b2e008933d"
       },
       {
-        "id": 72913,
+        "id": 72915,
         "aid": 14852,
         "name": "afa6a83cc1571165a51ad2b2e008933d",
         "img_type": "jpeg",

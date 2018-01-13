@@ -1,0 +1,120 @@
+FORMAT: 1A
+
+# Responses API
+In this API example we will discuss what information a response can bear and
+how to define multiple responses. Technically a response is represented by a
+payload that is sent back in response to a request.
+
+## API Blueprint
++ [Previous: Grouping Resources](04.%20Grouping%20Resources.md)
++ [This: Raw API Blueprint](https://raw.github.com/apiaryio/api-blueprint/master/examples/05.%20Responses.md)
++ [Next: Requests](06.%20Requests.md)
+
+# Group Messages
+Group of all messages-related resources.
+
+## My Message [/message/{id}]
+
++ Parameters
+
+    + id: 1 (number) - An unique identifier of the message.
+
+### Retrieve a Message [GET]
+This action has **two** responses defined: One returning plain text and the
+other a JSON representation of our resource. Both have the same HTTP status
+code. Also both responses bear additional information in the form of a custom
+HTTP header. Note that both responses have set the `Content-Type` HTTP header
+just by specifying `(text/plain)` or `(application/json)` in their respective
+signatures.
+
++ Response 200 (text/plain)
+
+    + Headers
+
+            X-My-Message-Header: 42
+
+    + Body
+
+            Hello World!
+
++ Response 200 (application/json)
+
+    + Headers
+
+            X-My-Message-Header: 42
+
+    + Body
+
+            { "message": "Hello World!" }
+
+### Update a Message [PUT]
+
++ Request (text/plain)
+
+        All your base are belong to us.
+
++ Request Update JSON Message (application/json)
+
+        { "message": "All your base are belong to us." }
+
++ Response 204
+
+## All My Messages [/messages{?limit}{?start}]
+A resource representing all of my messages in the system.
+
+We have added the query URI template parameter - `limit`. This parameter is
+used for limiting the number of results returned by some actions on this
+resource. It does not affect every possible action of this resource, therefore
+we will discuss it only at the particular action level below.
+
+### Retrieve all Messages [GET]
+
++ Parameters
+
+    + limit (number, optional) - The maximum number of results to return.
+        + Default: `20`
+
++ Response 200 (application/json)
+
+        [
+          {
+            "id": 1,
+            "message": "Hello World!"
+          },
+          {
+            "id": 2,
+            "message": "Time is an illusion. Lunchtime doubly so."
+          },
+          {
+            "id": 3,
+            "message": "So long, and thanks for all the fish."
+          }
+        ]
+
+## Coupon [/coupons/{id}]
+A coupon contains information about a percent-off or amount-off discount you
+might want to apply to a customer.
+
+### Retrieve a Coupon [GET]
+Retrieves the coupon with the given ID.
+
++ Response 200 (application/json)
+
+    + Attributes (object)
+        + id: 250FF (string, required)
+        + created: 1415203908 (number) - Time stamp
+        + percent_off: 25 (number)
+
+            A positive integer between 1 and 100 that represents the discount
+            the coupon will apply.
+
+        + redeem_by (number) - Date after which the coupon can no longer be redeemed
+
+    + Body
+
+            {
+                "id": "250FF",
+                "created": 1415203908,
+                "percent_off": 25,
+                "redeem_by": null
+            }
