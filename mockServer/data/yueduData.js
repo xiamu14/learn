@@ -4248,4 +4248,83 @@ exports.yueduTask = {
   }
 }
 
+exports.yueduTask1 = {
+  "err": 0,
+  "data": {
+    "continue_readed_days": 1,
+    "today_readed": 9,
+    "finished_tasks": {
+      "task_10001": {
+        "is_finished": true
+      },
+      "task_10002": {
+        "is_finished": true
+      },
+      "task_10003": {
+        "is_finished": true
+      },
+      "task_10004": {
+        "is_finished": false
+      },
+      "task_10005": {
+        "is_finished": true
+      },
+      "task_10006": {
+        "is_finished": false
+      },
+      "task_10007": {
+        "is_finished": false
+      },
+      "task_10008": {
+        "is_finished": false
+      },
+      "task_10009": {
+        "is_finished": false
+      },
+      "task_101011": {
+        "is_finished": false
+      },
+      "task_101012": {
+        "is_finished": false
+      },
+      "task_101013": {
+        "is_finished": false
+      },
+      "task_101014": {
+        "is_finished": false
+      },
+      "task_101015": {
+        "is_finished": false
+      },
+      "task_101016": {
+        "is_finished": false
+      },
+      "task_101017": {
+        "is_finished": false
+      }
+    },
+    "all_money": 0,
+    "user_type": 2,
+    "avg_readed": 9,
+    "recent_dcount": 0
+  }
+}
+
+exports.redpacketTask = {
+  "err": 0,
+  "data": {
+    "continue_days": 2,
+    "sign_time_left": 0
+  }
+}
+
+exports.redpacketTask1 = {
+  "err": 0,
+  "data": {
+    "msg": "OK",
+    "money": 0.01,
+    "continue_days": 3
+  }
+}
+
 exports.share = Mock.mock(template)

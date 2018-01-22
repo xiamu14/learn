@@ -21,5 +21,16 @@ router.put('/yuedutask', (req, res) => {
   }
 })
 
+router.get('/yuedutask', (req, res) => {
+  res.json(yueduData.yueduTask1);
+})
+
+router.get('/redpacket', (req, res) => {
+  res.json(yueduData.redpacketTask);
+})
+
+router.put('/redpacket', (req, res) => {
+  res.json(yueduData.redpacketTask1);
+})
 
 module.exports = router;

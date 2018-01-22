@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm t",
     "dev": "nodemon --exec babel-node --presets=es2015 server.js",
-    "json:server":"json-server --watch data.json"
+    "json:server": "json-server --watch data.json"
   },
   "keywords": [
     "nodejs",
@@ -20,7 +20,9 @@
     "express": "^4.15.4",
     "express-graphql": "^0.6.7",
     "graphql": "^0.11.1",
-    "json-server": "^0.12.0"
+    "json-server": "^0.12.0",
+    "react-apollo": "^2.0.4",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
