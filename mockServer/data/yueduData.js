@@ -4304,9 +4304,122 @@ exports.yueduTask1 = {
       }
     },
     "all_money": 0,
-    "user_type": 2,
+    "user_type": 1,
     "avg_readed": 9,
     "recent_dcount": 0
+  }
+}
+
+exports.yueduTask2 = {
+  "err": 0,
+  "data": {
+    "TaskResult": {
+      "10001": {
+        "TaskID": 10001,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "10002": {
+        "TaskID": 10002,
+        "IsFinished": true,
+        "Process": "0"
+      },
+      "10003": {
+        "TaskID": 10003,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "10004": {
+        "TaskID": 10004,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "10005": {
+        "TaskID": 10005,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "10006": {
+        "TaskID": 10006,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "10007": {
+        "TaskID": 10007,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "10008": {
+        "TaskID": 10008,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "10009": {
+        "TaskID": 10009,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "10101": {
+        "SubTask": [
+          {
+            "TaskID": 101011,
+            "IsFinished": false,
+            "Process": "0"
+          },
+          {
+            "TaskID": 101012,
+            "IsFinished": false,
+            "Process": "0"
+          },
+          {
+            "TaskID": 101013,
+            "IsFinished": false,
+            "Process": "0"
+          },
+          {
+            "TaskID": 101014,
+            "IsFinished": false,
+            "Process": "0"
+          },
+          {
+            "TaskID": 101015,
+            "IsFinished": false,
+            "Process": "0"
+          },
+          {
+            "TaskID": 101016,
+            "IsFinished": false,
+            "Process": "0"
+          },
+          {
+            "TaskID": 101017,
+            "IsFinished": false,
+            "Process": "0"
+          }
+        ],
+        "IsFinished": false,
+        "Process": "0/7"
+      },
+      "20004": {
+        "TaskID": 20004,
+        "IsFinished": true,
+        "Process": "0"
+      },
+      "50001": {
+        "TaskID": 50001,
+        "IsFinished": true,
+        "Process": "0"
+      },
+      "50003": {
+        "TaskID": 50003,
+        "IsFinished": false,
+        "Process": "0/3"
+      }
+    },
+    "Info": {
+      "UserType": 2,
+      "HasMaster": true
+    }
   }
 }
 

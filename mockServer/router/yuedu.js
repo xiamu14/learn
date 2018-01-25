@@ -25,6 +25,10 @@ router.get('/yuedutask', (req, res) => {
   res.json(yueduData.yueduTask1);
 })
 
+router.get('/yuedutask/simple', (req, res) => {
+  res.json(yueduData.yueduTask2);
+})
+
 router.get('/redpacket', (req, res) => {
   res.json(yueduData.redpacketTask);
 })

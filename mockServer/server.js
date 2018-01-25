@@ -3,7 +3,7 @@ const express = require('express');
 const yueduRouter = require('./router/yuedu');
 const yueduApiRouter = require('./router/yueduApi');
 const yueduAdminRouter = require('./router/yueduAdmin');
-const yueduAdminMaster = require('./router/yueduAdminMaster');
+const yueduMasterRouter = require('./router/yueduMaster');
 const config = require('./config');
 const expressSetup = require('./util').expressSetup;
 
@@ -16,7 +16,7 @@ expressSetup(app);
 app.use('/yuedu', yueduRouter);
 app.use('/yuedu/api', yueduApiRouter);
 app.use('/yuedu/account/admin', yueduAdminRouter);
-app.use('/yuedu/master/admin', yueduAdminMaster);
+app.use('/yuedu/master', yueduMasterRouter);
 
 const uri = `http://localhost:${config.port}`;
 
