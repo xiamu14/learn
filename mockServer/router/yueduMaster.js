@@ -12,7 +12,7 @@ router.get('/admin', (req, res) => {
 
 router.get('/task', (req, res) => {
   console.log(req.query);
-  if (req.query.task_id === 20007) {
+  if (req.query.task_id === '20007') {
     res.json(yueduTask.springfestival);
   } else {
     res.json({err: 404});

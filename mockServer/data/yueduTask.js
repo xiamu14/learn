@@ -1,11 +1,11 @@
 exports.springfestival = {
   "err": 0,
   "data": {
-    "dcount": 2,
-    "eff_dcount": 1,
+    "dcount": 2,  // 新徒弟
+    "eff_dcount": 1, //有效徒弟
     "rank": 1,
-    "money": 2,
-    "disciple_info": [
+    "money": 2,  // 获得奖励
+    "disciple_info": [  // 徒弟信息(all)
       {
         "Did": 3,
         "Nickname": "小猪",
@@ -19,7 +19,7 @@ exports.springfestival = {
         "info": "有效徒弟"
       }
     ],
-    "rank_data": [
+    "rank_data": [ // 任务列表
       {
         "dcount": 1,
         "money": 2,
