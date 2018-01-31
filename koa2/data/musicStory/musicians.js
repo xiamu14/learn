@@ -12,14 +12,14 @@ exports.musicians = {
         "musicinas": [
           {
             "id": 4,
-            "img": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2423163533,2396542910&fm=27&gp=0.jpg",
+            "img": "/resources/images/card/lockMusician/musician01_lock.png",
             "name": "拉赫玛尼诺夫",
             "desc": "",
             "desc_title": "人物小传：",
             "region_title": "国家：",
             "region": "大俄罗斯",
-            "isunlock": 0,
-            "isnew": 0
+            "isunlock": 1,
+            "isnew": 1
           },
           {
             "id": 7,

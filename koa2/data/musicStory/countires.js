@@ -2,7 +2,7 @@ exports.countries = {
   "code": 200,
   "message": "操作成功",
   "data": {
-    "obtain": 0,
+    "obtain": 1,
     "hasNew": 0,
     "total": 16,
     "list": [
@@ -30,14 +30,15 @@ exports.countries = {
       },
       {
         "id": 1,
-        "img": "http://czl.dosomi.com/card_tujian_weishouji.png",
-        "desc_img": null,
+        "img": "http://czl.dosomi.com//FqZw41Q0aJBsSeo4z7IuNV0cb5QY",
+        "desc_img": "http://czl.dosomi.com//FlCfIokGGxSAVsNxz5mfA9fNMT9G",
         "name": "大俄罗斯",
-        "region_desc": "",
+        "region_desc": "即前苏联，首都莫斯科，人口约2亿9千万，国土面积2240万平方公里，是世界上面积最大的国家；",
         "region_desc_title": "国家介绍：",
-        "second_desc_title": "相关音乐家：",
-        "second_desc": "穆索尔斯基,柴可夫斯基,里姆斯基·科萨科夫,拉赫玛尼诺夫,普罗科夫耶夫,肖斯塔科维奇,斯特拉文斯基",
-        "isunlock": 0
+        "second_desc_title": "风土人情：",
+        "second_desc": "在俄罗斯你可以看到世界上最深最纯净的贝加尔湖，可以乘火车穿越茂密深远的西伯利亚森林，去看看黑海的旖旎风光。当然最不能错过的还是冬宫中那些用200多年时间收集起来的、可能永远也看不完的展品。",
+        "isunlock": 1,
+        "isnew": 1
       },
       {
         "id": 14,
@@ -185,3 +186,5 @@ exports.countries = {
     ]
   }
 }
+
+

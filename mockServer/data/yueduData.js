@@ -4314,110 +4314,64 @@ exports.yueduTask2 = {
   "err": 0,
   "data": {
     "TaskResult": {
-      "10001": {
-        "TaskID": 10001,
-        "IsFinished": false,
-        "Process": "0"
-      },
-      "10002": {
-        "TaskID": 10002,
-        "IsFinished": true,
-        "Process": "0"
-      },
-      "10003": {
-        "TaskID": 10003,
-        "IsFinished": false,
-        "Process": "0"
-      },
-      "10004": {
-        "TaskID": 10004,
-        "IsFinished": false,
-        "Process": "0"
-      },
-      "10005": {
-        "TaskID": 10005,
-        "IsFinished": false,
-        "Process": "0"
-      },
-      "10006": {
-        "TaskID": 10006,
-        "IsFinished": false,
-        "Process": "0"
-      },
-      "10007": {
-        "TaskID": 10007,
-        "IsFinished": false,
-        "Process": "0"
-      },
-      "10008": {
-        "TaskID": 10008,
-        "IsFinished": false,
-        "Process": "0"
-      },
-      "10009": {
-        "TaskID": 10009,
-        "IsFinished": false,
-        "Process": "0"
-      },
-      "10101": {
-        "SubTask": [
-          {
-            "TaskID": 101011,
-            "IsFinished": false,
-            "Process": "0"
-          },
-          {
-            "TaskID": 101012,
-            "IsFinished": false,
-            "Process": "0"
-          },
-          {
-            "TaskID": 101013,
-            "IsFinished": false,
-            "Process": "0"
-          },
-          {
-            "TaskID": 101014,
-            "IsFinished": false,
-            "Process": "0"
-          },
-          {
-            "TaskID": 101015,
-            "IsFinished": false,
-            "Process": "0"
-          },
-          {
-            "TaskID": 101016,
-            "IsFinished": false,
-            "Process": "0"
-          },
-          {
-            "TaskID": 101017,
-            "IsFinished": false,
-            "Process": "0"
-          }
-        ],
-        "IsFinished": false,
-        "Process": "0/7"
-      },
       "20004": {
         "TaskID": 20004,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "20005": {
+        "TaskID": 20005,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "20007": {
+        "TaskID": 20007,
         "IsFinished": true,
         "Process": "0"
       },
       "50001": {
         "TaskID": 50001,
-        "IsFinished": true,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "50002": {
+        "TaskID": 50002,
+        "IsFinished": false,
         "Process": "0"
       },
       "50003": {
         "TaskID": 50003,
         "IsFinished": false,
         "Process": "0/3"
+      },
+      "50004": {
+        "TaskID": 50004,
+        "IsFinished": false,
+        "Process": "0/3"
+      },
+      "60001": {
+        "TaskID": 60001,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "60002": {
+        "TaskID": 60002,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "60004": {
+        "TaskID": 60004,
+        "IsFinished": false,
+        "Process": "0"
+      },
+      "60005": {
+        "TaskID": 60005,
+        "IsFinished": false,
+        "Process": "0"
       }
     },
     "Info": {
-      "UserType": 2,
+      "UserType": 4,
       "HasMaster": true
     }
   }

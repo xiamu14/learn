@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #add {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 100px;
+      left: 100px;
+      background: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="add"></div>
+  <script src="https://cdn.bootcss.com/stats.js/r17/Stats.js">
+  </script>
+  <script>
+    var stats = new Stats();
+    stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+    document.body.appendChild(stats.dom);
+    var lastFrameTime = 0;
+    var con = document.getElementById('add');
+    // 模拟 requestAnimationFrame
+    var doAnimationFrame = function (callback) {
+      var currTime = new Date().getTime();
+      var timeToCall = Math.max(0, 16 - (currTime - lastFrameTime));
+      var id = setTimeout(function () { callback(currTime + timeToCall); }, timeToCall);
+      lastFrameTime = currTime + timeToCall;
+      return id;
+    };
+    // 模拟 cancelAnimationFrame
+    var abortAnimationFrame = function (id) {
+      clearTimeout(id)
+    }
+    var tmp = 0;
+    var i = 0;
+    function add() {
+      abortAnimationFrame(tmp);
+
+      if (i < 100) {
+        stats.begin();
+        const j = Math.sqrt((i*i) - 1);
+        con.style.transform = `translate3D(${i}px, ${j}px, 0)`;
+        // monitored code goes here
+        i += 1;
+        stats.end();
+        tmp = doAnimationFrame(add);
+        // requestAnimationFrame(add);
+      }
+    }
+    // requestAnimationFrame(add);
+
+    doAnimationFrame(add);
+  </script>
+</body>
+
+</html>

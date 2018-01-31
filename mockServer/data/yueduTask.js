@@ -6,18 +6,48 @@ exports.springfestival = {
     "rank": 1,
     "money": 2,  // 获得奖励
     "disciple_info": [  // 徒弟信息(all)
-      // {
-      //   "Did": 3,
-      //   "Nickname": "小猪",
-      //   "Created_time": "2018-01-09 12:48:11",
-      //   "info": "无效徒弟"
-      // },
-      // {
-      //   "Did": 195,
-      //   "Nickname": "Hacketz",
-      //   "Created_time": "2018-01-09 17:41:00",
-      //   "info": "有效徒弟"
-      // }
+      {
+        "Did": 3,
+        "Nickname": "小猪",
+        "Created_time": "2018-01-09 12:48:11",
+        "info": "无效徒弟"
+      },
+      {
+        "Did": 195,
+        "Nickname": "Hacketz",
+        "Created_time": "2018-01-09 17:41:00",
+        "info": "有效徒弟"
+      },
+      {
+        "Did": 3,
+        "Nickname": "小猪",
+        "Created_time": "2018-01-09 12:48:11",
+        "info": "无效徒弟"
+      },
+      {
+        "Did": 195,
+        "Nickname": "Hacketz",
+        "Created_time": "2018-01-09 17:41:00",
+        "info": "有效徒弟"
+      },
+      {
+        "Did": 195,
+        "Nickname": "Hacketz",
+        "Created_time": "2018-01-09 17:41:00",
+        "info": "有效徒弟"
+      },
+      {
+        "Did": 3,
+        "Nickname": "小猪",
+        "Created_time": "2018-01-09 12:48:11",
+        "info": "无效徒弟"
+      },
+      {
+        "Did": 195,
+        "Nickname": "Hacketz",
+        "Created_time": "2018-01-09 17:41:00",
+        "info": "有效徒弟"
+      }
     ],
     "rank_data": [ // 任务列表
       {
