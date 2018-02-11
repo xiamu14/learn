@@ -4226,7 +4226,7 @@ exports.apprentice = {
       "info": "用户未登录"
     }
   ],
-  "data_length": 0,
+  "data_length": 12,
   "data_info": "更新了20条内容"
 }
 
@@ -4316,7 +4316,7 @@ exports.yueduTask2 = {
     "TaskResult": {
       "20004": {
         "TaskID": 20004,
-        "IsFinished": false,
+        "IsFinished": true,
         "Process": "0"
       },
       "20005": {
@@ -4331,23 +4331,28 @@ exports.yueduTask2 = {
       },
       "50001": {
         "TaskID": 50001,
-        "IsFinished": false,
+        "IsFinished": true,
         "Process": "0"
       },
       "50002": {
         "TaskID": 50002,
-        "IsFinished": false,
+        "IsFinished": true,
         "Process": "0"
       },
       "50003": {
         "TaskID": 50003,
-        "IsFinished": false,
-        "Process": "0/3"
+        "IsFinished": true,
+        "Process": "1/3"
       },
       "50004": {
         "TaskID": 50004,
-        "IsFinished": false,
-        "Process": "0/3"
+        "IsFinished": true,
+        "Process": "2/3"
+      },
+      "50005": {
+        "TaskID": 50005,
+        "IsFinished": true,
+        "Process": ""
       },
       "60001": {
         "TaskID": 60001,

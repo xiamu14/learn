@@ -3,7 +3,8 @@ exports.musicians = {
   "message": "操作成功",
   "data": {
     "obtain": 0,
-    "hasNew": 0,
+    "hasNew": 1,
+    "newNum": 4,
     "total": 67,
     "list": [
       {
@@ -29,8 +30,8 @@ exports.musicians = {
             "desc_title": "人物小传：",
             "region_title": "国家：",
             "region": "大俄罗斯",
-            "isunlock": 0,
-            "isnew": 0
+            "isunlock": 1,
+            "isnew": 1
           },
           {
             "id": 5,
@@ -40,8 +41,8 @@ exports.musicians = {
             "desc_title": "人物小传：",
             "region_title": "国家：",
             "region": "大俄罗斯",
-            "isunlock": 0,
-            "isnew": 0
+            "isunlock": 1,
+            "isnew": 1
           },
           {
             "id": 2,
@@ -51,8 +52,8 @@ exports.musicians = {
             "desc_title": "人物小传：",
             "region_title": "国家：",
             "region": "大俄罗斯",
-            "isunlock": 0,
-            "isnew": 0
+            "isunlock": 1,
+            "isnew": 1
           },
           {
             "id": 1,

@@ -3,7 +3,8 @@ exports.song = {
   "message": "操作成功",
   "data": {
     "obtain": 2,
-    "hasNew": 1,
+    "hasNew": 2,
+    "newNum": 2,
     "total": 153,
     "list": [
       {

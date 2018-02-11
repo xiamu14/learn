@@ -3,7 +3,8 @@ exports.countries = {
   "message": "操作成功",
   "data": {
     "obtain": 1,
-    "hasNew": 0,
+    "hasNew": 1,
+    "newNum": 1,
     "total": 16,
     "list": [
       {
