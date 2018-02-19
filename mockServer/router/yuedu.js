@@ -37,4 +37,8 @@ router.put('/redpacket', (req, res) => {
   res.json(yueduData.redpacketTask1);
 })
 
+router.get('/account/api/vcode', (req, res) => {
+  res.json(yueduData.vcode);
+})
+
 module.exports = router;

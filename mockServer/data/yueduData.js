@@ -4399,4 +4399,11 @@ exports.redpacketTask1 = {
   }
 }
 
+exports.vcode = {
+  "err": 0,
+  "data": {
+    "js_url": "https://captcha.guard.qcloud.com/template/TCapIframeApi.js?appid=1251003092&clientype=4&lang=2052&asig=5rP2t9ArWcykM5o4BSAbA4SGSWsfkM0V5b9a6FORtRJ0S4yp22aVuZmLNhh-VI2tO7-m9ay1jD9XKihpNLJDxzmGyBT7NyE2"
+  }
+}
+
 exports.share = Mock.mock(template)
