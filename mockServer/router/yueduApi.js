@@ -52,6 +52,13 @@ router.get('/yuedutask', (req, res) => {
   }
 })
 
+// 获取可编辑配置文件
+router.get('/config_mng', (req, res) => {
+  if (req.query.config_name === 'ads_data_android') {
+    res.json(yueduData.adsDataAndroid);
+  }
+});
+
 router.post('/statistic', statistic);
 
 module.exports = router;

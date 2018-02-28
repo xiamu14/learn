@@ -4407,3 +4407,84 @@ exports.vcode = {
 }
 
 exports.share = Mock.mock(template)
+
+exports.adsDataAndroid = {
+  "android_splash": {
+    "Ad_is_close": false,
+    "Ad_start_time": 1517211538,
+    "Ad_end_time": 1548747538,
+    "Ad_position": 0,
+    "Ad_frequency": 0,
+    "Ad_priority": {
+      "Ad_baidu": 50,
+      "Ad_tencent": 0,
+      "Ad_360": 0,
+      "Ad_own": 0
+    }
+  },
+  "android_feed_list_top1": {
+    "Ad_is_close": false,
+    "Ad_start_time": 1517211538,
+    "Ad_end_time": 1548747538,
+    "Ad_position": 1,
+    "Ad_frequency": 0,
+    "Ad_priority": {
+      "Ad_baidu": 50,
+      "Ad_tencent": 0,
+      "Ad_360": 0,
+      "Ad_own": 0
+    }
+  },
+  "android_feed_list_top2": {
+    "Ad_is_close": false,
+    "Ad_start_time": 1517211538,
+    "Ad_end_time": 1548747538,
+    "Ad_position": 0,
+    "Ad_frequency": 0,
+    "Ad_priority": {
+      "Ad_baidu": 0,
+      "Ad_tencent": 0,
+      "Ad_360": 0,
+      "Ad_own": 100
+    }
+  },
+  "android_feed_list_3": {
+    "Ad_is_close": false,
+    "Ad_start_time": 1517211538,
+    "Ad_end_time": 1548747538,
+    "Ad_position": 3,
+    "Ad_frequency": 0,
+    "Ad_priority": {
+      "Ad_baidu": 50,
+      "Ad_tencent": 0,
+      "Ad_360": 0,
+      "Ad_own": 0
+    }
+  },
+  "android_feed_list_7": {
+    "Ad_is_close": true,
+    "Ad_start_time": 1517211538,
+    "Ad_end_time": 1548747538,
+    "Ad_position": 7,
+    "Ad_frequency": 0,
+    "Ad_priority": {
+      "Ad_baidu": 50,
+      "Ad_tencent": 0,
+      "Ad_360": 0,
+      "Ad_own": 0
+    }
+  },
+  "android_feed_list_big_end": {
+    "Ad_is_close": false,
+    "Ad_start_time": 1517211538,
+    "Ad_end_time": 1548747538,
+    "Ad_position": 8,
+    "Ad_frequency": 0,
+    "Ad_priority": {
+      "Ad_baidu": 50,
+      "Ad_tencent": 0,
+      "Ad_360": 0,
+      "Ad_own": 0
+    }
+  }
+}
