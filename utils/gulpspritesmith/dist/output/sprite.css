@@ -1,0 +1,90 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-bg-name {
+  background-image: url(sprite.png);
+  background-position: 0px 0px;
+  width: 173px;
+  height: 42px;
+}
+.icon-decorate01 {
+  background-image: url(sprite.png);
+  background-position: -105px -52px;
+  width: 32px;
+  height: 40px;
+}
+.icon-decorate02 {
+  background-image: url(sprite.png);
+  background-position: -54px -52px;
+  width: 41px;
+  height: 41px;
+}
+.icon-decorate03 {
+  background-image: url(sprite.png);
+  background-position: -183px -32px;
+  width: 17px;
+  height: 17px;
+}
+.icon-decorate04 {
+  background-image: url(sprite.png);
+  background-position: 0px -52px;
+  width: 44px;
+  height: 44px;
+}
+.icon-decorate05 {
+  background-image: url(sprite.png);
+  background-position: -90px -106px;
+  width: 30px;
+  height: 30px;
+}
+.icon-decorate06 {
+  background-image: url(sprite.png);
+  background-position: -147px -52px;
+  width: 26px;
+  height: 26px;
+}
+.icon-decorate07 {
+  background-image: url(sprite.png);
+  background-position: -183px 0px;
+  width: 22px;
+  height: 22px;
+}
+.icon-decorate08 {
+  background-image: url(sprite.png);
+  background-position: -130px -106px;
+  width: 28px;
+  height: 28px;
+}
+.icon-decorate09 {
+  background-image: url(sprite.png);
+  background-position: -183px -59px;
+  width: 16px;
+  height: 16px;
+}
+.icon-err {
+  background-image: url(sprite.png);
+  background-position: 0px -106px;
+  width: 35px;
+  height: 36px;
+}
+.icon-right {
+  background-image: url(sprite.png);
+  background-position: -45px -106px;
+  width: 35px;
+  height: 35px;
+}
