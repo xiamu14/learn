@@ -1,0 +1,16 @@
+{
+  "name": "fontspider",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "font-spider index.html"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-font-spider": "^0.3.6"
+  },
+  "dependencies": {
+    "font-spider": "^1.3.4"
+  }
+}

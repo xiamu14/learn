@@ -16,75 +16,99 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 // HTML
 <i class="icon icon-home"></i>
 */
-.icon-bg-name {
+.icon-bg-name@2x {
   background-image: url(sprite.png);
-  background-position: 0px 0px;
+  background-position: -200px 0px;
   width: 173px;
   height: 42px;
 }
-.icon-decorate01 {
+.icon-bg_pk_baoji@2x {
   background-image: url(sprite.png);
-  background-position: -105px -52px;
+  background-position: 0px -100px;
+  width: 90px;
+  height: 90px;
+}
+.icon-bg_pk_fq@2x {
+  background-image: url(sprite.png);
+  background-position: 0px 0px;
+  width: 90px;
+  height: 90px;
+}
+.icon-bg_pk_news@2x {
+  background-image: url(sprite.png);
+  background-position: -200px -52px;
+  width: 74px;
+  height: 74px;
+}
+.icon-bg_pk_vs@2x {
+  background-image: url(sprite.png);
+  background-position: -100px 0px;
+  width: 90px;
+  height: 90px;
+}
+.icon-decorate01@2x {
+  background-image: url(sprite.png);
+  background-position: -338px -52px;
   width: 32px;
   height: 40px;
 }
-.icon-decorate02 {
+.icon-decorate02@2x {
   background-image: url(sprite.png);
-  background-position: -54px -52px;
+  background-position: -200px -136px;
   width: 41px;
   height: 41px;
 }
-.icon-decorate03 {
+.icon-decorate03@2x {
   background-image: url(sprite.png);
-  background-position: -183px -32px;
+  background-position: -284px -106px;
   width: 17px;
   height: 17px;
 }
-.icon-decorate04 {
+.icon-decorate04@2x {
   background-image: url(sprite.png);
-  background-position: 0px -52px;
+  background-position: -284px -52px;
   width: 44px;
   height: 44px;
 }
-.icon-decorate05 {
+.icon-decorate05@2x {
   background-image: url(sprite.png);
-  background-position: -90px -106px;
+  background-position: -341px -136px;
   width: 30px;
   height: 30px;
 }
-.icon-decorate06 {
+.icon-decorate06@2x {
   background-image: url(sprite.png);
-  background-position: -147px -52px;
+  background-position: -138px -100px;
   width: 26px;
   height: 26px;
 }
-.icon-decorate07 {
+.icon-decorate07@2x {
   background-image: url(sprite.png);
-  background-position: -183px 0px;
+  background-position: -100px -138px;
   width: 22px;
   height: 22px;
 }
-.icon-decorate08 {
+.icon-decorate08@2x {
   background-image: url(sprite.png);
-  background-position: -130px -106px;
-  width: 28px;
-  height: 28px;
-}
-.icon-decorate09 {
-  background-image: url(sprite.png);
-  background-position: -183px -59px;
+  background-position: -311px -106px;
   width: 16px;
   height: 16px;
 }
-.icon-err {
+.icon-decorate09@2x {
   background-image: url(sprite.png);
-  background-position: 0px -106px;
+  background-position: -100px -100px;
+  width: 28px;
+  height: 28px;
+}
+.icon-err@2x {
+  background-image: url(sprite.png);
+  background-position: -251px -136px;
   width: 35px;
   height: 36px;
 }
-.icon-right {
+.icon-right@2x {
   background-image: url(sprite.png);
-  background-position: -45px -106px;
+  background-position: -296px -136px;
   width: 35px;
   height: 35px;
 }

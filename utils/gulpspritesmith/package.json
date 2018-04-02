@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "gulp"
+    "dev": "gulp"
   },
   "dependencies": {
     "gulp": "^3.9.1",
