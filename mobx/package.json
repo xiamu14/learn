@@ -1,0 +1,9 @@
+{
+  "name": "mobx-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "mobx": "^4.2.1"
+  }
+}
