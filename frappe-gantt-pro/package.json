@@ -1,0 +1,17 @@
+{
+  "name": "frappe-gantt-pro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.9.2"
+  },
+  "dependencies": {
+    "frappe-gantt": "^0.1.1",
+    "moment": "^2.22.2",
+    "snap": "^0.2.2"
+  }
+}
