@@ -1,4 +1,5 @@
 import Gantt from "frappe-gantt";
+
 const tasks = [
   {
     id: '1',
