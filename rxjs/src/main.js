@@ -1,5 +1,6 @@
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/map';
+import { interval } from 'rxjs';
 
-Observable.of(1, 2, 3).map(x => x + '!!!').subscribe(i => console.log(i)); // etc
+// 每1秒发出数字序列中的值
+const source = interval(1000);
+// 数字: 0,1,2,3,4,5....
+const subscribe = source.subscribe(val => console.log(val));
