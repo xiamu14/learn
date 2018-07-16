@@ -5967,11 +5967,9 @@ Object.defineProperty(exports, 'config', {
 
 var _rxjs = require('rxjs');
 
-// 每1秒发出数字序列中的值
-var source = (0, _rxjs.interval)(1000);
-// 数字: 0,1,2,3,4,5....
-var subscribe = source.subscribe(function (val) {
-  return console.log(val);
+var of$ = (0, _rxjs.of)(1, 2, 3);
+of$.subscribe(function (v) {
+  console.log(v);
 });
 },{"rxjs":"node_modules/rxjs/_esm5/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -6002,7 +6000,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60054' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60811' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
