@@ -9,7 +9,7 @@ const formidable = require('koa-formidable'); // 图片处理
 const fs = require('fs'); // 图片路径
 const path = require('path'); // 图片路径
 
-console.log(path.join(__dirname, './static'));
+// console.log(path.join(__dirname, './static'));
 app.use(serve(path.join(__dirname, './static')));  // 设置静态文件
 
 // 新建文件
