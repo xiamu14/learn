@@ -1,0 +1,20 @@
+{
+  "name": "vue-dropzone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.1.0",
+    "less": "^3.7.1",
+    "parcel-bundler": "^1.9.7",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "dependencies": {
+    "vue": "^2.5.16",
+    "vue-hot-reload-api": "^2.3.0",
+    "vue2-dropzone": "^3.2.2"
+  }
+}
