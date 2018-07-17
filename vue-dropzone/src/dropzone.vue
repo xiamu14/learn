@@ -13,7 +13,8 @@ export default {
           thumbnailWidth: 150,
           maxFilesize: 0.5,
           dictDefaultMessage: '上传手持身份证',
-          uploadMultiple: true
+          uploadMultiple: true,
+          autoProcessQueue: false
       }
     }
   }
