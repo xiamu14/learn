@@ -5967,10 +5967,29 @@ Object.defineProperty(exports, 'config', {
 
 var _rxjs = require('rxjs');
 
-var of$ = (0, _rxjs.of)(1, 2, 3);
-of$.subscribe(function (v) {
-  console.log(v);
-});
+var onSubscribe = function onSubscribe(observer) {
+  observer.next(1);
+  observer.next(2);
+  observer.error('something is wrong');
+  observer.next(3);
+  observer.complete('err');
+};
+
+var source$ = new _rxjs.Observable(onSubscribe);
+
+var theObserver = {
+  next: function next(item) {
+    return console.log(item);
+  },
+  err: function err(_err) {
+    return console.log(_err);
+  },
+  complete: function complete(item) {
+    return console.log(item);
+  }
+};
+
+source$.subscribe(theObserver);
 },{"rxjs":"node_modules/rxjs/_esm5/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -6000,7 +6019,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60811' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61260' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

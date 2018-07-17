@@ -1,6 +1,19 @@
-import { of } from 'rxjs';
+import { Observable } from 'rxjs';
 
-const of$ = of(1, 2, 3);
-of$.subscribe((v) => {
-  console.log(v);
-})
+const onSubscribe = observer => {
+  observer.next(1)
+  observer.next(2)
+  observer.error('something is wrong')
+  observer.next(3)
+  observer.complete('err')
+}
+
+const source$ = new Observable(onSubscribe)
+
+const theObserver = {
+  next: item => console.log(item),
+  err: err => console.log(err),
+  complete: item => console.log(item),
+}
+
+source$.subscribe(theObserver)

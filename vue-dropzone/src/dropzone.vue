@@ -12,7 +12,8 @@ export default {
           url: 'http://192.168.1.117:9000/upload/image',
           thumbnailWidth: 150,
           maxFilesize: 0.5,
-          dictDefaultMessage: '上传手持身份证'
+          dictDefaultMessage: '上传手持身份证',
+          uploadMultiple: true
       }
     }
   }
