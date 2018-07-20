@@ -47,6 +47,8 @@ router.post('/upload/image', async function (ctx, next) {
       form((opt, { fields, files }) => {
         let url = fields.url;
         let articleId = fields.articleId;
+        console.log(fields);
+        // 处理多张图片
         let filename = files.file.name;
         console.log(files.file.path);
         let uploadDir = 'static/public/upload/';
