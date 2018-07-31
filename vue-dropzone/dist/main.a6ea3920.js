@@ -7742,17 +7742,24 @@ exports.default = {
   methods: {
     submit: function submit() {
       var id_card_1 = this.$refs.dropzone_1.getAcceptedFiles()[0].dataURL;
+      console.log(id_card_1);
       // 合并表单内容
-      // const form = new FormData(this.$refs.form);
-      var data = {
+      var form = new FormData(this.$refs.form);
+      var cache = {
         name: 'test1',
         phone: '12131234',
         id_number: '8787781234124',
+        auth_code: '1234',
         file: id_card_1,
-        fikleL: id_card_1.length
-        // form.append('id_card_2', this.$refs.dropzone_2.getAcceptedFiles()[0]);
-      };this.sendData(data);
-      console.log(data);
+        fileL: id_card_1.length,
+        fileHand: id_card_1,
+        fileHandL: id_card_1.length
+      };
+      Object.keys(cache).forEach(function (key) {
+        form.append(key, cache[key]);
+      });
+      // form.append('id_card_2', this.$refs.dropzone_2.getAcceptedFiles()[0]);
+      this.sendData(form);
     },
     sendData: function sendData(data) {
       var XHR = new XMLHttpRequest();
@@ -7770,8 +7777,8 @@ exports.default = {
       XHR.open('POST', 'http://app-beta.zifeiyucoco.com/user/authentication');
 
       // 添加表单数据POST请求所需的HTTP请求头
-      // XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
+      // XHR.setRequestHeader('Content-Type', 'multipart/form-data');
+      XHR.setRequestHeader('accessToken', '53048415086f6f0449c6507086f3f48b');
       // 最后，发送数据
       XHR.send(data);
     }
@@ -7791,10 +7798,8 @@ exports.default = {
   var _c = _vm._self._c || _h
   return _c(
     "form",
-    { ref: "form" },
+    { ref: "form", attrs: { enctype: "multipart/form-data" } },
     [
-      _c("input", { attrs: { type: "text", name: "name" } }),
-      _vm._v(" "),
       _c("vue-dropzone", {
         ref: "dropzone_1",
         attrs: { id: "dropzone_1", options: _vm.dropzoneOptions_1 }
@@ -7895,7 +7900,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57774' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61361' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

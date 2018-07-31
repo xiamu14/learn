@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "events": "^3.0.0",
+    "lockmachine": "^1.0.2",
     "rxjs": "^6.2.2",
     "rxjs-compat": "^6.2.2"
   }

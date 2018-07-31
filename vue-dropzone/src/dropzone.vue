@@ -31,18 +31,24 @@ export default {
   methods: {
     submit() {
       const id_card_1 = this.$refs.dropzone_1.getAcceptedFiles()[0].dataURL;
+      console.log(id_card_1);
       // 合并表单内容
-      // const form = new FormData(this.$refs.form);
-      const data = {
+      const form = new FormData(this.$refs.form);
+      const cache = {
         name: 'test1',
         phone: '12131234',
         id_number: '8787781234124',
+        auth_code: '1234',
         file: id_card_1,
-        fikleL: id_card_1.length,
+        fileL: id_card_1.length,
+        fileHand: id_card_1,
+        fileHandL: id_card_1.length,
       }
+      Object.keys(cache).forEach((key) => {
+        form.append(key, cache[key]);
+      });
       // form.append('id_card_2', this.$refs.dropzone_2.getAcceptedFiles()[0]);
-      this.sendData(data);
-      console.log(data);
+      this.sendData(form);
     },
     sendData(data) {
       const XHR = new XMLHttpRequest();
@@ -60,8 +66,8 @@ export default {
       XHR.open('POST', 'http://app-beta.zifeiyucoco.com/user/authentication');
 
       // 添加表单数据POST请求所需的HTTP请求头
-      // XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
+      // XHR.setRequestHeader('Content-Type', 'multipart/form-data');
+      XHR.setRequestHeader('accessToken', '53048415086f6f0449c6507086f3f48b');
       // 最后，发送数据
       XHR.send(data);
     }
@@ -70,8 +76,7 @@ export default {
 </script>
 
 <template>
-  <form ref='form'>
-    <input type="text" name="name">
+  <form ref='form' enctype="multipart/form-data">
     <vue-dropzone ref="dropzone_1" id="dropzone_1" :options="dropzoneOptions_1"></vue-dropzone>
     <vue-dropzone ref="dropzone_2" id="dropzone_2" :options="dropzoneOptions_2"></vue-dropzone>
     <div class="btn btn_submit" @click="submit">提交</div>
