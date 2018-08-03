@@ -12,8 +12,9 @@
   },
   "dependencies": {
     "babel-preset-latest": "^6.24.1",
+    "bowser": "^2.0.0-alpha.4",
     "chimee": "^0.8.3",
-    "chimee-mobile-player": "^0.0.3",
+    "chimee-mobile-player": "^0.2.7",
     "chimee-player": "^1.2.2",
     "chimee-plugin-popup": "^0.0.7"
   }

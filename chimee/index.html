@@ -6,6 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
     container {
   position: relative;
   display: block;
@@ -22,10 +26,30 @@ video:focus,
 video:active {
   outline: none;
 }
+header {
+  width: 100%;
+  height: 40px;
+  background: steelblue;
+  color: #ffffff;
+  text-align: center;
+  line-height: 40px;
+  z-index: 100;
+}
+.video {
+  margin-bottom: 20px;
+}
   </style>
 </head>
 <body>
-  <div id="wrapper"></div>
+  <header>测试一下吧</header>
+  <div id="wrapper">
+    <div class="video"></div>
+    <div class="video"></div>
+    <div class="video"></div>
+    <div class="video"></div>
+    <div class="video"></div>
+    <div class="video"></div>
+  </div>
   <script src="./src/index.js"></script>
 </body>
 </html>

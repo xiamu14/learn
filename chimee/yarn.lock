@@ -685,6 +685,10 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+bowser@^2.0.0-alpha.4:
+  version "2.0.0-alpha.4"
+  resolved "https://registry.npmjs.org/bowser/-/bowser-2.0.0-alpha.4.tgz#4897ef9714030e083481c5bfaf8b59aa0a467827"
+
 brace-expansion@^1.1.7:
   version "1.1.8"
   resolved "http://registry.npm.taobao.org/brace-expansion/download/brace-expansion-1.1.8.tgz#c07b211c7c952ec1f8efd51a77ef0d1d3990a292"
@@ -861,7 +865,7 @@ chalk@^2.1.0, chalk@^2.3.0:
     escape-string-regexp "^1.0.5"
     supports-color "^4.0.0"
 
-chimee-helper-dom@^0.1.3, chimee-helper-dom@^0.1.7:
+chimee-helper-dom@^0.1.3, chimee-helper-dom@^0.1.7, chimee-helper-dom@^0.1.8:
   version "0.1.8"
   resolved "http://registry.npm.taobao.org/chimee-helper-dom/download/chimee-helper-dom-0.1.8.tgz#8d3fac173ea1cd3da2b51575772e6b082a22831f"
   dependencies:
@@ -884,6 +888,13 @@ chimee-helper-log@^0.1.1, chimee-helper-log@^0.1.2:
     babel-runtime "^6.23.0"
     toxic-predicate-functions "^0.1.2"
 
+chimee-helper-log@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.npmjs.org/chimee-helper-log/-/chimee-helper-log-0.1.3.tgz#247c96d2694389686139745a90a1619f6e043550"
+  dependencies:
+    babel-runtime "^6.23.0"
+    toxic-predicate-functions "^0.1.2"
+
 chimee-helper-utils@^0.1.3:
   version "0.1.3"
   resolved "http://registry.npm.taobao.org/chimee-helper-utils/download/chimee-helper-utils-0.1.3.tgz#36e752285fd34a5bef3b7b18efedddcaacc9c77b"
@@ -891,7 +902,7 @@ chimee-helper-utils@^0.1.3:
     babel-runtime "^6.23.0"
     toxic-predicate-functions "^0.1.2"
 
-chimee-helper-utils@^0.2.0:
+chimee-helper-utils@^0.2.0, chimee-helper-utils@^0.2.1:
   version "0.2.1"
   resolved "http://registry.npm.taobao.org/chimee-helper-utils/download/chimee-helper-utils-0.2.1.tgz#aa8ae731da565e78c49d47a6a3a02cc8bec3e145"
   dependencies:
@@ -923,6 +934,19 @@ chimee-helper@^0.2.10, chimee-helper@^0.2.2, chimee-helper@^0.2.6, chimee-helper
     toxic-utils "^0.2.0"
     ua-parser-js "^0.7.17"
 
+chimee-helper@^0.2.11:
+  version "0.2.11"
+  resolved "https://registry.npmjs.org/chimee-helper/-/chimee-helper-0.2.11.tgz#3d2f0b1c6139639d44b1813b1b73a2a04da83923"
+  dependencies:
+    babel-runtime "^6.26.0"
+    chimee-helper-dom "^0.1.8"
+    chimee-helper-events "^0.1.0"
+    chimee-helper-log "^0.1.3"
+    chimee-helper-utils "^0.2.1"
+    toxic-predicate-functions "^0.1.5"
+    toxic-utils "^0.2.0"
+    ua-parser-js "^0.7.17"
+
 chimee-kernel-flv@^1.4.10:
   version "1.4.10"
   resolved "http://registry.npm.taobao.org/chimee-kernel-flv/download/chimee-kernel-flv-1.4.10.tgz#bb77a73d90350a036ec163830a99ebaf5dc3b8ec"
@@ -938,13 +962,6 @@ chimee-kernel-hls@^1.2.0:
     hls.js "^0.8.2"
     toxic-decorators "^0.3.8"
 
-chimee-kernel@^1.1.1:
-  version "1.3.2"
-  resolved "http://registry.npm.taobao.org/chimee-kernel/download/chimee-kernel-1.3.2.tgz#9c0cbec3093b1499aef789105d4076f04aad050d"
-  dependencies:
-    babel-runtime "^6.26.0"
-    chimee-helper "^0.2.10"
-
 chimee-kernel@^1.4.0:
   version "1.4.0"
   resolved "http://registry.npm.taobao.org/chimee-kernel/download/chimee-kernel-1.4.0.tgz#0762a56693f74b344bfd86b703eb918e630e22c3"
@@ -952,16 +969,16 @@ chimee-kernel@^1.4.0:
     babel-runtime "^6.26.0"
     chimee-helper "^0.2.10"
 
-chimee-mobile-player@^0.0.3:
-  version "0.0.3"
-  resolved "http://registry.npm.taobao.org/chimee-mobile-player/download/chimee-mobile-player-0.0.3.tgz#149e0451c7429b98866983bbd8c6e6bafafc8ab7"
+chimee-mobile-player@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.npmjs.org/chimee-mobile-player/-/chimee-mobile-player-0.2.7.tgz#4d74806cce3620555235b32148232a3188168fef"
   dependencies:
-    babel-runtime "^6.26.0"
-    chimee "^0.6.2"
+    chimee "git+https://github.com/Chimeejs/chimee.git"
     chimee-helper "^0.2.8"
-    chimee-plugin-gesture "0.0.8"
-    chimee-plugin-mobile-controlbar "0.0.8"
-    chimee-plugin-mobile-state "0.0.9"
+    chimee-plugin-gesture "0.0.12"
+    chimee-plugin-mobile-controlbar "git+https://github.com/Chimeejs/chimee-plugin-mobile-controlbar.git"
+    chimee-plugin-mobile-state "git+https://github.com/Chimeejs/chimee-plugin-mobile-state.git"
+    es-fullscreen "^0.3.0"
 
 chimee-player@^1.2.2:
   version "1.2.2"
@@ -1010,12 +1027,6 @@ chimee-plugin-gesture@0.0.12:
   dependencies:
     chimee-helper "^0.2.6"
 
-chimee-plugin-gesture@0.0.8:
-  version "0.0.8"
-  resolved "http://registry.npm.taobao.org/chimee-plugin-gesture/download/chimee-plugin-gesture-0.0.8.tgz#02de83814f77ccb96db07edc847990b7fd304f0d"
-  dependencies:
-    chimee-helper "^0.2.6"
-
 chimee-plugin-log@0.0.4:
   version "0.0.4"
   resolved "http://registry.npm.taobao.org/chimee-plugin-log/download/chimee-plugin-log-0.0.4.tgz#4d889a017041b30df1700bfa80c6a389d93c2385"
@@ -1024,22 +1035,22 @@ chimee-plugin-log@0.0.4:
     chimee-helper "^0.2.6"
     chimee-plugin-popup "0.0.5"
 
-chimee-plugin-mobile-controlbar@0.0.8:
-  version "0.0.8"
-  resolved "http://registry.npm.taobao.org/chimee-plugin-mobile-controlbar/download/chimee-plugin-mobile-controlbar-0.0.8.tgz#8d6f8ab6e29f33b59a5204878d5425349e3000c7"
+"chimee-plugin-mobile-controlbar@git+https://github.com/Chimeejs/chimee-plugin-mobile-controlbar.git":
+  version "0.1.3"
+  resolved "git+https://github.com/Chimeejs/chimee-plugin-mobile-controlbar.git#206e35377df187d044d862a5397ef5c56f076a2b"
   dependencies:
     chimee-helper "^0.2.8"
     chimee-plugin-gesture "0.0.12"
+    chimee-plugin-mobile-state "git+https://github.com/Chimeejs/chimee-plugin-mobile-state.git"
     toxic-decorators "^0.3.8"
 
-chimee-plugin-mobile-state@0.0.9:
-  version "0.0.9"
-  resolved "http://registry.npm.taobao.org/chimee-plugin-mobile-state/download/chimee-plugin-mobile-state-0.0.9.tgz#657a038c013af2e4344b10284a556c0b83a96ae1"
+"chimee-plugin-mobile-state@git+https://github.com/Chimeejs/chimee-plugin-mobile-state.git":
+  version "0.0.20"
+  resolved "git+https://github.com/Chimeejs/chimee-plugin-mobile-state.git#4f9a3316a635032b8642e0444a2699f70889700a"
   dependencies:
     babel-runtime "^6.23.0"
     chimee-helper "^0.2.8"
     chimee-plugin-gesture "0.0.12"
-    rollup-plugin-string "^2.0.2"
     toxic-decorators "^0.3.3"
 
 chimee-plugin-popup@0.0.2:
@@ -1063,16 +1074,6 @@ chimee-plugin-popup@0.0.7, chimee-plugin-popup@^0.0.7:
     babel-runtime "^6.26.0"
     chimee-helper "^0.2.8"
 
-chimee@^0.6.2:
-  version "0.6.4"
-  resolved "http://registry.npm.taobao.org/chimee/download/chimee-0.6.4.tgz#a8dee22978019854d5a5249175a0c8ebe7d5e734"
-  dependencies:
-    babel-runtime "^6.26.0"
-    chimee-helper "^0.2.8"
-    chimee-kernel "^1.1.1"
-    es-fullscreen "^0.2.1"
-    toxic-decorators "^0.3.8"
-
 chimee@^0.8.3:
   version "0.8.3"
   resolved "http://registry.npm.taobao.org/chimee/download/chimee-0.8.3.tgz#e3a4596cb92019f6285cfdffb24d73dbe5516783"
@@ -1090,6 +1091,15 @@ chimee@^0.9.2:
     chimee-helper "^0.2.10"
     chimee-kernel "^1.4.0"
     es-fullscreen "^0.2.5"
+    toxic-decorators "^0.3.8"
+
+"chimee@git+https://github.com/Chimeejs/chimee.git":
+  version "0.10.5"
+  resolved "git+https://github.com/Chimeejs/chimee.git#c18f8f72ecba820d3575df54d3794307de979cdb"
+  dependencies:
+    babel-runtime "^6.26.0"
+    chimee-helper "^0.2.11"
+    es-fullscreen "^0.3.0"
     toxic-decorators "^0.3.8"
 
 chokidar@^1.7.0:
@@ -1515,7 +1525,7 @@ errno@^0.1.4:
   dependencies:
     prr "~1.0.1"
 
-es-fullscreen@^0.2.1, es-fullscreen@^0.2.4:
+es-fullscreen@^0.2.4:
   version "0.2.4"
   resolved "http://registry.npm.taobao.org/es-fullscreen/download/es-fullscreen-0.2.4.tgz#13596b7fd3eee22d394667ed632270f6d18acc72"
   dependencies:
@@ -1526,6 +1536,14 @@ es-fullscreen@^0.2.1, es-fullscreen@^0.2.4:
 es-fullscreen@^0.2.5:
   version "0.2.6"
   resolved "http://registry.npm.taobao.org/es-fullscreen/download/es-fullscreen-0.2.6.tgz#cf0f8a9b8ce0cb499f32670c20e9e4b1e342253b"
+  dependencies:
+    babel-runtime "^6.26.0"
+    toxic-decorators "^0.3.8"
+    toxic-predicate-functions "^0.1.4"
+
+es-fullscreen@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/es-fullscreen/-/es-fullscreen-0.3.0.tgz#acdeb5b99d888703bb848d7faa7b60e6ff3def0d"
   dependencies:
     babel-runtime "^6.26.0"
     toxic-decorators "^0.3.8"
@@ -1546,10 +1564,6 @@ esprima@^2.6.0:
 esprima@^4.0.0:
   version "4.0.0"
   resolved "http://registry.npm.taobao.org/esprima/download/esprima-4.0.0.tgz#4499eddcd1110e0b218bacf2fa7f7f59f55ca804"
-
-estree-walker@^0.2.1:
-  version "0.2.1"
-  resolved "http://registry.npm.taobao.org/estree-walker/download/estree-walker-0.2.1.tgz#bdafe8095383d8414d5dc2ecf4c9173b6db9412e"
 
 estree-walker@^0.3.0:
   version "0.3.1"
@@ -3224,19 +3238,6 @@ rollup-plugin-replace@^2.0.0:
     magic-string "^0.22.4"
     minimatch "^3.0.2"
     rollup-pluginutils "^2.0.1"
-
-rollup-plugin-string@^2.0.2:
-  version "2.0.2"
-  resolved "http://registry.npm.taobao.org/rollup-plugin-string/download/rollup-plugin-string-2.0.2.tgz#f5323a22cfd738b450cbea62ab6593705eac744b"
-  dependencies:
-    rollup-pluginutils "^1.5.0"
-
-rollup-pluginutils@^1.5.0:
-  version "1.5.2"
-  resolved "http://registry.npm.taobao.org/rollup-pluginutils/download/rollup-pluginutils-1.5.2.tgz#1e156e778f94b7255bfa1b3d0178be8f5c552408"
-  dependencies:
-    estree-walker "^0.2.1"
-    minimatch "^3.0.2"
 
 rollup-pluginutils@^2.0.1:
   version "2.0.1"
