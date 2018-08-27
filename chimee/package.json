@@ -8,7 +8,9 @@
     "dev": "parcel index.html"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.4.1"
+    "@vue/component-compiler-utils": "^2.2.0",
+    "babel-preset-env": "^1.7.0",
+    "parcel-bundler": "^1.9.7"
   },
   "engines": {
     "ecmascript": "2017"
@@ -20,6 +22,9 @@
     "chimee-mobile-player": "^0.2.7",
     "chimee-player": "^1.2.2",
     "chimee-plugin-danmu": "^0.1.0",
-    "chimee-plugin-popup": "^0.0.7"
+    "chimee-plugin-popup": "^0.0.7",
+    "parcel-plugin-vue": "^1.5.0",
+    "vue": "^2.5.17",
+    "vue-template-compiler": "^2.5.17"
   }
 }
