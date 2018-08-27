@@ -1021,6 +1021,14 @@ chimee-plugin-controlbar@^0.4.0:
     stylelint-config-standard "^17.0.0"
     toxic-decorators "^0.3.8"
 
+chimee-plugin-danmu@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/chimee-plugin-danmu/-/chimee-plugin-danmu-0.1.0.tgz#5ecc55c99971b16eb48340eaa69acade720cb5c2"
+  dependencies:
+    babel-runtime "^6.26.0"
+    chimee-helper "^0.2.6"
+    toxic-decorators "^0.3.8"
+
 chimee-plugin-gesture@0.0.12:
   version "0.0.12"
   resolved "http://registry.npm.taobao.org/chimee-plugin-gesture/download/chimee-plugin-gesture-0.0.12.tgz#fc005a045d50f069c00cbd68ef3142f0a2015b24"
@@ -1074,13 +1082,13 @@ chimee-plugin-popup@0.0.7, chimee-plugin-popup@^0.0.7:
     babel-runtime "^6.26.0"
     chimee-helper "^0.2.8"
 
-chimee@^0.8.3:
-  version "0.8.3"
-  resolved "http://registry.npm.taobao.org/chimee/download/chimee-0.8.3.tgz#e3a4596cb92019f6285cfdffb24d73dbe5516783"
+chimee@^0.10.5:
+  version "0.10.5"
+  resolved "https://registry.npmjs.org/chimee/-/chimee-0.10.5.tgz#f14d0ecf94e3de71b4c332dba5add8b84185b7a3"
   dependencies:
     babel-runtime "^6.26.0"
-    chimee-helper "^0.2.10"
-    es-fullscreen "^0.2.4"
+    chimee-helper "^0.2.11"
+    es-fullscreen "^0.3.0"
     toxic-decorators "^0.3.8"
 
 chimee@^0.9.2:
@@ -1524,14 +1532,6 @@ errno@^0.1.4:
   resolved "http://registry.npm.taobao.org/errno/download/errno-0.1.6.tgz#c386ce8a6283f14fc09563b71560908c9bf53026"
   dependencies:
     prr "~1.0.1"
-
-es-fullscreen@^0.2.4:
-  version "0.2.4"
-  resolved "http://registry.npm.taobao.org/es-fullscreen/download/es-fullscreen-0.2.4.tgz#13596b7fd3eee22d394667ed632270f6d18acc72"
-  dependencies:
-    babel-runtime "^6.26.0"
-    toxic-decorators "^0.3.8"
-    toxic-predicate-functions "^0.1.4"
 
 es-fullscreen@^0.2.5:
   version "0.2.6"

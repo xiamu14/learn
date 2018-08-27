@@ -10,12 +10,16 @@
   "devDependencies": {
     "parcel-bundler": "^1.4.1"
   },
+  "engines": {
+    "ecmascript": "2017"
+  },
   "dependencies": {
     "babel-preset-latest": "^6.24.1",
     "bowser": "^2.0.0-alpha.4",
-    "chimee": "^0.8.3",
+    "chimee": "^0.10.5",
     "chimee-mobile-player": "^0.2.7",
     "chimee-player": "^1.2.2",
+    "chimee-plugin-danmu": "^0.1.0",
     "chimee-plugin-popup": "^0.0.7"
   }
 }
