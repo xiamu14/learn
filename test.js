@@ -1,10 +1,10 @@
-function double(arr) {
-  const results = arr.map(item => {
-    return item * 2
-  })
-  return results
+@testable
+class MyTestableClass {
+  // ...
 }
 
-const tmp = double([1,2,3])
+function testable(target) {
+  target.isTestable = true;
+}
 
-console.log(tmp)
+MyTestableClass.isTestable // true
