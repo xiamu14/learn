@@ -24,28 +24,28 @@ export default class UserRoutes implements IRoute {
                         auth: false,
                     },
                 },
-                {
-                    method: 'PUT',
-                    path: '/api/users/{id}',
-                    options: {
-                        handler: controller.updateById,
-                        validate: validate.updateById,
-                        description: 'Method that updates a user by its id.',
-                        tags: ['api', 'users'],
-                        auth: false,
-                    },
-                },
-                {
-                    method: 'GET',
-                    path: '/api/users/{id}',
-                    options: {
-                        handler: controller.getById,
-                        validate: validate.getById,
-                        description: 'Method that get a user by its id.',
-                        tags: ['api', 'users'],
-                        auth: false,
-                    },
-                },
+                // {
+                //     method: 'PUT',
+                //     path: '/api/users/{id}',
+                //     options: {
+                //         handler: controller.updateById,
+                //         validate: validate.updateById,
+                //         description: 'Method that updates a user by its id.',
+                //         tags: ['api', 'users'],
+                //         auth: false,
+                //     },
+                // },
+                // {
+                //     method: 'GET',
+                //     path: '/api/users/{id}',
+                //     options: {
+                //         handler: controller.getById,
+                //         validate: validate.getById,
+                //         description: 'Method that get a user by its id.',
+                //         tags: ['api', 'users'],
+                //         auth: false,
+                //     },
+                // },
                 {
                     method: 'GET',
                     path: '/api/users',
@@ -56,17 +56,17 @@ export default class UserRoutes implements IRoute {
                         auth: false,
                     },
                 },
-                {
-                    method: 'DELETE',
-                    path: '/api/users/{id}',
-                    options: {
-                        handler: controller.deleteById,
-                        validate: validate.deleteById,
-                        description: 'Method that deletes a user by its id.',
-                        tags: ['api', 'users'],
-                        auth: false,
-                    },
-                },
+                // {
+                //     method: 'DELETE',
+                //     path: '/api/users/{id}',
+                //     options: {
+                //         handler: controller.deleteById,
+                //         validate: validate.deleteById,
+                //         description: 'Method that deletes a user by its id.',
+                //         tags: ['api', 'users'],
+                //         auth: false,
+                //     },
+                // },
             ]);
 
             Logger.info('UserRoutes - Finish adding user routes.');

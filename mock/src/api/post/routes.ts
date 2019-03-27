@@ -34,16 +34,16 @@ export default class PostRoutes implements IRoute {
         //     auth: false
         //   }
         // },
-        // {
-        //   method: 'GET',
-        //   path: '/api/posts',
-        //   options: {
-        //     handler: controller.getAllPostInfo,
-        //     description: 'Method that gets all post info.',
-        //     tags: ['api', 'post'],
-        //     auth: false,
-        //   },
-        // },
+        {
+          method: 'GET',
+          path: '/api/posts',
+          options: {
+            handler: controller.getAll,
+            description: 'Method that gets all post info.',
+            tags: ['api', 'post'],
+            auth: false,
+          },
+        },
       ]);
 
       Logger.info("PostRoutes - Finish adding post routes.");
