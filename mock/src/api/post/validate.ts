@@ -4,8 +4,9 @@ export default {
   create: {
     payload: {
       text: Joi.string().required(),
-      img: Joi.array().optional(),
-      uid: Joi.string().required()
+      imgs: Joi.array().optional(),
+      uid: Joi.string().required(),
+      comments: Joi.array()
     }
   },
   getById: {
