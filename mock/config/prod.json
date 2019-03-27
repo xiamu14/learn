@@ -1,0 +1,16 @@
+{
+    "db": {
+        "host": "ds149365.mlab.com",
+        "port": 49365,
+        "user": "graphql_server",
+        "pwd": "graphql_server_1234",
+        "name": "graphql_server",
+        "mongoose": {
+            "useNewUrlParser": true,
+            "autoIndex": true
+        }
+    },
+    "server": {
+        "port": 4000
+    }
+}

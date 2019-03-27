@@ -11,6 +11,7 @@
     "mongoose": "^5.4.15"
   },
   "devDependencies": {
+    "graphql": "^14.1.1",
     "nodemon": "^1.18.10"
   }
 }

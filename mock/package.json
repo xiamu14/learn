@@ -1,0 +1,76 @@
+{
+  "author": "BlackBox Vision",
+  "contributors": [
+    "Jonatan E. Salas <jonatansalas@live.com.ar>",
+    "Lauri Larjo <laurilarjo@gmail.com>"
+  ],
+  "description": "Starter for building APIs with Hapi + Typescript!",
+  "license": "MIT",
+  "name": "typescript-hapi-starter",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=10.0"
+  },
+  "scripts": {
+    "build-ts": "tsc",
+    "start": "node dist/src/index.js",
+    "docker:logs": "docker-compose logs",
+    "docker:ps": "docker-compose ps",
+    "docker:start": "docker-compose up",
+    "docker:stop": "docker-compose -f docker-compose.yml down -v --remove-orphans",
+    "nodemon:build": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts ",
+    "nodemon:start": "npm run nodemon:build",
+    "format:lint": "./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts'",
+    "format:prettier": "./node_modules/.bin/prettier --tab-width 4 --print-width 120 --single-quote --trailing-comma all --write 'src/**/*.ts'",
+    "postinstall": "npm run build-ts",
+    "test": "NODE_ENV=test nyc --reporter=lcov --require ts-node/register tape test/**/*.spec.{ts,js} | tap-spec"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ]
+  },
+  "dependencies": {
+    "@types/code": "^4.0.5",
+    "@types/config": "^0.0.34",
+    "@types/dotenv": "^6.1.0",
+    "@types/hapi": "^17.8.2",
+    "@types/joi": "^14.0.1",
+    "@types/mongoose": "^5.3.23",
+    "@types/nedb": "^1.8.3",
+    "@types/node": "^10.12.18",
+    "@types/tape": "^4.2.33",
+    "config": "^3.0.1",
+    "dotenv": "^6.2.0",
+    "hapi": "^17.8.1",
+    "hapi-boom-decorators": "^4.1.2",
+    "hapi-swagger": "^9.3.0",
+    "hapijs-status-monitor": "ziyasal/hapijs-status-monitor",
+    "inert": "^5.1.2",
+    "joi": "^14.3.1",
+    "mongoose": "^5.4.19",
+    "nedb": "^1.8.0",
+    "vision": "^5.4.4",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "nyc": "^13.1.0",
+    "prettier": "^1.5.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.8.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.4.3",
+    "typescript": "^3.2.2"
+  },
+  "keywords": [
+    "api",
+    "nodejs",
+    "hapi",
+    "typescript",
+    "swagger"
+  ]
+}
