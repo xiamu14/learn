@@ -31,5 +31,10 @@ export default {
     params: {
       id: Joi.string().required()
     }
+  },
+  getSkey: {
+    payload: {
+      skey: Joi.string()
+    }
   }
 };

@@ -20,7 +20,7 @@ export default class CrudController {
       Logger.info(`POST - ${Utils.getUrl(request)}`);
       const res = this.model.create(request.payload);
       return h.response({
-        statusCode: 200,
+        code: 200,
         data: res
       });
     } catch (error) {
@@ -35,7 +35,7 @@ export default class CrudController {
     try {
       Logger.info(`GET - ${Utils.getUrl(request)}`);
       const res = await this.model.find({});
-      return h.response({ statusCode: 200, data: res });
+      return h.response({ code: 200, data: res });
     } catch (error) {
       return Boom.badImplementation(error);
     }
