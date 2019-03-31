@@ -20,7 +20,7 @@ export class UploadController extends CrudController {
       Logger.info(`GET - ${Utils.getUrl(request)}`);
 
       const post:Buffer = (request.payload as any).post;
-
+      console.log(request.payload);
       fs.writeFile(path.resolve(__dirname, "../../img/test.png"), post, err => {
         if (!err) {
           console.log("Uploaded!");
