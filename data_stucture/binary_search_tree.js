@@ -1,6 +1,6 @@
 var TreeNode = /** @class */ (function () {
-    function TreeNode(key, entity) {
-        this.key = key;
+    function TreeNode(entity) {
+        this.key = entity.key;
         this.entity = entity;
         this.left = null;
         this.right = null;
@@ -14,8 +14,8 @@ var BinarySearchTree = /** @class */ (function () {
     function BinarySearchTree() {
         this.root = null;
     }
-    BinarySearchTree.prototype.insert = function (key, entity) {
-        var newNode = new TreeNode(key, entity);
+    BinarySearchTree.prototype.insert = function (entity) {
+        var newNode = new TreeNode(entity);
         if (this.root === null) {
             this.root = newNode;
         }
@@ -44,7 +44,7 @@ var BinarySearchTree = /** @class */ (function () {
     return BinarySearchTree;
 }());
 var fruitSweetness = new BinarySearchTree();
-fruitSweetness.insert(100, { name: '西瓜', sweetness: 100 });
+fruitSweetness.insert({ name: '西瓜', sweetness: 100, key: 100 });
 if (fruitSweetness.root) {
     console.log(fruitSweetness.root);
 }

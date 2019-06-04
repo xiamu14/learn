@@ -1,11 +1,14 @@
+interface IKey {
+  key: number
+}
 
-class TreeNode<T> {
+class TreeNode<T extends IKey> {
   left: null | TreeNode<T>;
   right: null | TreeNode<T>;
   key: number;
   entity: T;
-  constructor(key:number, entity: T ) {
-    this.key = key;
+  constructor(entity: T ) {
+    this.key = entity.key;
     this.entity = entity;
     this.left = null;
     this.right = null;
@@ -15,14 +18,14 @@ class TreeNode<T> {
 /**
  * @description 二叉搜索树
  */
-class BinarySearchTree<T> {
+class BinarySearchTree<T extends IKey> {
   root: null | TreeNode<T>;
   constructor() {
     this.root = null;
   }
 
-  insert(key: number, entity: T) {
-    const newNode = new TreeNode<T>(key, entity);
+  insert(entity: T) {
+    const newNode = new TreeNode<T>(entity);
     if (this.root === null) {
       this.root = newNode;
     } else {
@@ -58,11 +61,18 @@ type fruit = {
    */
   sweetness: number;
 
+  /**
+   * @type {number} 键
+   * @desc 用于二叉搜索树时的排序值，值等于 sweetness
+   */
+  key: number;
+
 }
 
 const fruitSweetness = new BinarySearchTree<fruit>()
 
-fruitSweetness.insert(100, {name: '西瓜', sweetness: 100});
+fruitSweetness.insert({name: '西瓜', sweetness: 100, key: 100});
+fruitSweetness.insert({name: '苹果', sweetness: 10, key: 10});
 
 if (fruitSweetness.root) {
   console.log(fruitSweetness.root);
