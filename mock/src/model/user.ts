@@ -1,9 +1,0 @@
-import { Schema, model } from "mongoose";
-
-export const userSchema: Schema = new Schema({
-  nickname: String,
-  avatar: String,
-  sex: Number
-});
-const UserModel = model("User", userSchema);
-export default UserModel;
