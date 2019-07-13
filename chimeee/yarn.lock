@@ -1359,21 +1359,7 @@ chimee-helper-utils@^0.2.0, chimee-helper-utils@^0.2.1:
     babel-runtime "^6.23.0"
     toxic-predicate-functions "^0.1.2"
 
-chimee-helper@^0.2.11, chimee-helper@^0.2.6, chimee-helper@^0.2.8:
-  version "0.2.11"
-  resolved "https://registry.yarnpkg.com/chimee-helper/-/chimee-helper-0.2.11.tgz#3d2f0b1c6139639d44b1813b1b73a2a04da83923"
-  integrity sha512-mLA02w9P5wf1qncJGw/GwjHrnGmrAp5OEKeOaNGGR0A9ZZ4sFuBoBO9xXlpAiRcoJXgGdpNrZK28lJ14cn3kfA==
-  dependencies:
-    babel-runtime "^6.26.0"
-    chimee-helper-dom "^0.1.8"
-    chimee-helper-events "^0.1.0"
-    chimee-helper-log "^0.1.3"
-    chimee-helper-utils "^0.2.1"
-    toxic-predicate-functions "^0.1.5"
-    toxic-utils "^0.2.0"
-    ua-parser-js "^0.7.17"
-
-"chimee-helper@git+https://github.com/Chimeejs/chimee-helper.git":
+chimee-helper@^0.2.11, chimee-helper@^0.2.6, chimee-helper@^0.2.8, "chimee-helper@git+https://github.com/Chimeejs/chimee-helper.git":
   version "0.2.11"
   resolved "git+https://github.com/Chimeejs/chimee-helper.git#cd4130e958cc17e97fd2e8d1a328e71d11ca0ec3"
   dependencies:
@@ -3353,9 +3339,9 @@ lodash.uniq@^4.5.0:
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
 lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
+  integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
 
 log-symbols@^2.2.0:
   version "2.2.0"
@@ -5370,14 +5356,6 @@ toxic-utils@^0.1.5:
     babel-runtime "^6.26.0"
     toxic-predicate-functions "^0.1.4"
 
-toxic-utils@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/toxic-utils/-/toxic-utils-0.2.0.tgz#c2b487c206acb5038896eda3c2e4d426f4e56298"
-  integrity sha512-3AFj4RS6sSTolHcE2dKlihvghxeUKb58r3wltHJYRtz6oRhxgl39TGvqpxeSo2uvbYvK0r8qV9spC932uY+0wg==
-  dependencies:
-    babel-runtime "^6.26.0"
-    toxic-predicate-functions "^0.1.4"
-
 toxic-utils@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/toxic-utils/-/toxic-utils-0.3.0.tgz#66eca4514cc96ad584d33910a440c3a3af8c42e1"
@@ -5427,7 +5405,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-ua-parser-js@^0.7.17, ua-parser-js@^0.7.18:
+ua-parser-js@^0.7.18:
   version "0.7.19"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.19.tgz#94151be4c0a7fb1d001af7022fdaca4642659e4b"
   integrity sha512-T3PVJ6uz8i0HzPxOF9SWzWAlfN/DavlpQqepn22xgve/5QecC+XMCAtmUNnY7C9StehaV6exjUCI801lOI7QlQ==
