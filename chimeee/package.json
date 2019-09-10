@@ -8,7 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "chimee-player": "1.4.7",
     "hapi": "^18.1.0",
     "inert": "^5.1.2",
