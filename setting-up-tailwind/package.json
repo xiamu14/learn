@@ -1,0 +1,42 @@
+{
+  "name": "setting-up-tailwind",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "3.2.0"
+  },
+  "scripts": {
+    "build:styles": "postcss src/tailwind.css -o src/styles.css",
+    "prestart": "yarn build:styles",
+    "start": "react-scripts start",
+    "prebuild": "NODE_ENV=production yarn build:styles",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "serve": "yarn build && serve -s build",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "autoprefixer": "^9.7.1",
+    "postcss-cli": "^6.1.3",
+    "serve": "^11.2.0",
+    "tailwindcss": "^1.1.3"
+  }
+}
