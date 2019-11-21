@@ -14,7 +14,7 @@
     "prebuild": "NODE_ENV=production yarn build:styles",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "serve": "yarn build && serve -s build",
+    "serve": "serve -s build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
