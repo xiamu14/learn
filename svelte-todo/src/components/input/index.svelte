@@ -1,12 +1,21 @@
 <script>
   import IconPlus from "../../assets/icon_plus.svg";
-  let value = "";
-  function onInput(e) {
-    value = `${value}${e.data}`;
+  let html = "";
+  function onInput() {
+    html = html.replace(/[2]/gi, '<span class="tag">奇怪</span>');
+    console.log('%c奇怪', 'background: #69c0ff; color: white; padding: 4px', html);
+
   }
 </script>
 
 <style>
+  :global(span.tag) {
+    border: 1px solid #096dd9;
+    background: #1890ff;
+    color: #ffffff;
+    padding: 2px 4px;
+    border-radius: 2px;
+  }
   .input-box {
     width: 600px;
     position: relative;
@@ -50,14 +59,16 @@
   }
 </style>
 
+<svelte:head>
+  <link rel="stylesheet" href="../../styles/index.css" />
+</svelte:head>
 <div class="input-box">
   <div
     class="input-text"
     contenteditable="plaintext-only"
     placeholder="添加事件"
-    on:input={onInput}>
-    {value}
-  </div>
+    on:input={onInput}
+    bind:innerHTML={html} />
   <div type="submit" class="btn_add">
     <img src={IconPlus} alt="icon plus" />
   </div>
