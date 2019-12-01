@@ -9,7 +9,7 @@
     return className;
   }
   function onClick() {
-    status = "complete";
+    status = status === "complete" ? "" : "complete";
   }
 </script>
 
@@ -22,10 +22,17 @@
     height: 46px;
     border-radius: 6px;
     border: 2px solid #c4c4c4;
+    box-sizing: border-box;
+  }
+  .checkbox > img {
+    width: 27px;
   }
   .sm {
     width: 30px;
     height: 30px;
+  }
+  .sm > img {
+    width: 17px;
   }
   .complete {
     border: 3px solid #28a820;
@@ -34,6 +41,6 @@
 
 <div type="radio" class={genClass(size, status)} on:click={onClick}>
   {#if status === 'complete'}
-    <img alt="tick" width="27px" src={IconTick} />
+    <img alt="tick" src={IconTick} />
   {/if}
 </div>
