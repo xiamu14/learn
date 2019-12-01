@@ -9,8 +9,8 @@ export default {
 
 export const text = () => ({
   Component: Button,
-  props: { text: 'Hello Button' },
-  on: { click: action('clicked') },
+  props    : { text: 'Hello Button' },
+  on       : { click: action('clicked') },
 });
 
 export const emoji = () => ({
