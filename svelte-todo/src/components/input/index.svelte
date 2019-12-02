@@ -1,10 +1,28 @@
 <script>
   import IconPlus from "../../assets/icon_plus.svg";
   let html = "";
-  function onInput() {
-    html = html.replace(/[2]/gi, '<span class="tag">奇怪</span>');
-    console.log('%c奇怪', 'background: #69c0ff; color: white; padding: 4px', html);
+  function onInput(e) {
+    const tagReg = new RegExp(/^#(\w+)\s$/, "i");
+    if (tagReg.test(html)) {
+      const tag = html.replace(tagReg, "$1");
+      // console.log(window.getSelection());
+      html = `<span class="tag" contenteditable="false">${tag}</span>`;
+      keepLastIndex(e.target);
+    } else {
+      html = ` ${html}`;
+    }
 
+    // keepLastIndex(e);
+  }
+  function keepLastIndex(obj) {
+    if (window.getSelection) {
+      const s = window.getSelection();
+      const r = document.createRange();
+      r.setStart(obj, 0);
+      r.setEnd(obj, 0);
+      s.removeAllRanges();
+      s.addRange(r);
+    }
   }
 </script>
 
