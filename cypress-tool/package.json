@@ -1,0 +1,13 @@
+{
+  "name": "cypress-tool",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ben14",
+  "license": "MIT",
+  "scripts": {
+    "cypress": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^3.7.0"
+  }
+}
