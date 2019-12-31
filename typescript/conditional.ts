@@ -25,4 +25,8 @@ function testFn<T>(data: T): T {
   return data;
 }
 
-testFn<{}>({a: 12}).a;
+testFn({ a: 12 }).a;
+
+function a(i:number, j: number) {
+  return i + j;
+}
