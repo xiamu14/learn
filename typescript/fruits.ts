@@ -54,7 +54,7 @@ class Enum {
   getItemByObj(obj: { key: string; val: any }) {
     let result = {};
     this.data.forEach(item => {
-      if ((item[obj.key] === obj.val)) {
+      if (item[obj.key] === obj.val) {
         result = item;
         return true;
       }
@@ -68,3 +68,11 @@ const fruitsEnum = new Enum(fruits);
 console.log(fruitsEnum.getValArr("iid"));
 
 console.log(fruitsEnum.getItemByObj({ key: "iid", val: 1 }));
+
+type Te = {
+  [key in ("a" | "b")]: {
+    test?: string;
+  };
+};
+
+type Ae = Record<"a" | "b", {test?: string}>

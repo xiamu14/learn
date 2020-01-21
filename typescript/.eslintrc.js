@@ -13,6 +13,6 @@ module.exports = {
     sourceType: "module"
   },
   rules: {
-    semi: true
+    "comma-dangle": 1
   }
 };
