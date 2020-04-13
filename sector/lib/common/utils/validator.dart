@@ -16,3 +16,8 @@ bool duCheckStringLength(String input, int length) {
 bool duIsPwd(String input) {
   return duCheckStringLength(input, 6);
 }
+
+/// 校验姓名长度
+bool duIsFullName(String input) {
+  return duCheckStringLength(input, 5);
+}
