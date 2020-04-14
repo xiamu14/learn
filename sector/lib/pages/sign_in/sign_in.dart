@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:localstorage/localstorage.dart';
+import 'package:sector/common/apis/user.dart';
+import 'package:sector/common/entity/user.dart';
 import 'package:sector/common/utils/screen.dart';
+import 'package:sector/common/utils/security.dart';
+import 'package:sector/common/utils/storage.dart';
 import 'package:sector/common/utils/validator.dart';
 import 'package:sector/common/values/shadows.dart';
 import 'package:sector/common/values/values.dart';
@@ -12,6 +17,12 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  /// emial 控制器
+  final TextEditingController _emailController = TextEditingController();
+
+  /// 密码控制器
+  final TextEditingController _passController = TextEditingController();
+
   // 跳转 注册页面
   _handleNavSignUp() {
     Navigator.pushNamed(context, "/sign-up");
@@ -19,7 +30,15 @@ class _SignInPageState extends State<SignInPage> {
 
   /// 登录操作
   _handleSignIn() async {
-    print(_emailController.value.text);
+
+    UserRequestSigInEntity params = UserRequestSigInEntity(
+      email: _emailController.value.text,
+      password: duSHA256(_passController.value.text),
+    );
+    UserResponseEntity res = await UserAPI.login(params: params);
+    // print(res.displayName);
+    // 写本地 access_token
+    StorageUtil().setItem('access_token', res.accessToken);
   }
 
   /// logo
@@ -50,7 +69,7 @@ class _SignInPageState extends State<SignInPage> {
                     decoration: BoxDecoration(
                       color: AppColors.primaryBackground,
                       boxShadow: [Shadows.primaryShadow],
-//                      border: Border.all(color: Colors.red),
+                      //                      border: Border.all(color: Colors.red),
                       borderRadius: BorderRadius.all(
                         Radius.circular(42), // 父容器的 50%
                       ),
@@ -98,12 +117,6 @@ class _SignInPageState extends State<SignInPage> {
       ),
     );
   }
-
-  /// emial 控制器
-  final TextEditingController _emailController = TextEditingController();
-
-  /// 密码控制器
-  final TextEditingController _passController = TextEditingController();
 
   /// 登录表单
   Widget _buildInputForm() {

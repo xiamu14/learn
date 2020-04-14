@@ -1,0 +1,149 @@
+.App {
+  text-align: center;
+  height: 400px;
+  overflow: hidden;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*
+os-theme-block-dark
+*/
+
+.os-theme-block-dark > .os-scrollbar {
+  padding: 0;
+}
+.os-theme-block-dark > .os-scrollbar-horizontal {
+  right: 16px;
+  height: 16px;
+}
+.os-theme-block-dark > .os-scrollbar-vertical {
+  bottom: 16px;
+  width: 16px;
+}
+.os-theme-block-dark.os-host-rtl > .os-scrollbar-horizontal {
+  left: 16px;
+  right: 0;
+}
+.os-theme-block-dark > .os-scrollbar-corner {
+  height: 16px;
+  width: 16px;
+  background-color: transparent;
+}
+.os-theme-block-dark > .os-scrollbar > .os-scrollbar-track {
+  background: transparent;
+}
+.os-theme-block-dark > .os-scrollbar-horizontal > .os-scrollbar-track:before,
+.os-theme-block-dark > .os-scrollbar-vertical > .os-scrollbar-track:before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #E8E8E8;
+  border-radius: 1px;
+}
+.os-theme-block-dark > .os-scrollbar-horizontal > .os-scrollbar-track:before {
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  top: 50%;
+  margin-top: -1px;
+}
+.os-theme-block-dark > .os-scrollbar-vertical > .os-scrollbar-track:before {
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  left: 50%;
+  margin-left: -1px;
+}
+.os-theme-block-dark > .os-scrollbar-horizontal:hover > .os-scrollbar-track:before,
+.os-theme-block-dark > .os-scrollbar-horizontal.active > .os-scrollbar-track:before {
+  left: 0;
+  right: 0;
+  height: 100%;
+  top: 0;
+  margin-top: 0;
+}
+.os-theme-block-dark > .os-scrollbar-vertical:hover > .os-scrollbar-track:before,
+.os-theme-block-dark > .os-scrollbar-vertical.active > .os-scrollbar-track:before {
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  margin-left: 0;
+}
+.os-theme-block-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+  background: transparent;
+}
+.os-theme-block-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle {
+  min-width: 100px;
+  max-width: 100px;
+}
+.os-theme-block-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle {
+  min-height: 100px;
+  max-height: 100px;
+}
+.os-theme-block-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  border-radius: 8px;
+  background: #BDD8F7;
+}
+.os-theme-block-dark.os-host-scrolling > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:before {
+  background: #BDD8F7;
+}
+.os-theme-block-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:hover:before,
+.os-theme-block-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active:before {
+  background: #BDD8F7;
+}
+.os-theme-block-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle {
+  height: 100%;
+  min-width: 16px;
+}
+.os-theme-block-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle {
+  width: 100%;
+  min-height: 16px;
+}
+.os-theme-block-dark.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:before {
+  transition: background 0.3s;
+}
+.os-theme-block-dark.os-host-transition > .os-scrollbar > .os-scrollbar-track:before {
+  transition: margin 0.3s, height 0.3s, width 0.3s, top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+}
