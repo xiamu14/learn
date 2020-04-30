@@ -1,27 +1,33 @@
-import 'package:localstorage/localstorage.dart';
-import 'package:sector/common/values/storage.dart';
+import 'dart:convert';
+
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// 本地存储
 /// 单例 StorageUtil().getItem()
 class StorageUtil {
-  static final StorageUtil _singleton = new StorageUtil._internal();
+  static final StorageUtil _singleton = new StorageUtil._();
+  static SharedPreferences _prefs;
 
-  LocalStorage _storage;
+  StorageUtil._();
 
   factory StorageUtil() {
     return _singleton;
   }
 
-  StorageUtil._internal() {
-    _storage = new LocalStorage(STORAGE_MASTER_KEY);
+  static Future<void> init() async {
+    if (_prefs == null) {
+      _prefs = await SharedPreferences.getInstance();
+    }
   }
 
-   String getItem(String key) {
-    return _storage.getItem(key);
+  /// 设置 json 对象
+  Future<bool> setJSON(String key, dynamic jsonVal) {
+    String jsonString = jsonEncode(jsonVal);
+    return _prefs.setString(key, jsonString);
   }
-
-  Future<void> setItem(String key, String val) async {
-    await _storage.setItem(key, val);
+  /// 获取 json 对象
+  dynamic getJSON(String key) {
+    String jsonString = _prefs.getString(key);
+    return jsonString == null ? null : jsonDecode(jsonString);
   }
-
 }

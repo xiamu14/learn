@@ -212,6 +212,24 @@ class _SignUpPageState extends State<SignUpPage> {
       resizeToAvoidBottomInset: false,
       appBar: transparentAppbar(
         context: context,
+        // title: Text(
+        //   'sign up',
+        //   style: TextStyle(
+        //     color: AppColors.primaryText,
+        //     fontFamily: 'Montserrat',
+        //     fontSize: duSetFontSize(18.0),
+        //     fontWeight: FontWeight.w600,
+        //   ),
+        // ),
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: AppColors.primaryText,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.info_outline, color: AppColors.primaryText),

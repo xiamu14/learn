@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:localstorage/localstorage.dart';
 import 'package:sector/common/apis/user.dart';
 import 'package:sector/common/entity/user.dart';
 import 'package:sector/common/utils/screen.dart';
 import 'package:sector/common/utils/security.dart';
-import 'package:sector/common/utils/storage.dart';
+// import 'package:sector/common/utils/storage.dart';
 import 'package:sector/common/utils/validator.dart';
 import 'package:sector/common/values/shadows.dart';
+// import 'package:sector/common/values/storage.dart';
 import 'package:sector/common/values/values.dart';
 import 'package:sector/common/widgets/button.dart';
 import 'package:sector/common/widgets/input.dart';
+
+import 'package:sector/global.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -38,7 +40,10 @@ class _SignInPageState extends State<SignInPage> {
     UserResponseEntity res = await UserAPI.login(params: params);
     // print(res.displayName);
     // 写本地 access_token
-    StorageUtil().setItem('access_token', res.accessToken);
+    // StorageUtil().setJSON(STORAGE_USER_TOKEN_KEY, res.accessToken);
+    Global.saveProfile(res);
+    Navigator.pushNamed(context, "/app");
+
   }
 
   /// logo
