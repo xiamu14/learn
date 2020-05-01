@@ -2,9 +2,8 @@
 
 A quick description of your strapi application
 
-## Develop info
+## Administrator User
 
-Admin login info :
-- user: Ben Baton
-- email : 544652471@qq.com
+- username: Benjamin Button
+- email: x_z_gfree@163.com
 - pwd: 123456

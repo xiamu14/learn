@@ -1,5 +1,5 @@
 {
-  "name": "learn-strapi",
+  "name": "app",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -21,13 +21,13 @@
     "strapi-plugin-upload": "3.0.0-beta.20.1",
     "strapi-connector-bookshelf": "3.0.0-beta.20.1",
     "knex": "<0.20.0",
-    "sqlite3": "latest"
+    "pg": "latest"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "fe3887b6-0ac6-4d1b-a22c-6b0d9888f5ba"
+    "uuid": "b78c26f4-13c4-48e0-a85a-4205b880ab98"
   },
   "engines": {
     "node": ">=10.0.0",
