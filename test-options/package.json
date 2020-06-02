@@ -1,0 +1,20 @@
+{
+  "name": "test-options",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ben14",
+  "license": "MIT",
+  "scripts": {
+    "start": "ncc run app.ts -C"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "koa": "^2.12.0",
+    "koa-router": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.3",
+    "@types/koa-router": "^7.4.1",
+    "@zeit/ncc": "^0.22.3"
+  }
+}

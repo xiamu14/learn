@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/ben/opt/anaconda3/envs/learn-37/bin/python",
+    "python.pythonPath": "/Users/ben/opt/anaconda3/envs/lerna-python/bin/python",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "python.linting.banditEnabled": false
