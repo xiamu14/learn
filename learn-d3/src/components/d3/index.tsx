@@ -21,7 +21,8 @@ dimensions.boundedWidth = dimensions.width - dimensions.margin.left - dimensions
 dimensions.boundedHeight = dimensions.height - dimensions.margin.top - dimensions.margin.bottom;
 
 const yScale = d3.scaleLinear().domain([10, 100]).range([dimensions.boundedHeight, 0]);
-const xScale = d3.scaleLinear().domain(d3.extent(Array.from(dataset, xAccessor) as any) as any).range([0, dimensions.boundedWidth]);
+console.log('检查', d3.extent(Array.from(dataset, xAccessor)));
+const xScale = d3.scaleTime().domain(d3.extent(Array.from(dataset, xAccessor) as any) as any).range([0, dimensions.boundedWidth]);
 
 const lineGenerator = d3.line().x((d: any) => xScale(xAccessor(d))).y((d: any) => yScale(yAccessor(d))) as any;
 
@@ -37,19 +38,19 @@ export default function D3() {
       const bounds = svg.append('g').style("transform", `translate(${dimensions.margin.left}px, ${dimensions.margin.right}px)`)
 
       const freezingTemperaturePlacement = yScale(32);
-      const freezingTemperatures = bounds.append("rect").attr('x', 0).attr("width", dimensions.boundedWidth).attr('y', freezingTemperaturePlacement).attr("height", dimensions.boundedHeight - freezingTemperaturePlacement).attr("fill", "#e0f3f3");
+      bounds.append("rect").attr('x', 0).attr("width", dimensions.boundedWidth).attr('y', freezingTemperaturePlacement).attr("height", dimensions.boundedHeight - freezingTemperaturePlacement).attr("fill", "#e0f3f3");
 
-      const line = bounds.append("path").attr("d", lineGenerator(dataset)).attr("fill", "none").attr("stroke", "#af9358").attr("stroke-width", 2);
+      bounds.append("path").attr("d", lineGenerator(dataset)).attr("fill", "none").attr("stroke", "#af9358").attr("stroke-width", 2);
 
-      const yAxis = bounds.append('g');
-      const xAxis = bounds.append('g');
+      bounds.append('g').call(yAxisGenerator);
+      bounds.append('g').call(xAxisGenerator).style("transform", `translateY(${dimensions.boundedHeight}px)`);
 
-      yAxisGenerator(yAxis);
-      xAxisGenerator(xAxis);
+      // yAxisGenerator(yAxis);
+      // xAxisGenerator(xAxis);
     }
-    console.table(dataset[0]);
-    console.log(xAccessor(dataset[0]));
-    console.log(yScale(32));
+    // console.table(dataset[0]);
+    // console.log(xAccessor(dataset[0]));
+    // console.log(yScale(32));
   }, [])
   return <div id="svg-wrapper" ref={svgWrapRef}>
   </div>
