@@ -41,3 +41,9 @@
   border-bottom-color: #fa283d;
   top: -20px;
 }
+
+.grid-line{
+  stroke: black;
+  shape-rendering: crispEdges;
+  stroke-opacity: .2;
+}

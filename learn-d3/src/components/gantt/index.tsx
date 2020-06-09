@@ -99,26 +99,48 @@ const yScale = d3.scaleOrdinal<string, number>()
   .range(rangeData as number[])
 
 function makeGrid(ctx: {
-  svg: d3.Selection<SVGSVGElement, unknown, HTMLElement, any>;
+  svg: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
 }) {
   const xAxisGenerator = d3.axisBottom(xScale)
     .ticks(d3.timeHour.every(24))
-  .tickFormat(d3.timeFormat("%-m月 %-d日") as any);
+    .tickFormat(d3.timeFormat("%-m月 %-d日") as any);
+
+
+
 
   const { svg } = ctx;
   const xAxis = svg
     .append("g")
+    .classed('x-axis', true)
     .attr("transform", "translate(" + sidePadding + ", " + (h - 50) + ")");
   xAxisGenerator(xAxis);
 
+  d3.selectAll('g.x-axis g.tick')
+    .append('line')
+    .classed('grid-line', true)
+    .attr('x1', 0)
+    .attr('y1', 0)
+    .attr('x2', 0)
+    .attr('y2', -(h - 50))
+    .attr('stoke', 'black')
+
   const yAxisGenerator = d3.axisLeft(yScale);
   svg.append('g')
+    .classed('y-axis', true)
     .call(yAxisGenerator)
     .attr("transform", `translate(${sidePadding})`);
+
+  d3.selectAll('g.y-axis g.tick')
+    .append('line')
+    .classed('grid-line', true)
+    .attr('x1', 0)
+    .attr('y1',-10)
+    .attr('x2', w)
+    .attr('y2', -10)
 }
 
 function drawRects(ctx: {
-  svg: d3.Selection<SVGSVGElement, unknown, HTMLElement, any>;
+  svg: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
 }) {
   const { svg } = ctx;
 
@@ -157,7 +179,8 @@ export default function Gantt() {
         .select(".svg")
         .append("svg")
         .attr("width", w)
-        .attr("height", h);
+        .attr("height", h)
+        .append('g');
       const ctx = { svg };
       makeGrid(ctx);
       drawRects(ctx);
