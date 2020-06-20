@@ -1,14 +1,8 @@
-import { Application } from 'https://deno.land/x/oak/mod.ts'
-import router from './routes.ts'
+import { serve } from "https://deno.land/std/http/server.ts";
 
-const env = Deno.env.toObject()
-const HOST = env.HOST || '127.0.0.1'
-const PORT = env.PORT || 7700
+const server = serve({ port: 8000 });
 
-const app = new Application()
-
-app.use(router.routes())
-app.use(router.allowedMethods())
-
-console.log(`Listening on port ${PORT} ...`)
-await app.listen(`${HOST}:${PORT}`)
+const greeting:string = "I'm a Deno server, you found me!";
+for await (const req of server) {
+    req.respond({ body: greeting});
+}
