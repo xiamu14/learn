@@ -1,9 +1,0 @@
-{
-    "python.pythonPath": "/Users/ben/opt/anaconda3/envs/lerna-python/bin/python",
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-    "python.linting.banditEnabled": false,
-    "cSpell.words": [
-        "numpy"
-    ]
-}

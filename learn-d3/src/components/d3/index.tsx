@@ -3,6 +3,7 @@ import * as d3 from "d3";
 import dataset from '../../data/my_weather_data.json';
 
 const dateParser = d3.timeParse('%Y-%m-%d');
+
 const xAccessor = (d: { date: string }) => dateParser(d.date) as Date;
 const yAccessor = (d: { temperatureMax: number }) => d.temperatureMax;
 
@@ -45,12 +46,7 @@ export default function D3() {
       bounds.append('g').call(yAxisGenerator);
       bounds.append('g').call(xAxisGenerator).style("transform", `translateY(${dimensions.boundedHeight}px)`);
 
-      // yAxisGenerator(yAxis);
-      // xAxisGenerator(xAxis);
     }
-    // console.table(dataset[0]);
-    // console.log(xAccessor(dataset[0]));
-    // console.log(yScale(32));
   }, [])
   return <div id="svg-wrapper" ref={svgWrapRef}>
   </div>
