@@ -3,15 +3,10 @@ import * as d3 from "d3";
 
 import "./index.css";
 
-const w = 1616;
-const h = 400;
-const topPadding = 75;
-const sidePadding = 75;
-const barHeight = 10;
-const gap = barHeight + 8;
+
 
 interface Task {
-  id: string,
+  id: string;
   task: string;
   type: "active" | "finished";
   startTime: string;
@@ -19,7 +14,6 @@ interface Task {
 }
 
 const taskArray: Task[] = [
-
   {
     id: "1",
     task: "优化注册",
@@ -42,20 +36,26 @@ const taskArray: Task[] = [
     endTime: "2013-2-1 11:00",
   },
   {
-    id: '2',
+    id: "2",
     task: "完成时间轴组件",
     type: "active",
     startTime: "2013-2-1 14:00", // year/month/day hover:minute
     endTime: "2013-2-1 14:20",
   },
   {
-    id: '2',
+    id: "2",
     task: "添加时间功能",
     type: "active",
     startTime: "2013-2-2 14:40", // year/month/day hover:minute
     endTime: "2013-2-12 15:20",
   },
 ];
+
+const w = 1616;
+const h = taskArray.length * 40;
+const topPadding = 20;
+const sidePadding = 75;
+const barHeight = 10;
 
 d3.timeFormatDefaultLocale({
   dateTime: "%a %b %e %X %Y",
@@ -64,18 +64,35 @@ d3.timeFormatDefaultLocale({
   periods: ["上午", "下午"],
   days: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
   shortDays: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
-  months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
-  shortMonths: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+  months: [
+    "一月",
+    "二月",
+    "三月",
+    "四月",
+    "五月",
+    "六月",
+    "七月",
+    "八月",
+    "九月",
+    "十月",
+    "十一月",
+    "十二月",
+  ],
+  shortMonths: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
 });
-
-
 
 const dateParser = d3.timeParse("%Y-%m-%d %H:%M");
 const xAccessorMin = (d: Task) => dateParser(d.startTime) as Date;
 const xAccessorMax = (d: Task) => dateParser(d.endTime) as Date;
 
-// @ts-ignore
-console.log((d3.max(taskArray, xAccessorMax) - d3.min(taskArray, xAccessorMin)) / 1000 / 60 / 60 / 24)
+console.log(
+  // @ts-ignore
+  (d3.max(taskArray, xAccessorMax) - d3.min(taskArray, xAccessorMin)) /
+    1000 /
+    60 /
+    60 /
+    24
+);
 
 const xScale = d3
   .scaleTime()
@@ -85,58 +102,65 @@ const xScale = d3
   ])
   .range([0, w - 150]);
 
-
 // 绘制 y 轴
 const domain = Array.from(taskArray, (task: Task) => task.task);
-domain.unshift('');
+// domain.unshift('');
 
-const rangeData = Array.from(taskArray, (_, index) => (index * gap + topPadding + barHeight / 2));
-rangeData.unshift(45);
-rangeData.push(h - 40);
+console.log("y 轴数据", domain);
 
-const yScale = d3.scaleOrdinal<string, number>()
+const rangeData = Array.from(taskArray, (_, index) => index * 40 + topPadding);
+// rangeData.unshift(45);
+// rangeData.push(h - 40);
+
+console.log("查看 y 轴数据范围", rangeData);
+
+const yScale = d3
+  .scaleOrdinal<string, number>()
   .domain(domain)
-  .range(rangeData as number[])
+  .range(rangeData as number[]);
+
+console.log("检查看看", yScale("优化注册"));
 
 function makeGrid(ctx: {
   svg: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
 }) {
-  const xAxisGenerator = d3.axisBottom(xScale)
+  const xAxisGenerator = d3
+    .axisBottom(xScale)
     .ticks(d3.timeHour.every(24))
     .tickFormat(d3.timeFormat("%-m月 %-d日") as any);
-
-
-
 
   const { svg } = ctx;
   const xAxis = svg
     .append("g")
-    .classed('x-axis', true)
-    .attr("transform", "translate(" + sidePadding + ", " + (h - 50) + ")");
+    .classed("x-axis", true)
+    // .attr("transform", "translate(" + sidePadding + ", " + (h - 20) + ")");
+    .attr("transform", `translate(0, ${h-20})`);
+
   xAxisGenerator(xAxis);
 
-  d3.selectAll('g.x-axis g.tick')
-    .append('line')
-    .classed('grid-line', true)
-    .attr('x1', 0)
-    .attr('y1', 0)
-    .attr('x2', 0)
-    .attr('y2', -(h - 50))
-    .attr('stoke', 'black')
+  d3.selectAll("g.x-axis g.tick")
+    .append("line")
+    .classed("grid-line", true)
+    .attr("x1", 0)
+    .attr("y1", 0)
+    .attr("x2", 0)
+    .attr("y2", -(h - 20))
+    .attr("stoke", "black");
 
   const yAxisGenerator = d3.axisLeft(yScale);
-  svg.append('g')
-    .classed('y-axis', true)
+  svg
+    .append("g")
+    .classed("y-axis", true)
     .call(yAxisGenerator)
-    .attr("transform", `translate(${sidePadding})`);
+    // .attr("transform", `translate(${sidePadding})`);
 
-  d3.selectAll('g.y-axis g.tick')
-    .append('line')
-    .classed('grid-line', true)
-    .attr('x1', 0)
-    .attr('y1',-10)
-    .attr('x2', w)
-    .attr('y2', -10)
+  d3.selectAll("g.y-axis g.tick")
+    .append("line")
+    .classed("grid-line", true)
+    .attr("x1", 0)
+    .attr("y1", -20)
+    .attr("x2", 800)
+    .attr("y2", -20);
 }
 
 function drawRects(ctx: {
@@ -156,17 +180,18 @@ function drawRects(ctx: {
       return xScale(dateParser(d.startTime) as Date) + sidePadding;
     })
     .attr("y", (_: Task, i: number) => {
-      return i * gap + topPadding;
+      return i * 40 + topPadding - 5;
     })
     .attr("width", (d: Task) => {
       return (
-        xScale(dateParser(d.endTime) as Date) -
-        xScale(dateParser(d.startTime) as Date)
-      ) * 10;
+        (xScale(dateParser(d.endTime) as Date) -
+          xScale(dateParser(d.startTime) as Date)) *
+        10
+      );
     })
     .attr("height", barHeight)
     .attr("stroke", "#69c0ff")
-    .attr("stroke-dasharray", "3,3,3")
+    // .attr("stroke-dasharray", "2,2,2")
     .attr("fill", "rgba(0,0,0,0)");
 }
 
@@ -180,7 +205,7 @@ export default function Gantt() {
         .append("svg")
         .attr("width", w)
         .attr("height", h)
-        .append('g');
+        .append("g");
       const ctx = { svg };
       makeGrid(ctx);
       drawRects(ctx);

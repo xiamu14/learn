@@ -9,6 +9,8 @@
   width: 800px;
   height: 400px;
   position: absolute;
+  border: 1px solid red;
+  overflow: scroll;
 }
 .grid .tick {
   stroke: lightgrey;
