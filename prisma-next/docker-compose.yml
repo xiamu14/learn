@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:11.7
+    container_name: prisma-next-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: prismaNext
+      POSTGRES_PASSWORD: ${POSTGRESPWD}
+    ports:
+      - 54322:5432
+    volumes:
+      - ./db/postgresql:/var/lib/postgresql/data
