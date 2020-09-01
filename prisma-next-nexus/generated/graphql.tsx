@@ -146,6 +146,19 @@ export type AllUsersQuery = (
   )>> }
 );
 
+export type CreateOneUserMutationVariables = Exact<{
+  data: UserCreateInput;
+}>;
+
+
+export type CreateOneUserMutation = (
+  { __typename?: 'Mutation' }
+  & { createOneUser: (
+    { __typename?: 'User' }
+    & Pick<User, 'id' | 'name'>
+  ) }
+);
+
 
 export const AllUsersDocument = gql`
     query AllUsers {
@@ -158,4 +171,16 @@ export const AllUsersDocument = gql`
 
 export function useAllUsersQuery(options: Omit<Urql.UseQueryArgs<AllUsersQueryVariables>, 'query'> = {}) {
   return Urql.useQuery<AllUsersQuery>({ query: AllUsersDocument, ...options });
+};
+export const CreateOneUserDocument = gql`
+    mutation CreateOneUser($data: UserCreateInput!) {
+  createOneUser(data: $data) {
+    id
+    name
+  }
+}
+    `;
+
+export function useCreateOneUserMutation() {
+  return Urql.useMutation<CreateOneUserMutation, CreateOneUserMutationVariables>(CreateOneUserDocument);
 };
