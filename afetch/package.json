@@ -1,5 +1,5 @@
 {
-  "name": "smooth-scrollbar",
+  "name": "afetch",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,10 +12,10 @@
     "@types/react-dom": "^16.9.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-query": "^2.18.0",
     "react-scripts": "3.4.3",
-    "react-scrollbars-custom": "^4.0.25",
-    "smooth-scrollbar": "^8.5.2",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "whatwg-fetch": "^3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,7 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "node-sass": "^4.14.1"
-  }
+  "devDependencies": {}
 }
