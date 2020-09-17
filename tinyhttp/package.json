@@ -1,0 +1,16 @@
+{
+  "name": "tinyhttp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ben14",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.9.0"
+  },
+  "dependencies": {
+    "@tinyhttp/app": "^0.2.78",
+    "@tinyhttp/cors": "^0.2.20",
+    "@tinyhttp/logger": "^0.3.37",
+    "formidable": "^1.2.2"
+  }
+}

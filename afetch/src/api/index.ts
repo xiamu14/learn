@@ -1,6 +1,6 @@
 import appendToFormData from "./append_to_form";
 
-const base = "https://api.jsonapi.co";
+const base = "http://localhost:4000";
 
 export type ReqConfig = {
   option: {
@@ -41,8 +41,9 @@ export function createFetch(reqConfig: ReqConfig) {
         reqConfig.option.headers,
         "Content-Type"
       ) &&
-      reqConfig.option?.headers["Content-Type"] === "multipart/form-data"
+      reqConfig.option?.headers["Content-Type"] === undefined
     ) {
+      delete reqConfig.option?.headers["Content-Type"];
       config["body"] = appendToFormData(reqConfig.option.data);
     } else {
       config["body"] = JSON.stringify(reqConfig.option.data);
