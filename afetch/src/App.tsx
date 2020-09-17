@@ -1,41 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-import { testApi } from "./api/test";
-import logo from "./logo.svg";
-import "./App.css";
+import { ReactQueryDevtools } from "react-query-devtools";
 
-function App() {
-  const { data, error, isLoading } = useQuery(testApi.key, testApi.fetch);
-  // const { data, error, isLoading } = useQuery("testApi", () =>
-  //   window
-  //     .fetch("https://api.jsonapi.co/rest/v1/speech-to-text/news")
-  //     .then((res) => res.json())
-  // );
-  console.log("检查看看网络请求", data);
-  if (isLoading) {
-    return <div>这里是否需要配合 suspense</div>;
-  }
-  if (error) {
-    return <div>接口报错，显示错误信息提示</div>;
-  }
+import { testApi } from "./api/test";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Pokemon queryKey="pokemon1" /> */}
+      <Pokemon queryKey="pokemon1" />
+      <ReactQueryDevtools />
     </div>
   );
 }
 
-export default App;
+function Pokemon({ queryKey }: any) {
+  const [t, set] = useState(0);
+  useEffect(() => {
+    setTimeout(() => {
+      set((t1) => t1 + 1);
+    }, 3000);
+  }, []);
+  const queryInfo = useQuery(queryKey, testApi.fetch, {
+    staleTime: Infinity,
+  });
+  console.log("奇怪啊", queryInfo);
+  return queryInfo.isLoading ? (
+    "Loading..."
+  ) : queryInfo.isError ? (
+    (queryInfo.error as any).message
+  ) : (
+    <div>
+      {queryInfo.data.results.map((result: any) => {
+        return <div key={result.name}>{result.name}</div>;
+      })}
+      <br />
+      <i>{t}</i>
+      {queryInfo.isFetching ? "Updating..." : null}
+    </div>
+  );
+}

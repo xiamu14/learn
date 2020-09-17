@@ -4,14 +4,13 @@ export const testApi = {
   key: "testApi",
   fetch: createFetch({
     option: {
-      url: "/api/upload",
-      method: "POST",
-      data: { name: "12", email: "21", password: "123123" },
+      url: "/api/v2/pokemon",
+      method: "GET",
       // headers: {
       //   "Content-Type": "multipart/form-data"
       // }
       headers: {
-        "Content-Type": undefined,
+        "Content-Type": "application/json",
       },
     },
   }),

@@ -1,6 +1,6 @@
 import appendToFormData from "./append_to_form";
 
-const base = "http://localhost:4000";
+const base = "https://pokeapi.co";
 
 export type ReqConfig = {
   option: {
