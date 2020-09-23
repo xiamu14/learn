@@ -17,6 +17,11 @@ App.getInitialProps = async (ctx: NextUrqlAppContext) => {
 
 export default withUrqlClient((_ssrExchange, _ctx) => ({
   url: GRAPHQL_ENDPOINT,
+  fetchOptions: {
+    headers: {
+      credentials: "include",
+    },
+  },
   fetch,
 }))(
   // @ts-ignore

@@ -6,6 +6,7 @@
         "esnext",
         "postgres",
         "postgresql",
+        "reexecute",
         "unfetch"
     ],
     "files.watcherExclude": {

@@ -16,30 +16,13 @@ export type Scalars = {
   Json: any;
 };
 
-export type BatchPayload = {
-  __typename?: 'BatchPayload';
-  count: Scalars['Int'];
-};
-
 
 
 export type Mutation = {
   __typename?: 'Mutation';
-  bigRedButton?: Maybe<Scalars['String']>;
-  createOneUser: User;
-  deleteOneUser?: Maybe<User>;
   updateOneUser?: Maybe<User>;
-  updateManyUser: BatchPayload;
-};
-
-
-export type MutationCreateOneUserArgs = {
-  data: UserCreateInput;
-};
-
-
-export type MutationDeleteOneUserArgs = {
-  where: UserWhereUniqueInput;
+  register?: Maybe<User>;
+  login?: Maybe<User>;
 };
 
 
@@ -49,138 +32,91 @@ export type MutationUpdateOneUserArgs = {
 };
 
 
-export type MutationUpdateManyUserArgs = {
-  data: UserUpdateManyMutationInput;
-  where?: Maybe<UserWhereInput>;
+export type MutationRegisterArgs = {
+  name?: Maybe<Scalars['String']>;
+  email: Scalars['String'];
+  password: Scalars['String'];
 };
 
-export type NestedStringFilter = {
-  equals?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Scalars['String']>>;
-  notIn?: Maybe<Array<Scalars['String']>>;
-  lt?: Maybe<Scalars['String']>;
-  lte?: Maybe<Scalars['String']>;
-  gt?: Maybe<Scalars['String']>;
-  gte?: Maybe<Scalars['String']>;
-  contains?: Maybe<Scalars['String']>;
-  startsWith?: Maybe<Scalars['String']>;
-  endsWith?: Maybe<Scalars['String']>;
-  not?: Maybe<NestedStringFilter>;
+
+export type MutationLoginArgs = {
+  email: Scalars['String'];
+  password: Scalars['String'];
 };
 
 export type Query = {
   __typename?: 'Query';
-  allUsers?: Maybe<Array<User>>;
-  user?: Maybe<User>;
-  users: Array<User>;
-};
-
-
-export type QueryUserArgs = {
-  where: UserWhereUniqueInput;
-};
-
-
-export type QueryUsersArgs = {
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  before?: Maybe<UserWhereUniqueInput>;
-  after?: Maybe<UserWhereUniqueInput>;
-};
-
-export type StringFilter = {
-  equals?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Scalars['String']>>;
-  notIn?: Maybe<Array<Scalars['String']>>;
-  lt?: Maybe<Scalars['String']>;
-  lte?: Maybe<Scalars['String']>;
-  gt?: Maybe<Scalars['String']>;
-  gte?: Maybe<Scalars['String']>;
-  contains?: Maybe<Scalars['String']>;
-  startsWith?: Maybe<Scalars['String']>;
-  endsWith?: Maybe<Scalars['String']>;
-  not?: Maybe<NestedStringFilter>;
+  me?: Maybe<User>;
 };
 
 export type User = {
   __typename?: 'User';
   id: Scalars['String'];
-  name: Scalars['String'];
-};
-
-export type UserCreateInput = {
-  id?: Maybe<Scalars['String']>;
-  name: Scalars['String'];
+  name?: Maybe<Scalars['String']>;
+  email: Scalars['String'];
 };
 
 export type UserUpdateInput = {
   id?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
-};
-
-export type UserUpdateManyMutationInput = {
-  id?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
-};
-
-export type UserWhereInput = {
-  AND?: Maybe<Array<UserWhereInput>>;
-  OR?: Maybe<Array<UserWhereInput>>;
-  NOT?: Maybe<Array<UserWhereInput>>;
-  id?: Maybe<StringFilter>;
-  name?: Maybe<StringFilter>;
+  email?: Maybe<Scalars['String']>;
+  password?: Maybe<Scalars['String']>;
 };
 
 export type UserWhereUniqueInput = {
   id?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
 };
 
-export type AllUsersQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type AllUsersQuery = (
-  { __typename?: 'Query' }
-  & { allUsers?: Maybe<Array<(
-    { __typename?: 'User' }
-    & Pick<User, 'id' | 'name'>
-  )>> }
-);
-
-export type CreateOneUserMutationVariables = Exact<{
-  data: UserCreateInput;
+export type LoginMutationVariables = Exact<{
+  email: Scalars['String'];
+  password: Scalars['String'];
 }>;
 
 
-export type CreateOneUserMutation = (
+export type LoginMutation = (
   { __typename?: 'Mutation' }
-  & { createOneUser: (
+  & { login?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id' | 'name'>
-  ) }
+    & Pick<User, 'id' | 'name' | 'email'>
+  )> }
+);
+
+export type MeQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type MeQuery = (
+  { __typename?: 'Query' }
+  & { me?: Maybe<(
+    { __typename?: 'User' }
+    & Pick<User, 'id' | 'name' | 'email'>
+  )> }
 );
 
 
-export const AllUsersDocument = gql`
-    query AllUsers {
-  allUsers {
+export const LoginDocument = gql`
+    mutation Login($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
     id
     name
+    email
   }
 }
     `;
 
-export function useAllUsersQuery(options: Omit<Urql.UseQueryArgs<AllUsersQueryVariables>, 'query'> = {}) {
-  return Urql.useQuery<AllUsersQuery>({ query: AllUsersDocument, ...options });
+export function useLoginMutation() {
+  return Urql.useMutation<LoginMutation, LoginMutationVariables>(LoginDocument);
 };
-export const CreateOneUserDocument = gql`
-    mutation CreateOneUser($data: UserCreateInput!) {
-  createOneUser(data: $data) {
+export const MeDocument = gql`
+    query Me {
+  me {
     id
     name
+    email
   }
 }
     `;
 
-export function useCreateOneUserMutation() {
-  return Urql.useMutation<CreateOneUserMutation, CreateOneUserMutationVariables>(CreateOneUserDocument);
+export function useMeQuery(options: Omit<Urql.UseQueryArgs<MeQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<MeQuery>({ query: MeDocument, ...options });
 };

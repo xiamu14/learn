@@ -1,0 +1,35 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "email",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "email"
+        },
+        "directive": "unique"
+      }
+    },
+    {
+      "tag": "UpdateField",
+      "model": "User",
+      "field": "name",
+      "arity": "Optional"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "User",
+      "field": "password",
+      "arity": "Required"
+    }
+  ]
+}

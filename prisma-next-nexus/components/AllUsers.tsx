@@ -1,22 +1,21 @@
 import React, { useEffect } from "react";
-import {
-  useAllUsersQuery,
-  useCreateOneUserMutation,
-} from "../generated/graphql";
+import { useMeQuery, useLoginMutation } from "../generated/graphql";
 
 export default function AllUsers() {
-  const [result] = useAllUsersQuery();
+  const [result, reexecuteQuery] = useMeQuery();
   const { data, fetching, error } = result;
 
-  const [createOneUserResult, createOneUser] = useCreateOneUserMutation();
+  const refresh = () => {
+    // Refetch the query and skip the cache
+    reexecuteQuery({ requestPolicy: "network-only" });
+  };
+
+  const [loginRes, login] = useLoginMutation();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      createOneUser({ data: { name: "Jane" } }).then(() => {
-        console.log("检查看看", createOneUserResult);
-      });
-      clearTimeout(timer);
-    }, 1000);
+    login({ email: "1@qq.com", password: "test" }).then(() => {
+      refresh();
+    });
   }, []);
 
   if (fetching) return <p>Loading...</p>;
@@ -24,12 +23,7 @@ export default function AllUsers() {
 
   return (
     <div>
-      <p>There are {data?.allUsers?.length} user(s) in the database:</p>
-      <ul>
-        {data?.allUsers?.map((user) => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>
+      <p>{data?.me?.email}</p>
     </div>
   );
 }

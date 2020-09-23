@@ -1,19 +1,21 @@
 import gql from "graphql-tag";
 
-export const AllUsersQuery = gql`
-  query AllUsers {
-    allUsers {
+export const login = gql`
+  mutation Login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
       id
       name
+      email
     }
   }
 `;
 
-export const CreateUserMutation = gql`
-  mutation CreateOneUser($data: UserCreateInput!) {
-    createOneUser(data: $data) {
+export const me = gql`
+  query Me {
+    me {
       id
       name
+      email
     }
   }
 `;
