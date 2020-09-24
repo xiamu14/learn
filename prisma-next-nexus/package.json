@@ -1,11 +1,13 @@
 {
-  "name": "with-typescript",
+  "name": "prisma-next-nexus",
   "version": "1.0.0",
   "scripts": {
     "dev": "concurrently -r \"yarn nexus dev\" \"yarn next\"",
+    "graphql-codegen": "graphql-codegen",
+    "prisma:up": "prisma migrate up --experimental",
+    "prisma:save": "prisma migrate save --experimental",
     "build": "next build",
     "start": "next start",
-    "graphql-codegen": "graphql-codegen",
     "type-check": "tsc"
   },
   "dependencies": {

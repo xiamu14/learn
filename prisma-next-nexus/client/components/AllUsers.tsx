@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useMeQuery, useLoginMutation } from "../../generated/graphql";
+import { useMeQuery, useLoginMutation } from "../api/graphql_generated";
 
 export default function AllUsers() {
   const [result, reexecuteQuery] = useMeQuery();
