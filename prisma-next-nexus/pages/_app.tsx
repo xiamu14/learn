@@ -2,6 +2,7 @@ import React from "react";
 import { withUrqlClient, NextUrqlAppContext } from "next-urql";
 import NextApp, { AppProps } from "next/app";
 import fetch from "isomorphic-unfetch";
+import "../client/style/index.css";
 
 // the URL to /api/graphql
 const GRAPHQL_ENDPOINT = `http://localhost:3000/api/graphql`;

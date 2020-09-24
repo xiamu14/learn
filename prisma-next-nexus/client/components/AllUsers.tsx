@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+/** @jsx jsx */
+import { jsx, css } from "@emotion/core";
+import { useEffect } from "react";
 import { useMeQuery, useLoginMutation } from "../api/graphql_generated";
 
 export default function AllUsers() {
@@ -15,6 +17,7 @@ export default function AllUsers() {
   useEffect(() => {
     login({ email: "1@qq.com", password: "test" }).then(() => {
       refresh();
+      console.log("检查看看", loginRes);
     });
   }, []);
 
@@ -22,7 +25,12 @@ export default function AllUsers() {
   if (error) return <p>Oh no... {error.message}</p>;
 
   return (
-    <div>
+    <div
+      css={css`
+        background: lightskyblue;
+        width: 10rem;
+      `}
+    >
       <p>{data?.me?.email}</p>
     </div>
   );
