@@ -2,8 +2,8 @@ import { schema, use } from "nexus";
 import { hash, compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 import { prisma } from "nexus-plugin-prisma";
-import { APP_SECRET, getUserId } from "../pages/api/utils";
-import { serializeCookie } from "../utils/serialize_cookie";
+import { APP_SECRET, getUserId } from "./utils";
+import { serializeCookie } from "./utils/serialize_cookie";
 
 use(prisma({ features: { crud: true } }));
 

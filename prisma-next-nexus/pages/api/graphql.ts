@@ -1,9 +1,9 @@
 import { auth } from "nexus-plugin-jwt-auth";
 import app, { server, use, settings } from "nexus";
 import cookieParser from "cookie-parser";
-import "../../graphql/schema"; // we'll create this file in a second!
-import { protectedPaths } from "./permissions";
-import { APP_SECRET } from "./utils";
+import "../../server/schema"; // we'll create this file in a second!
+import { protectedPaths } from "../../server/permissions";
+import { APP_SECRET } from "../../server/utils";
 
 settings.change({
   server: {

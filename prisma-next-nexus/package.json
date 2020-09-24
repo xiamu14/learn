@@ -5,6 +5,7 @@
     "dev": "concurrently -r \"yarn nexus dev\" \"yarn next\"",
     "build": "next build",
     "start": "next start",
+    "graphql-codegen": "graphql-codegen",
     "type-check": "tsc"
   },
   "dependencies": {

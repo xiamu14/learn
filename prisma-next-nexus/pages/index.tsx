@@ -1,4 +1,4 @@
-import AllUsers from "../components/AllUsers";
+import AllUsers from "../client/components/AllUsers";
 
 const IndexPage = () => (
   <div>
