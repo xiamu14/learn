@@ -11,8 +11,8 @@
   width: 40vw;
   height: 40vh;
   background: lightblue;
-  top: 10vh;
-  left: 10vh;
+  // top: 10vh;
+  // left: 10vh;
 }
 
 .header {
@@ -21,6 +21,7 @@
   left: 0;
   width: 60vw;
   height: 10vh;
+  z-index: 98;
   background: #8e2de2; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -47,28 +48,27 @@
   left: 0;
   width: 10vh;
   height: 60vh;
+  z-index: 98;
   background: #f12711; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to bottom,
     #f5af19,
     #f12711
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #f5af19,
-    #f12711
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to bottom, #f5af19, #f12711);
 }
-// .App .scrollbar-track {
-//   background: rgba($color: #000000, $alpha: 0) ;
-// }
-// .App .scrollbar-thumb {
-//   background: rgba($color: #000000, $alpha: 0) ;
-// }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.common_area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10vh;
+  height: 10vh;
+  background: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -90,6 +90,14 @@
 
 .App-link {
   color: #61dafb;
+}
+.ScrollbarsCustom-Track {
+  width: 0 !important;
+}
+
+.ScrollbarsCustom-Wrapper {
+  bottom: 0 !important;
+  right: 0 !important;
 }
 
 @keyframes App-logo-spin {
