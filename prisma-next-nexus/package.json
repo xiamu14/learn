@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "concurrently -r \"yarn nexus dev\" \"yarn next\"",
-    "graphql-codegen": "graphql-codegen",
+    "generate": "graphql-codegen",
     "prisma:up": "prisma migrate up --experimental",
     "prisma:save": "prisma migrate save --experimental",
     "build": "next build",
