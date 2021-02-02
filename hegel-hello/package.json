@@ -1,0 +1,16 @@
+{
+  "name": "hegel-hello",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ben14",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src/ -d dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-flow": "^7.12.1",
+    "@hegel/cli": "^0.0.45"
+  }
+}
