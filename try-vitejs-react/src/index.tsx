@@ -1,0 +1,23 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import Pc from "./Pc";
+import Test from "./Test";
+import reportWebVitals from "./reportWebVitals";
+import { RecoilRoot } from "recoil";
+import { isPC } from "./util/is_pc";
+
+
+ReactDOM.render(
+  <React.StrictMode>
+    {/* <RecoilRoot>{isPC() ? <Pc /> : <App />}</RecoilRoot> */}
+    <Test />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+html {
+  font-size: 10vw;
+  box-sizing: border-box;
+  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei",
+    "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+}
+
+html body {
+  width: 10rem;
+  margin: 0 auto;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-wrapper .modal {
+  width: auto !important;
+  height: auto !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+.modal-wrapper .modal-overlay.modal-mask {
+  background: rgba(0, 0, 0, 0.65) !important;
+}
+
+.Toaster__alert {
+  justify-content: space-between;
+  align-items: center;
+  width: 2.6rem !important;
+  border-radius: 20px !important;
+  padding: .2rem .4rem !important;
+}
+
+.Toaster__alert_text {
+  font-size: 14px !important;
+}
+
+.Toaster__alert_close {
+  padding: 0;
+  font-size: 18px;
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+/**
+ *
+ * p_base.css
+ *
+ * @authors leiTingGame-Tp
+ * @date    2016-01-22 
+ * @version v2016
+ *
+ */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+fieldset,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font: 14px/1 "Microsoft YaHei";
+}
+address,
+cite,
+dfn,
+em,
+i,
+var {
+  font-style: normal;
+}
+small {
+  font-size: 12px;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+  outline: none;
+}
+a:hover {
+  text-decoration: none;
+}
+abbr[title],
+acronym[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+q:before,
+q:after {
+  content: "";
+}
+legend {
+  color: #000;
+}
+fieldset,
+img {
+  border: none;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+input {
+  outline: none;
+  border: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+hr {
+  border: none;
+  height: 1px;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.pr {
+  position: relative;
+}
+.pa {
+  position: absolute;
+}
+.hid {
+  display: none !important;
+}
+
+/*通栏初始化高度*/
+#LTTopBar {
+  min-height: 43px;
+}
+
+/*极验调整*/
+.LT_popup .geetest_holder.geetest_wind {
+  min-width: 246px;
+}
+
+/*阿里验证调整*/
+.sm-pop {
+  left: 0 !important;
+  top: 0 !important;
+  height: 100% !important;
+  line-height: 100% !important;
+  box-sizing: border-box;
+  width: 100% !important;
+  overflow: hidden;
+}
+.sm-pop-inner {
+  top: 4px !important;
+  left: 50% !important;
+  margin-left: -150px !important;
+}
+.sm-btn {
+  box-sizing: border-box;
+  height: 100%;
+}
+#rectMask {
+  display: none !important;
+}
