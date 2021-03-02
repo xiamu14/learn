@@ -11,3 +11,6 @@ export default function Test() {
 const headerCss = css`
   ${size("10px", "12px")}
 `;
+
+// compare
+// Div().css(size('10px', '10px'))
